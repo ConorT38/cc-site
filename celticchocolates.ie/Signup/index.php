@@ -1,5 +1,5 @@
 <?php 
-if(!isset($_SESSION['logged_in'])){
+if(isset($_SESSION['logged_in'])){
   header("Location: ../");
   die();
  }
@@ -50,6 +50,7 @@ if(!isset($_SESSION['logged_in'])){
       <div class="row">
         <div class="col-xs-12">
           <div class="body-plain__title">
+          <div id="result"></div>
             <h1 class="text-center">Sign Up</h1>
           </div>
         </div> 
@@ -61,35 +62,19 @@ if(!isset($_SESSION['logged_in'])){
             <!-- Sign Up form -->
             <form role="form">
               <div class="form-group">
-                <label for="sign-up__name" class="sr-only">Enter name</label>
-                <input class="form-control" id="sign-up__name" placeholder="Your name" type="text">
+                <label for="name" class="sr-only">Enter name</label>
+                <input class="form-control" id="name" placeholder="Your name" type="text">
               </div>
               <div class="form-group">
-                <label for="sign-up__username" class="sr-only">Enter username</label>
-                <input class="form-control" id="sign-up__username" placeholder="Username" type="text">
+                <label for="email" class="sr-only">Enter email</label>
+                <input class="form-control" id="email" placeholder="Enter email" type="email">
               </div>
-              <div class="form-group">
-                <label for="sign-up__email" class="sr-only">Enter email</label>
-                <input class="form-control" id="sign-up__email" placeholder="Enter email" type="email">
-              </div>
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-sm-6">
                     <div class="form-group">
-                      <label for="sign-up__password" class="sr-only">Enter password</label>
-                      <input class="form-control" id="sign-up__password" placeholder="Password" type="password">
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <label for="sign-up__password_repeat" class="sr-only">Repeat password</label>
-                      <input class="form-control" id="sign-up__password_repeat" placeholder="Repeat Password" type="password">
-                    </div>
-                  </div>
-                </div>
+                      <label for="password" class="sr-only">Enter password</label>
+                      <input class="form-control" id="password" placeholder="Password" type="password">
               </div>
               <div class="checkbox">
-              <button type="submit" class="btn btn-primary btn-block btn-lg">Create Account</button>
+              <button type="submit" id="submit" class="btn btn-primary btn-block btn-lg">Create Account</button>
             </form>
 
             <!-- Sign In link -->
@@ -120,6 +105,30 @@ if(!isset($_SESSION['logged_in'])){
 
     <!-- JS Custom -->
     <script src="Signup_files/custom.js"></script>
+   <script type="text/javascript">
+$(document).ready(function(){
+$('#submit').click(function(){
+// AJAX Code To Submit Form.
+$.ajax({
+type: "POST",
+url: "Signup.php",
+data: {
+        'name':$("#name").val(),
+        'email':$("#email").val(),
+        'password':$("#password").val()
+    },
+success: function(result){
+    location.reload();
+document.getElementById("result").innerHTML = result;
+window.location='http://localhost/';
+}
+});
+return false;
+});
+});
+
+
+</script>
 
 
   

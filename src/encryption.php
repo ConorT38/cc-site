@@ -2,6 +2,7 @@
 
 
 require_once "mysqlw.php";
+require_once "../../details/details.php";
 
 
 class Encryption{
@@ -20,7 +21,7 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-  $sql1 ="SELECT e FROM enc WHERE id=1";
+  $sql1 ="SELECT e FROM e WHERE e_id=0";
     if($result = mysqli_query($con,$sql1)){
         
         if (mysqli_num_rows($result) > 0) {

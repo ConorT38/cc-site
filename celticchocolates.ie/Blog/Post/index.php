@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/img/favicon.ico">
 
-    <title>Beatrix :: Blog Post</title>
+    <title>Blog | Celtic Chocolates</title>
 
     <!-- CSS Global -->
     <link href="Post_files/styles.css" rel="stylesheet">
@@ -16,6 +16,7 @@
     <!-- CSS Plugins -->
     <link href="Post_files/font-awesome.css" rel="stylesheet">
     <link href="Post_files/animate.css" rel="stylesheet">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!-- Google Fonts -->
     <link href="Post_files/css.css" rel="stylesheet" type="text/css">
@@ -35,176 +36,7 @@
     <!-- <div class="preloader">
       <img src="img/preloader.gif" alt="Loading..." class="preloader__img">
     </div> -->
-
-
-    <!-- STATIC TOPBAR
-    ============================== -->
-    <div class="topbar hidden-xs hidden-sm">
-      <div class="container">
-        <!-- Social links -->
-        <ul class="topbar-nav topbar-nav_left">
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-          <li><a href="#"><i class="fa fa-vk"></i></a></li>
-          <li><a href="#"><i class="fa fa-stumbleupon"></i></a></li>
-        </ul>
-        <ul class="topbar-nav topbar-nav_right">
-          <li>
-            <!-- Search form -->
-            <form class="form-inline topbar__search" role="form">
-              <label class="sr-only" for="nav-search">Search</label>
-              <input class="form-control" id="nav-search" placeholder="Search here..." type="search">
-              <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-          </li>
-          <!-- Account links -->
-          <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/sign-in.html">Sign In</a></li>
-          <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/sing-up.html">Sign Up</a></li>
-          <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/shopping-cart.html">My Cart (0)</a></li>
-        </ul>
-      </div> <!-- / .container -->
-    </div> <!-- / .topbar -->
-    <div class="navbar__hr hidden-xs hidden-sm"></div>
-
-
-    <!-- STATIC NAVBAR
-    ============================== -->
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <!-- Toggle button -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- Brand name -->
-          <a class="navbar-brand" href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/index.html">Beatrix</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <!-- Navbar links -->
-          <ul class="nav navbar-nav navbar-right">
-
-            <!-- Home -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Home <span class="fa fa-angle-down"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/index.html">Home: Default</a></li>
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/index_carousel.html">Home: Carousel</a></li>
-              </ul>
-            </li>
-
-            <!-- Profile -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Profile <span class="fa fa-angle-down"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li class="dropdown-submenu">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign In</a>
-                  <!-- Dropdown submenu -->
-                  <ul class="dropdown-menu">
-                    <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/sign-in.html">Sign In: Default</a></li>
-                    <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/sign-in_option-1.html">Sign In: Option 1</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown-submenu">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign Up</a>
-                  <!-- Dropdown submenu -->
-                  <ul class="dropdown-menu">
-                    <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/sign-up.html">Sign Up: Default</a></li>
-                    <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/sign-up_option-1.html">Sign Up: Option 1</a></li>
-                  </ul>
-                </li>
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/profile.html">User Profile</a></li>
-              </ul>
-            </li>
-
-            <!-- Portfolio -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Portfolio <span class="fa fa-angle-down"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/portfolio.html">Portfolio</a></li>
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/portfolio-item.html">Portfolio Item</a></li>
-              </ul>
-            </li>
-
-            <!-- Blog -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Blog <span class="fa fa-angle-down"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/blog.html">Blog</a></li>
-                <li class="active"><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/blog-post.html">Blog Post</a></li>
-              </ul>
-            </li>
-
-            <!-- Shop -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Shop <span class="fa fa-angle-down"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/shop.html">Shop</a></li>
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/shop-item.html">Shop Item</a></li>
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/shopping-cart.html">Shopping Cart</a></li>
-              </ul>
-            </li>
-
-            <!-- More pages -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                More Pages <span class="fa fa-angle-down"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/about-us.html">About Us</a></li>
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/coming-soon.html">Coming Soon</a></li>
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/contact-us.html">Contact Us</a></li>
-                <li class="dropdown-submenu">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help Center</a>
-                  <!-- Dropdown submenu -->
-                  <ul class="dropdown-menu">
-                    <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/help-center.html">Help Center</a></li>
-                    <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/help-item.html">Help Item</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown-submenu">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pricing Options</a>
-                  <!-- Dropdown submenu -->
-                  <ul class="dropdown-menu">
-                    <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/pricing_boxes.html">Pricing Options: Boxes</a></li>
-                    <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/pricing_table.html">Pricing Options: Table</a></li>
-                  </ul>
-                </li> 
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/services.html">Services</a></li>
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/search-results.html">Search Results</a></li>
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/timeline.html">Timeline</a></li>
-                <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/error-page.html">404 Error</a></li>               
-              </ul>
-            </li>
-
-            <!-- UI Elements -->
-            <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/ui-elements.html">UI Elements</a></li>
-          </ul>
-          <!-- Search form (for collapsed menu only) -->
-          <form class="navbar-form navbar-left visible-xs visible-sm" role="search">
-            <div class="form-group">
-              <label class="sr-only" for="nav-search-xs">Search</label>
-              <input class="form-control" id="nav-search-xs" placeholder="Search here..." type="search">
-            </div>
-          </form>
-        </div> <!-- / .navbar-collapse -->
-      </div> <!-- / .container -->
-    </div> <!-- / .navbar -->
-
-
+<?php require_once"../../includes/header.php";?>
     <!-- PAGE HEADER
     ============================== -->
     <div class="page__header">
@@ -213,8 +45,8 @@
           <div class="col-xs-12">
             <h3 class="page-header__title">Blog Post</h3>
             <ol class="breadcrumb page-header__breadcrumb">
-              <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/index.html">Home</a></li>
-              <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/blog.html">Blog</a></li>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../">Blog</a></li>
               <li class="active">Blog Post</li>
             </ol>
           </div>
@@ -477,148 +309,7 @@ lacinia erat, at maximus erat bibendum quis. Lorem ipsum dolor sit amet,
         </div>
       </div> <!-- / .row -->
     </div> <!-- / .container -->
-    
-
-    <!-- FOOTER
-    ============================== -->
-    <footer>
-
-      <!-- Footer Top -->
-      <div class="footer_top hidden-xs">
-        <div class="container">
-          <div class="row">
-
-            <!-- Contact Us -->
-            <div class="col-xs-12 col-sm-3">
-              <div class="footer__item">
-                <div class="footer__title">Contact Us</div>
-                <div class="footer__content">
-                  <p>
-                    Do not hesitate to contact us if you have any questions or feature requests:
-                  </p><p>
-                    Lorem ipsum dolor sit amet,<br>
-                    Consectetur adipiscing elit
-                  </p><p>
-                    Phone: +0 000 000 00 00<br>
-                    Fax: +0 000 000 00 00
-                  </p><p>
-                    Email: <a href="#">support@example.com</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Recent Tweets -->
-            <div class="col-xs-12 col-sm-3">
-              <div class="footer__item">
-                <div class="footer__title">Recent Tweets</div>
-                <div class="footer__content">
-                  <div class="footer__tweet">
-                    <div class="footer-tweet__icon">
-                      <i class="fa fa-twitter"></i>
-                    </div>
-                    <div class="footer-tweet__content">
-                      <p>
-                        <a href="#">@wrapbootstrap</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisi lorem, elementum sed feugiat.
-                      </p>
-                      <a href="#">1 hour ago</a>
-                    </div>
-                  </div>
-                  <div class="footer__tweet">
-                    <div class="footer-tweet__icon">
-                      <i class="fa fa-twitter"></i>
-                    </div>
-                    <div class="footer-tweet__content">
-                      <p>
-                        <a href="#">@wrapbootstrap</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisi lorem, elementum sed feugiat.
-                      </p>
-                      <a href="#">1 day ago</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Recent Posts -->
-            <div class="col-xs-12 col-sm-3">
-              <div class="footer__item">
-                <div class="footer__title">Recent Posts</div>
-                <div class="footer__content">
-                  <div class="footer__post">
-                    <div class="footer-post__img">
-                      <img src="Post_files/general_1.jpg" alt="...">
-                    </div>
-                    <div class="footer-post__content">
-                      <p><a href="#">Lorem ipsum dolor sit amet</a></p>
-                      <time datetime="2015-01-01">2015/01/01</time>
-                    </div>
-                  </div>
-                  <div class="footer__post">
-                    <div class="footer-post__img">
-                      <img src="Post_files/general_2.jpg" alt="...">
-                    </div>
-                    <div class="footer-post__content">
-                      <p><a href="#">Lorem ipsum dolor sit amet</a></p>
-                      <time datetime="2015-01-01">2015/01/01</time>
-                    </div>
-                  </div>
-                  <div class="footer__post">
-                    <div class="footer-post__img">
-                      <img src="Post_files/general_3.jpg" alt="...">
-                    </div>
-                    <div class="footer-post__content">
-                      <p><a href="#">Lorem ipsum dolor sit amet</a></p>
-                      <time datetime="2015-01-01">2015/01/01</time>
-                    </div>
-                  </div>
-                </div>
-              </div>            
-            </div>
-
-            <!-- Quick Links -->
-            <div class="col-xs-12 col-sm-3">
-              <div class="footer__item">
-                <div class="footer__title">Quick Links</div>
-                <div class="footer__content">
-                  <ul class="footer__links">
-                    <li><a href="#">Donec commodo turpis eget orci</a></li>
-                    <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-                    <li><a href="#">Aenean rhoncus vel nisi sed</a></li>
-                    <li><a href="#">Aenean accumsan volutpat libero</a></li>
-                    <li><a href="#">Vestibulum lacinia erat massa</a></li>
-                  </ul>
-                </div>
-              </div>            
-            </div>
-
-          </div> <!-- / .row -->
-        </div> <!-- / .container -->
-      </div> <!-- / .footer_top -->
-      <div class="footer__hr hidden-xs"></div>
-
-      <!-- Footer Bottom -->
-      <div class="footer_bottom">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12 col-sm-6">
-              <div class="footer__copyright">
-                Copyright 2015 <a href="http://simpleqode.com/">Simpleqode.com</a>. All Rights Reserved.
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <ul class="footer__social">
-                <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-              </ul>
-            </div>
-          </div> <!-- / .row -->
-        </div> <!-- / .container -->
-      </div> <!-- / .footer_bottom -->
-    </footer>
-
+    <?php require_once'../../includes/footer.php';?>
 
     <!-- Javascript
     ============================== -->

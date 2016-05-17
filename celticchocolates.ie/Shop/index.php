@@ -37,7 +37,7 @@
       <img src="img/preloader.gif" alt="Loading..." class="preloader__img">
     </div> -->
 <?php require_once "../includes/header.php";?>
-<?php require_once "/../../dev/Shop.php";?>
+<?php require_once "../../dev/Shop.php";?>
 
     <!-- PAGE HEADER
     ============================== -->
@@ -226,31 +226,6 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-4">
-              <div class="product-list__item">
-                <!-- Image -->
-                <div class="product-list__img">
-                  <a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/shop-item.html">
-                    <img src="Shop_files/product_1.jpg" alt="Product Image">
-                  </a>
-                </div>
-                <!-- Captions -->
-                <div class="product-list__caption">
-                  <h3 class="product-list__title">
-                    <a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/shop-item.html">Product Title</a>
-                  </h3>
-                  <ul class="rating_stars">
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li><i class="fa fa-star"></i></li>
-                    <li class="rating__comment">(12 reviews)</li>
-                  </ul>
-                  <div class="product-list__price">17 USD <s class="text-muted">20 USD</s></div>
-                </div>
-              </div>
-            </div>
             <?php
            Shop::getAllProducts();
             ?>

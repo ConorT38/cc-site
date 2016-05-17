@@ -102,7 +102,7 @@
                   <ul class="footer__links">
                     <li><a href="http://<?php echo $_SERVER['SERVER_NAME'];?>">Home</a></li>
                     <li><a href="http://<?php echo $_SERVER['SERVER_NAME'];?>/Shop">Shop</a></li>
-                    <li><a href="http://<?php echo $_SERVER['SERVER_NAME'];?>/Cart">Cart</a></li>
+                    <li><a href="http://<?php echo $_SERVER['SERVER_NAME'];?>/Shop/Cart">Cart</a></li>
                     <li><a href="http://<?php echo $_SERVER['SERVER_NAME'];?>/Blog">Blog</a></li>
                   </ul>
                 </div>

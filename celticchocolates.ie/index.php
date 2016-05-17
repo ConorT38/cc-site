@@ -126,8 +126,8 @@ max-width:none
         </div> <!-- / .wrapper -->
       </div> <!-- / .hero__inner -->
 
-    <div style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 829px; width: 1842px; z-index: -999998; position: absolute;" class="backstretch">
-    <img src="home/bg_1.jpg" style="-webkit-filter: grayscale(30%);position: absolute; margin: 0px; padding: 0px; border: medium none; width: 1842px; height: 1217.45px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -194.223px;"></div></div> <!-- / .hero -->
+    <div style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 860px; width: 100%; z-index: -999998; position: absolute;" class="backstretch">
+    <img src="home/bg_1.jpg" style="-webkit-filter: grayscale(40%);position: absolute; margin: 0px; padding: 0px; border: medium none; width: 100%; height: 1217.45px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -194.223px;"></div></div> <!-- / .hero -->
 
 
     <!-- KEY FEATURES
@@ -635,7 +635,7 @@ gravida ipsum. Sed dignissim nec ex nec fringilla. Ut commodo leo mi, eu
         <div class="row">
           <div class="col-xs-12">
             <h1 class="section__title">
-              Our Contributors
+              Our Team
             </h1>
             <p class="section__intro">
               A team of hard-working enthusiastic people who helped this product come to life
@@ -651,7 +651,7 @@ gravida ipsum. Sed dignissim nec ex nec fringilla. Ut commodo leo mi, eu
                 <img src="home/photo_1.jpg" class="img-responsive" alt="...">
               </div>
               <div class="authors__content">
-                <div class="authors__title">John Doe, Designer</div>
+                <div class="authors__title">Joe Callery, Owner</div>
                 <div class="authors__intro">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu lacus enim. Aliquam eu elit justo. 
                 </div>
@@ -679,7 +679,7 @@ gravida ipsum. Sed dignissim nec ex nec fringilla. Ut commodo leo mi, eu
                 <img src="home/photo_2.jpg" class="img-responsive" alt="...">
               </div>
               <div class="authors__content">
-                <div class="authors__title">Judy Roe, Designer</div>
+                <div class="authors__title">Phyllis O'Keeffe, Office Manager</div>
                 <div class="authors__intro">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu lacus enim. Aliquam eu elit justo. 
                 </div>

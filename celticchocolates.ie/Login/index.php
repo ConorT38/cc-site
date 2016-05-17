@@ -1,5 +1,6 @@
 <?php 
-if(!isset($_SESSION['logged_in'])){
+session_start();
+if(isset($_SESSION['logged_in'])){
   header("Location: ../");
   die();
  }
@@ -48,8 +49,10 @@ if(!isset($_SESSION['logged_in'])){
     ============================== -->
     <div class="container">
       <div class="row">
+      
         <div class="col-xs-12">
           <div class="body-plain__title">
+          <div id="result"></div>
             <h1 class="text-center">Sign In</h1>
           </div>
         </div> 
@@ -63,20 +66,20 @@ if(!isset($_SESSION['logged_in'])){
               <label for="sign-in__email" class="sr-only">Enter email</label>
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <input class="form-control" id="sign-in__email" placeholder="Enter email" type="email">
+                <input class="form-control" id="email" placeholder="Enter email" type="email">
               </div>
               <br>
               <label for="sign-in__password" class="sr-only">Enter password</label>
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                <input class="form-control" id="sign-in__password" placeholder="Password" type="password">
+                <input class="form-control" id="password" placeholder="Password" type="password">
               </div>
               <div class="checkbox">
                 <label>
                   <input type="checkbox"> Remember me
                 </label>
               </div>
-              <button type="submit" class="btn btn-primary btn-block btn-lg">Submit</button>
+              <button type="submit" id="submit" class="btn btn-primary btn-block btn-lg">Submit</button>
             </form>
 
             <!-- Sign Up link -->
@@ -124,6 +127,28 @@ if(!isset($_SESSION['logged_in'])){
 
     <!-- JS Custom -->
     <script src="Login_files/custom.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+$('#submit').click(function(){
+// AJAX Code To Submit Form.
+$.ajax({
+type: "POST",
+url: "Login.php",
+data: {
+        'email':$("#email").val(),
+        'password':$("#password").val()
+    },
+success: function(result){
+document.getElementById("result").innerHTML = result;
+setTimeout(function(){window.location='http://localhost/';},1800);
+}
+});
+return false;
+});
+});
+
+
+</script>
 
 
   

@@ -6,9 +6,9 @@ USE celtic_chocolates;
 CREATE TABLE `users`
 (
 u_id int NOT NULL AUTO_INCREMENT,
-fname varchar(255),
-lname varchar(255) NOT NULL,
+name varchar(255),
 email varchar(255) NOT NULL,
+password varchar(255) NOT NULL,
 address varchar(255) NOT NULL,
 city varchar(255) NOT NULL,
 country varchar(255) NOT NULL,
@@ -48,6 +48,8 @@ e_id int NOT NULL,
 e TEXT(555),
 PRIMARY KEY (e_id)
 );
+INSERT INTO e(e) VALUES("ASE323wSsaq!sadslae£sac! !");
+
 
 CREATE TABLE `blog`
 (

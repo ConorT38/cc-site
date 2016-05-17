@@ -7,7 +7,7 @@
  */
     define('HOST', 'localhost');
     define('USER',"root");
-    define('PASSWORD',"Blizzardofozz1");
+    define('PASSWORD',"A0LmondaY");
     define('DATABASE',"celtic_chocolates");
 
 
