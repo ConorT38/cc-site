@@ -64,24 +64,7 @@
           <!-- Categories -->
           <h3 class="header header_plain">Categories</h3>
           <div class="list-group">
-            <a href="#" class="list-group-item active">
-              <span class="badge">25</span> Seashells
-            </a>
-            <a href="#" class="list-group-item">
-              <span class="badge">23</span> Fashion
-            </a>
-            <a href="#" class="list-group-item">
-              <span class="badge">15</span> Electronics
-            </a>
-            <a href="#" class="list-group-item">
-              <span class="badge">43</span> Collectibles
-            </a>
-            <a href="#" class="list-group-item">
-              <span class="badge">34</span> Home &amp; Garden
-            </a>
-            <a href="#" class="list-group-item">
-              <span class="badge">19</span> Sporting Goods
-            </a>
+          <?php Shop::getCategories();?>
           </div>
           <!-- Recommended & Popular -->
           <h3 class="header header_plain">Top Products</h3>

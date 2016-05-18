@@ -5,7 +5,7 @@ class Shop{
 	
 	public function getAllProducts(){
 
-		$con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+		        $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
             // Check connection
             if (mysqli_connect_errno())
               {
@@ -84,5 +84,33 @@ class Shop{
           }
         }//end of getRating()
 
+  public function getCategories(){
+
+           $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+            // Check connection
+            if (mysqli_connect_errno())
+              {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
+
+             $sql ="SELECT tag,COUNT(*) as `count`
+             FROM `celtic_chocolates`.`products`
+             GROUP BY tag
+             ORDER BY `count` DESC";
+      if($result = mysqli_query($con,$sql)){
+        
+        if (mysqli_num_rows($result) >0) {
+            while($row = mysqli_fetch_assoc($result)) {
+              $num = $row['count'];
+              $tag = $row['tag'];
+              echo '<a href="#" class="list-group-item">
+              <span class="badge">'.$num.'</span> '.$tag.'
+            </a>';
+
+            }
+          }
+        }
+
+        }//end of getCategories()
 	}
 ?>

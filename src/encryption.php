@@ -2,7 +2,7 @@
 
 
 require_once "mysqlw.php";
-require_once "../../details/details.php";
+require_once $_SERVER['DOCUMENT_ROOT']."../../details/details.php";
 
 
 class Encryption{

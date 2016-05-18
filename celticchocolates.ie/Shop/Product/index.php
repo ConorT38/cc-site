@@ -37,7 +37,7 @@
       <img src="img/preloader.gif" alt="Loading..." class="preloader__img">
     </div> -->
     <?php require_once "../../includes/header.php";?> 
-    <?php require_once "/../../../dev/Product.php";?>
+    <?php require_once "../../../dev/Product.php";?>
 
     <!-- PAGE HEADER
     ============================== -->
