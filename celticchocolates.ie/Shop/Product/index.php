@@ -1,3 +1,6 @@
+<?php
+$id = $_REQUEST['id'];
+?>
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -47,8 +50,8 @@
           <div class="col-xs-12">
             <h3 class="page-header__title">Shop Item</h3>
             <ol class="breadcrumb page-header__breadcrumb">
-              <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/index.html">Home</a></li>
-              <li><a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/shop.html">Shop</a></li>
+              <li><a href="../../">Home</a></li>
+              <li><a href="../">Shop</a></li>
               <li class="active">Shop Item</li>
             </ol>
           </div>
@@ -76,11 +79,11 @@
         </div>
         <div class="col-sm-4">
           <h3 class="header header_plain">
-            <?php echo Product::get(1,"title");?>
+            <?php echo Product::get($id,"title");?>
           </h3>
           <ul class="rating_stars">
           <?php
-          $num = Product::get(1,"rating");
+          $num = Product::get($id,"rating");
           for($i = 0; $i<$num-1; $i++){
             echo '<li><i class="fa fa-star"></i></li>';
           } if(is_float($num)){
@@ -102,19 +105,20 @@
             <li class="list-group-item"><i class="fa fa-check fa-fw text-primary"></i> Porta ac consectetur ac</li>
             <li class="list-group-item"><i class="fa fa-check fa-fw text-primary"></i> Vestibulum at eros</li>
           </ul>
-
+          <div id="result"></div>
           <!-- Add to cart -->
           <div class="product__add-to-cart">
             <form class="form-inline">
               <div class="form-group">
                 <label class="sr-only">Price</label>
-                <p class="form-control-static"><strong>EU €<?php echo Product::get(1,"price");?> x</strong></p>
+                <p class="form-control-static"><strong>EU €<?php echo Product::get($id,"price");?> x</strong></p>
               </div>
               <div class="form-group">
-                <label for="product__quantity" class="sr-only">Quantity</label>
-                <input id="product__quantity" value="1" class="form-control" type="number">
+                <label for="quantity" class="sr-only">Quantity</label>
+                <input id="quantity" value="1" class="form-control" type="number">
+                <input style="visibility:hidden;" value="<?php echo $id;?>"  id="id"/>
               </div>
-              <button type="submit" class="btn btn-default"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+              <button type="submit" id="addToCart" class="btn btn-default"><i class="fa fa-cart-plus"></i> Add to Cart</button>
             </form>
           </div> <!-- .product__add-to-cart -->
         </div>
@@ -387,6 +391,29 @@ adipiscing elit.
 
     <!-- JS Custom -->
     <script src="Product_files/custom.js"></script>
+
+        <script type="text/javascript">
+    $(document).ready(function(){
+$('#addToCart').click(function(){
+// AJAX Code To Submit Form.
+$.ajax({
+type: "POST",
+url: "addToCart.php",
+data: {
+        'id':$("#id").val(),
+        'quantity':$("#quantity").val()
+    },
+success: function(result){
+document.getElementById("result").innerHTML = result;
+
+}
+});
+return false;
+});
+});
+
+
+    </script>
 
 
   

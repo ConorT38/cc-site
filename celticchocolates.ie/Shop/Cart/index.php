@@ -82,15 +82,8 @@
               <tbody>
                 <?php getContents();?>
                
-              </tbody>
-            </table>
-          </div> <!-- / .table-responsive -->
-
-          <!-- Subtotal -->
-          <p class="text-right">
-            <strong>Subtotal:</strong> $150.00 <a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/shopping-cart.html#" class="btn btn-primary">Checkout</a>
-          </p>
         </div>
+        <div id="result"></div>
       </div> <!-- / .row -->
     </div> <!-- / .container -->
 
@@ -110,6 +103,44 @@
 
     <!-- JS Custom -->
     <script src="./cart_files/custom.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+$('#remove').click(function(){
+// AJAX Code To Submit Form.
+$.ajax({
+type: "POST",
+url: "removeItem.php",
+data: {
+        'id':$("#id").val(),
+        'quantity':$("#quantity").val()
+    },
+success: function(result){
+document.getElementById("result").innerHTML = result;
+window.location.reload();
+}
+});
+return false;
+});
+
+$('#update').click(function(){
+// AJAX Code To Submit Form.
+$.ajax({
+type: "POST",
+url: "updateQuantity.php",
+data: {
+        'id':$("#id").val(),
+        'quantity':$("#quantity").val()
+    },
+success: function(result){
+document.getElementById("result").innerHTML = result;
+}
+});
+return false;
+});
+});
+</script>
+
 
 
   
