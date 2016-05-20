@@ -52,13 +52,111 @@ class Blog{
 
 	}//end of getAllBlogs()
 
-	public function getAllTags(){
+	 public function getCategories(){
 
-	}//end of getAllTags()
+           $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+            // Check connection
+            if (mysqli_connect_errno())
+              {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
+
+             $sql ="SELECT tag,COUNT(*) as `count`
+             FROM `celtic_chocolates`.`blog`
+             GROUP BY tag
+             ORDER BY `count` DESC";
+      if($result = mysqli_query($con,$sql)){
+        
+        if (mysqli_num_rows($result) >0) {
+            while($row = mysqli_fetch_assoc($result)) {
+              $num = $row['count'];
+              $tag = $row['tag'];
+              echo '<a href="#" class="list-group-item">
+              <span class="badge">'.$num.'</span> '.$tag.'
+            </a>';
+
+            }
+          }else{
+            echo "No blogs yet";
+            return true;
+          }
+        }
+
+        }//end of getCategories()
 
 	public function getBlogById($id){
 
 	}//end of getBlogById()
+
+  public function getNew(){
+
+    $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+            // Check connection
+            if (mysqli_connect_errno())
+              {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
+
+             $sql ="SELECT *
+             FROM `celtic_chocolates`.`blog`
+             ORDER BY uploaded DESC
+             LIMIT 5";
+      if($result = mysqli_query($con,$sql)){
+        
+        if (mysqli_num_rows($result) >0) {
+            while($row = mysqli_fetch_assoc($result)) {
+            $name = $row['title'];
+              $id = $row['b_id'];
+              $time = $row['uploaded'];
+
+                echo '<a href="http://localhost/Shop/Product/?title='.str_replace(" ", "-", $name).'&id='.$id.'" class="list-group-item">
+                  '.$name.'
+                  <time datetime="2015-01-01">'.$time.'</time>
+                </a>';
+
+            }
+          }else{
+            echo "No blogs yet";
+            return true;
+          }
+        }
+
+  }//end of getNew()
+
+    public function getPopular(){
+
+    $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+            // Check connection
+            if (mysqli_connect_errno())
+              {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
+
+             $sql ="SELECT *
+             FROM `celtic_chocolates`.`blog`
+             ORDER BY views DESC
+             LIMIT 5";
+      if($result = mysqli_query($con,$sql)){
+        
+        if (mysqli_num_rows($result) >0) {
+            while($row = mysqli_fetch_assoc($result)) {
+              $name = $row['title'];
+              $id = $row['b_id'];
+              $time = $row['uploaded'];
+
+                echo '<a href="http://localhost/Shop/Product/?title='.str_replace(" ", "-", $name).'&id='.$id.'" class="list-group-item">
+                  '.$name.'
+                  <time datetime="2015-01-01">'.$time.'</time>
+                </a>';
+
+            }
+          }else{
+            echo "No blogs yet";
+            return true;
+          }
+        }
+
+  }//end of getPopular()
 }
 
 

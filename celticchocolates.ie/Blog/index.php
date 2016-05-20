@@ -80,30 +80,13 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/../dev/Blog.php';
           <!-- Categories -->
           <h3 class="header header_plain">Categories</h3>
           <div class="list-group">
-            <a href="#" class="list-group-item active">
-              <span class="badge">14</span> Bootstrap
-            </a>
-            <a href="#" class="list-group-item">
-              <span class="badge">17</span> Coding
-            </a>
-            <a href="#" class="list-group-item">
-              <span class="badge">22</span> Design
-            </a>
-            <a href="#" class="list-group-item">
-              <span class="badge">8</span> Graphics
-            </a>
-            <a href="#" class="list-group-item">
-              <span class="badge">21</span> Mobile
-            </a>
-            <a href="#" class="list-group-item">
-              <span class="badge">10</span> UX Design
-            </a>
+           <?php Blog::getCategories();?>
           </div>
           <!-- Recommended & Popular -->
           <h3 class="header header_plain">More Stories</h3>
           <ul class="nav nav-tabs nav-justified" role="tablist">
             <li role="presentation" class="active">
-              <a href="#blog-tab_recommended" aria-controls="blog-tab_recommended" role="tab" data-toggle="tab">Recommended</a>
+              <a href="#blog-tab_recommended" aria-controls="blog-tab_recommended" role="tab" data-toggle="tab">New</a>
             </li>
             <li role="presentation">
               <a href="#blog-tab_popular" aria-controls="blog-tab_popular" role="tab" data-toggle="tab">Popular</a>
@@ -113,43 +96,13 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/../dev/Blog.php';
             <!-- Recommended -->
             <div role="tabpanel" class="tab-pane active" id="blog-tab_recommended">
               <div class="list-group blog-tab__list">
-                <a href="#" class="list-group-item">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  <time datetime="2015-01-01">January 1, 2015</time>
-                </a>
-                <a href="#" class="list-group-item">
-                  Cras hendrerit tellus porttitor elementum commodo
-                  <time datetime="2015-01-02">January 2, 2015</time>
-                </a>
-                <a href="#" class="list-group-item">
-                  Sed ultrices euismod hendrerit. Nunc augue tellus
-                  <time datetime="2015-01-03">January 3, 2015</time>
-                </a>
-                <a href="#" class="list-group-item">
-                  Maecenas venenatis sodales sem
-                  <time datetime="2015-01-04">January 4, 2015</time>
-                </a>
+              <?php Blog::getNew();?>
               </div>
             </div>
             <!-- Popular -->
             <div role="tabpanel" class="tab-pane" id="blog-tab_popular">
               <div class="list-group blog-tab__list">
-                <a href="#" class="list-group-item">
-                  Sed ultrices euismod hendrerit. Nunc augue tellus
-                  <time datetime="2015-01-05">January 5, 2015</time>
-                </a>
-                <a href="#" class="list-group-item">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  <time datetime="2015-01-06">January 6, 2015</time>
-                </a>
-                <a href="#" class="list-group-item">
-                  Maecenas venenatis sodales sem
-                  <time datetime="2015-01-07">January 7, 2015</time>
-                </a>
-                <a href="#" class="list-group-item">
-                  Cras hendrerit tellus porttitor elementum commodo
-                  <time datetime="2015-01-08">January 8, 2015</time>
-                </a>
+              <?php Blog::getPopular();?>
               </div>
             </div>
           </div>

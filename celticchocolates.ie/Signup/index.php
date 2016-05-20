@@ -3,6 +3,10 @@ if(isset($_SESSION['logged_in'])){
   header("Location: ../");
   die();
  }
+ if(isset($_SESSION['admin'])){
+  header("Location: http://".$_SERVER['HTTP_HOST']."/Admin/");
+  die();
+}
  ?>
 <!DOCTYPE html>
 <html lang="en"><head>
@@ -120,7 +124,7 @@ data: {
 success: function(result){
     location.reload();
 document.getElementById("result").innerHTML = result;
-window.location='http://localhost/';
+window.location='http://localhost/Login';
 }
 });
 return false;

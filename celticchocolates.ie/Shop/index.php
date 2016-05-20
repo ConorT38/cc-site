@@ -70,7 +70,7 @@
           <h3 class="header header_plain">Top Products</h3>
           <ul class="nav nav-tabs nav-justified" role="tablist">
             <li role="presentation" class="active">
-              <a href="#shop-tab_recommended" aria-controls="shop-tab_recommended" role="tab" data-toggle="tab">Recommended</a>
+              <a href="#shop-tab_recommended" aria-controls="shop-tab_recommended" role="tab" data-toggle="tab">New</a>
             </li>
             <li role="presentation">
               <a href="#shop-tab_popular" aria-controls="shop-tab_popular" role="tab" data-toggle="tab">Popular</a>
@@ -80,123 +80,13 @@
             <!-- Recommended -->
             <div role="tabpanel" class="tab-pane active" id="shop-tab_recommended">
               <div class="list-group shop-tab__list">
-                <a href="#" class="list-group-item">
-                  <img class="img-responsive list-group-item__img" src="Shop_files/product_1.jpg" alt="...">
-                  <div class="list-group-item__content">
-                    Lorem ipsum dolor sit amet
-                    <ul class="rating_stars">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                    </ul>
-                  </div>
-                  <div class="clearfix"></div>
-                </a>
-                <a href="#" class="list-group-item">
-                  <img class="img-responsive list-group-item__img" src="Shop_files/product_2.jpg" alt="...">
-                  <div class="list-group-item__content">
-                    Cras hendrerit tellus porttitor elementum 
-                    <ul class="rating_stars">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star-o"></i></li>
-                    </ul>
-                  </div>
-                  <div class="clearfix"></div>
-                </a>
-                <a href="#" class="list-group-item">
-                  <img class="img-responsive list-group-item__img" src="Shop_files/product_3.jpg" alt="...">
-                  <div class="list-group-item__content">
-                    Sed ultrices euismod hendrerit nunc augue 
-                    <ul class="rating_stars">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star-half-o"></i></li>
-                    </ul>
-                  </div>
-                  <div class="clearfix"></div>
-                </a>
-                <a href="#" class="list-group-item">
-                  <img class="img-responsive list-group-item__img" src="Shop_files/product_4.jpg" alt="...">
-                  <div class="list-group-item__content">
-                    Maecenas venenatis sodales sem
-                    <ul class="rating_stars">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                    </ul>
-                  </div>
-                  <div class="clearfix"></div>
-                </a>
+                  <?php Shop::getNew();?>
               </div>
             </div>
             <!-- Popular -->
             <div role="tabpanel" class="tab-pane" id="shop-tab_popular">
               <div class="list-group shop-tab__list">
-                <a href="#" class="list-group-item">
-                  <img class="img-responsive list-group-item__img" src="Shop_files/product_2.jpg" alt="...">
-                  <div class="list-group-item__content">
-                    Cras hendrerit tellus porttitor elementum 
-                    <ul class="rating_stars">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star-o"></i></li>
-                    </ul>
-                  </div>
-                  <div class="clearfix"></div>
-                </a>
-                <a href="#" class="list-group-item">
-                  <img class="img-responsive list-group-item__img" src="Shop_files/product_4.jpg" alt="...">
-                  <div class="list-group-item__content">
-                    Maecenas venenatis sodales sem
-                    <ul class="rating_stars">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                    </ul>
-                  </div>
-                  <div class="clearfix"></div>
-                </a>
-                <a href="#" class="list-group-item">
-                  <img class="img-responsive list-group-item__img" src="Shop_files/product_1.jpg" alt="...">
-                  <div class="list-group-item__content">
-                    Lorem ipsum dolor sit amet
-                    <ul class="rating_stars">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                    </ul>
-                  </div>
-                  <div class="clearfix"></div>
-                </a>
-                <a href="#" class="list-group-item">
-                  <img class="img-responsive list-group-item__img" src="Shop_files/product_3.jpg" alt="...">
-                  <div class="list-group-item__content">
-                    Sed ultrices euismod hendrerit nunc augue 
-                    <ul class="rating_stars">
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star"></i></li>
-                      <li><i class="fa fa-star-half-o"></i></li>
-                    </ul>
-                  </div>
-                  <div class="clearfix"></div>
-                </a>
+            <?php Shop::getPopular();?>
               </div>
             </div>
           </div>

@@ -15,6 +15,15 @@ country varchar(255) NOT NULL,
 PRIMARY KEY (u_id)
 );
 
+CREATE TABLE `admin`
+(
+a_id int NOT NULL AUTO_INCREMENT,
+name varchar(255),
+email varchar(255) NOT NULL,
+password varchar(255) NOT NULL,
+PRIMARY KEY (a_id)
+);
+
 CREATE TABLE `products`
 (
 p_id int NOT NULL AUTO_INCREMENT,

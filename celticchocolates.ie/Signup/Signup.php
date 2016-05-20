@@ -18,7 +18,7 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-  $sql1 ="INSERT INTO `users`(name,email,password) VALUES('$E_name','$E_email','$hpass');";
+  $sql1 ="INSERT INTO `admin`(name,email,password) VALUES('$E_name','$E_email','$hpass');";
     if($result = mysqli_query($con,$sql1)){
         echo "<div class='alert alert-success fade in'><a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Success!</strong></div>";
 }else{

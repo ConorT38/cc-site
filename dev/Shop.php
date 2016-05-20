@@ -70,7 +70,7 @@ class Shop{
      if($result = mysqli_query($con,$sql)){  
         if (mysqli_num_rows($result) ==1) {
           while($row = mysqli_fetch_assoc($result)) {
-              $i = $row['rating'];
+              $i = intval($row['rating']);
               $star = "";
               for($j=0; $j<$i;$j++){
                 $star.= '<li><i class="fa fa-star"></i></li>';
@@ -112,5 +112,79 @@ class Shop{
         }
 
         }//end of getCategories()
+
+  public function getNew(){
+
+    $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+            // Check connection
+            if (mysqli_connect_errno())
+              {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
+
+             $sql ="SELECT *
+             FROM `celtic_chocolates`.`products`
+             ORDER BY uploaded DESC
+             LIMIT 5";
+      if($result = mysqli_query($con,$sql)){
+        
+        if (mysqli_num_rows($result) >0) {
+            while($row = mysqli_fetch_assoc($result)) {
+              $name = $row['title'];
+              $id = $row['p_id'];
+              echo '<a href="http://localhost/Shop/Product/?title='.str_replace(" ", "-", $name).'&id='.$id.'" class="list-group-item">
+                  <img class="img-responsive list-group-item__img" src="Shop_files/product_1.jpg" alt="...">
+                  <div class="list-group-item__content">
+                    '.$name.'
+                    <ul class="rating_stars">
+                      '.Self::getRating($id).'
+                    </ul>
+                  </div>
+                  <div class="clearfix"></div>
+                </a>';
+
+            }
+          }
+        }
+
+  }//end of getNew()
+
+    public function getPopular(){
+
+    $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+            // Check connection
+            if (mysqli_connect_errno())
+              {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
+
+             $sql ="SELECT *
+             FROM `celtic_chocolates`.`products`
+             ORDER BY rating DESC
+             LIMIT 5";
+      if($result = mysqli_query($con,$sql)){
+        
+        if (mysqli_num_rows($result) >0) {
+            while($row = mysqli_fetch_assoc($result)) {
+              $name = $row['title'];
+              $id = $row['p_id'];
+              echo '<a href="http://localhost/Shop/Product/?title='.str_replace(" ", "-", $name).'&id='.$id.'" class="list-group-item">
+                  <img class="img-responsive list-group-item__img" src="Shop_files/product_1.jpg" alt="...">
+                  <div class="list-group-item__content">
+                    '.$name.'
+                    <ul class="rating_stars">
+                      '.Self::getRating($id).'
+                    </ul>
+                  </div>
+                  <div class="clearfix"></div>
+                </a>';
+
+            }
+          }
+        }
+
+  }//end of getPopular()
+
+
 	}
 ?>

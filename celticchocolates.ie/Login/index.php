@@ -4,6 +4,13 @@ if(isset($_SESSION['logged_in'])){
   header("Location: ../");
   die();
  }
+ if(isset($_SESSION['admin'])){
+  header("Location: http://".$_SERVER['HTTP_HOST']."/Admin/");
+  die();
+}
+if(isset($_REQUEST['r'])){
+  $_SESSION['redirect'] = $_REQUEST['r'];
+}
  ?>
 <!DOCTYPE html>
 <html lang="en"><head>
@@ -140,7 +147,7 @@ data: {
     },
 success: function(result){
 document.getElementById("result").innerHTML = result;
-setTimeout(function(){window.location='http://localhost/';},1800);
+setTimeout(function(){window.location='http://<?php echo $_SERVER["HTTP_HOST"];?>/';},1800);
 }
 });
 return false;

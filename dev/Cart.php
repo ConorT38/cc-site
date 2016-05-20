@@ -21,7 +21,6 @@ function getContents(){
                       </div>
                       <div class="media-body">
                         <a href="../Product/?title='.str_replace(" ", "-", get($cart[0],"title")).'&id='.$cart[0].'">'.get($cart[0],"title").'</a>
-                        <input style="visibility:hidden;" id="id" value="'.$cart[0].'"/>
                       </div>
                     </div>
                   </td>
@@ -36,8 +35,8 @@ function getContents(){
                   </td>
                   <td>€'.get($cart[0],"price").'</td>
                   <td>€'.floatval(get($cart[0],"price"))*$cart[1].'</td>
-                  <td><button id="update" class="btn btn-default">Update</button></td>
-                  <td><input type="submit" id="remove" value="Remove" class="btn btn-danger"/></td>
+                  <td><button id="update" name ="'.$cart[0].'"class="btn btn-default update">Update</button></td>
+                  <td><input type="submit" id="remove" name="'.$cart[0].'" value="Remove" class="btn btn-danger remove"/></td>
                   </form>
                 </tr>';//end of echo
                 $total += floatval(get($cart[0],"price"))*$cart[1];

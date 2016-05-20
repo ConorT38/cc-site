@@ -106,34 +106,35 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-$('#remove').click(function(){
+$('.remove').click(function(){
 // AJAX Code To Submit Form.
 $.ajax({
 type: "POST",
 url: "removeItem.php",
 data: {
-        'id':$("#id").val(),
+        'id':jQuery(this).attr('name'),
         'quantity':$("#quantity").val()
     },
 success: function(result){
 document.getElementById("result").innerHTML = result;
-window.location.reload();
+window.location = window.location.href;
 }
 });
 return false;
 });
 
-$('#update').click(function(){
+$('.update').click(function(){
 // AJAX Code To Submit Form.
 $.ajax({
 type: "POST",
 url: "updateQuantity.php",
 data: {
-        'id':$("#id").val(),
+        'id':jQuery(this).attr('name'),
         'quantity':$("#quantity").val()
     },
 success: function(result){
 document.getElementById("result").innerHTML = result;
+window.location = window.location.href;
 }
 });
 return false;
