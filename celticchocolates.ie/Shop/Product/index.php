@@ -126,7 +126,7 @@ $id = $_REQUEST['id'];
       <div class="row">
         <div class="col-sm-8">
           <!-- New review -->
-         <?php Product::allowReview();;?>
+         <?php Product::allowReview();?>
 
           <!-- Reviews header -->
           <div class="comment__header">

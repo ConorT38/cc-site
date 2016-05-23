@@ -1,3 +1,33 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . "/../details/details.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/encryption.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/../dev/Blog.php";
+$id = $_REQUEST['id'];
+if(!isset($_GET['title'])){
+  header("Location: ../../");
+}
+
+$con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+            // Check connection
+            if (mysqli_connect_errno())
+              {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
+
+             $sql ="SELECT *,DATE_FORMAT(`uploaded`,'%D of %M, %Y') as `time` FROM `celtic_chocolates`.`blog` WHERE b_id = $id";
+                  if($result = mysqli_query($con,$sql)){
+        
+        if (mysqli_num_rows($result) >0) {
+            while($row = mysqli_fetch_assoc($result)) {
+              $title = Encryption::decrypt($row['title']);
+              $content = $row['content'];
+              $time = $row['time'];
+              $tag = $row['tag'];
+              }
+            }
+          }
+
+?>
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -64,77 +94,22 @@
             <div class="blog__item">
               <div class="blog__content">
                 <h3 class="blog__title">
-                  <a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/blog-post.html">Sed lacinia suscipit lacus non sodales. Pellentesque lacinia ornare justo eu tincidunt</a>
+                  <a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/blog-post.html"><?=$title?></a>
                 </h3>
                 <ul class="blog__info">
-                  <li><time datetime="2015-01-30">January 30, 2015</time></li>
-                  <li><a href="#">Bootstrap</a></li>
+                  <li><time><?=$time?></time></li>
+                  <li><a href="#"><?=$tag?></a></li>
                   <li><a href="#"><i class="fa fa-comments-o"></i> 2</a></li>
                 </ul>
                 <div class="blog__body">
-                  <img src="Post_files/general_1.jpg" alt="..." class="img-responsive blog__img">
-                  <p>
-                    Nam ultrices, orci sit amet dignissim dignissim, 
-tellus elit consequat dui, eu venenatis urna nisi non est. Aliquam 
-egestas pulvinar ornare. Aenean et vulputate lacus. Ut eget purus ut 
-ante imperdiet feugiat quis vel elit. Donec imperdiet enim quis risus 
-porttitor congue. Vestibulum vel tristique urna. Pellentesque nulla leo,
- laoreet sed luctus eu, dapibus id lorem. Pellentesque eu tincidunt 
-odio. Proin imperdiet bibendum mauris, ut bibendum odio mollis id.
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing 
-elit. Pellentesque gravida, est non tempus pharetra, erat velit 
-convallis diam, quis blandit neque nulla a nulla. Quisque fringilla 
-lacinia erat, at maximus erat bibendum quis. Lorem ipsum dolor sit amet,
- consectetur adipiscing elit. In eget efficitur nulla, a egestas mi. 
-Cras hendrerit ipsum in tellus consequat sollicitudin. Quisque felis 
-est, dictum nec ante nec, egestas blandit purus. Donec posuere suscipit 
-arcu, eu ullamcorper turpis lobortis et. Nullam viverra tincidunt elit, 
-ac tempus dui iaculis eu. Vivamus eget urna eu purus ultricies 
-scelerisque. Vivamus laoreet bibendum nunc, in ullamcorper tortor 
-euismod nec. Sed a lobortis purus.
-                  </p>
-                  <p>
-                    Cras lobortis pharetra ante sed sagittis. Ut euismod
- dignissim massa in sollicitudin. Cras tempus urna ut pellentesque 
-lobortis. Nunc bibendum, lorem a blandit scelerisque, velit erat 
-eleifend risus, et pellentesque libero augue non massa. Donec volutpat 
-dui sed fringilla mattis. Mauris aliquet elementum facilisis. Nullam a 
-ligula nec massa vestibulum efficitur. In cursus lacus ut sapien 
-sodales, ac vestibulum sem pretium. Pellentesque nisi nulla, hendrerit 
-consectetur mi eu, blandit pulvinar eros. Nulla fermentum fermentum 
-ante, eu luctus velit laoreet ut. Fusce nec diam id purus pellentesque 
-mollis venenatis at libero. Suspendisse eu dapibus diam, ac accumsan 
-felis.
-                  </p>
-                  <p>
-                    In condimentum ullamcorper justo, ac accumsan 
-tellus. Sed id maximus libero, ut euismod nisi. In hac habitasse platea 
-dictumst. Pellentesque eget convallis lorem. Nullam eget augue rhoncus 
-odio dictum gravida eget at nisi. Maecenas sit amet magna faucibus, 
-malesuada elit vitae, fringilla erat. Ut sollicitudin, augue eu lacinia 
-sagittis, nulla nisi efficitur risus, id posuere tellus sapien sed nisi.
-                  </p>
+        <?=$content?>
                 </div>
               </div>
             </div> <!-- / .blog__item -->
+            <hr/>
 
             <!-- New comment -->
-            <div class="comment comment_new">
-              <div class="comment__author_img">
-                <img class="img-responsive" alt="..." src="Post_files/photo_4.jpg">
-              </div>
-              <div class="comment__content">
-                <form>
-                  <div class="form-group">
-                    <label for="comment-new__textarea" class="sr-only">Enter your comment</label>
-                    <textarea class="form-control" rows="2" id="comment-new__textarea" placeholder="Enter your comment"></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Send Comment</button>
-                </form>
-              </div> <!-- / .comment__content -->
-            </div> <!-- / .comment__new -->
+            <?php Blog::allowComment();?>
 
             <!-- Comments header -->
             <div class="comment__header">
@@ -142,90 +117,7 @@ sagittis, nulla nisi efficitur risus, id posuere tellus sapien sed nisi.
             </div>
 
             <!-- All comments -->
-            <div class="comment">
-              <div class="comment__author_img">
-                <img src="Post_files/photo_1.jpg" alt="..." class="img-responsive">
-              </div>
-              <div class="comment__content">
-                <div class="comment__author_name">John Doe</div>
-                <time datetime="2015-01-30" class="comment__date">February 02, 2015</time>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing 
-elit. Pellentesque gravida, est non tempus pharetra, erat velit 
-convallis diam, quis blandit neque nulla a nulla. Quisque fringilla 
-lacinia erat, at maximus erat bibendum quis. Lorem ipsum dolor sit amet,
- consectetur adipiscing elit.
-                </p>
-                <div class="btn-group pull-right" role="group" aria-label="comment__actions">
-                  <a href="#" class="btn btn-default btn-xs"><i class="fa fa-times"></i> Remove</a>
-                  <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                  <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-reply"></i> Answer</a>
-                </div>
-              </div> <!-- / .comment__content -->
-            </div> <!-- / .comment -->
-            <div class="comment comment_answer_1">
-              <div class="comment__author_img">
-                <img src="Post_files/photo_2.jpg" alt="..." class="img-responsive">
-              </div>
-              <div class="comment__content">
-                <div class="comment__author_name">Judy Doe</div>
-                <time datetime="2015-01-30" class="comment__date">February 02, 2015</time>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing 
-elit. Pellentesque gravida, est non tempus pharetra, erat velit 
-convallis diam, quis blandit neque nulla a nulla. Quisque fringilla 
-lacinia erat, at maximus erat bibendum quis. Lorem ipsum dolor sit amet,
- consectetur adipiscing elit.
-                </p>
-                <div class="btn-group pull-right" role="group" aria-label="comment__actions">
-                  <a href="#" class="btn btn-default btn-xs"><i class="fa fa-times"></i> Remove</a>
-                  <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                  <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-reply"></i> Answer</a>
-                </div>
-              </div> <!-- / .comment__content -->
-            </div> <!-- / .comment -->
-            <div class="comment comment_answer_2">
-              <div class="comment__author_img">
-                <img src="Post_files/photo_3.jpg" alt="..." class="img-responsive">
-              </div>
-              <div class="comment__content">
-                <div class="comment__author_name">Richard Roe</div>
-                <time datetime="2015-01-30" class="comment__date">February 02, 2015</time>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing 
-elit. Pellentesque gravida, est non tempus pharetra, erat velit 
-convallis diam, quis blandit neque nulla a nulla. Quisque fringilla 
-lacinia erat, at maximus erat bibendum quis. Lorem ipsum dolor sit amet,
- consectetur adipiscing elit.
-                </p>
-                <div class="btn-group pull-right" role="group" aria-label="comment__actions">
-                  <a href="#" class="btn btn-default btn-xs"><i class="fa fa-times"></i> Remove</a>
-                  <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                  <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-reply"></i> Answer</a>
-                </div>
-              </div> <!-- / .comment__content -->
-            </div> <!-- / .comment -->
-            <div class="comment">
-              <div class="comment__author_img">
-                <img src="Post_files/photo_4.jpg" alt="..." class="img-responsive">
-              </div>
-              <div class="comment__content">
-                <div class="comment__author_name">John Doe</div>
-                <time datetime="2015-01-30" class="comment__date">February 02, 2015</time>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing 
-elit. Pellentesque gravida, est non tempus pharetra, erat velit 
-convallis diam, quis blandit neque nulla a nulla. Quisque fringilla 
-lacinia erat, at maximus erat bibendum quis. Lorem ipsum dolor sit amet,
- consectetur adipiscing elit.
-                </p>
-                <div class="btn-group pull-right" role="group" aria-label="comment__actions">
-                  <a href="#" class="btn btn-default btn-xs"><i class="fa fa-times"></i> Remove</a>
-                  <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                  <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-reply"></i> Answer</a>
-                </div>
-              </div> <!-- / .comment__content -->
-            </div> <!-- / .comment -->
+           <?php Blog::getComments($id);?>
 
           </div> <!-- / .blog__items -->
         </div>
@@ -233,30 +125,13 @@ lacinia erat, at maximus erat bibendum quis. Lorem ipsum dolor sit amet,
           <!-- Categories -->
           <h3 class="header header_plain">Categories</h3>
           <div class="list-group">
-            <a href="#" class="list-group-item active">
-              <span class="badge">14</span> Bootstrap
-            </a>
-            <a href="#" class="list-group-item">
-              <span class="badge">17</span> Coding
-            </a>
-            <a href="#" class="list-group-item">
-              <span class="badge">22</span> Design
-            </a>
-            <a href="#" class="list-group-item">
-              <span class="badge">8</span> Graphics
-            </a>
-            <a href="#" class="list-group-item">
-              <span class="badge">21</span> Mobile
-            </a>
-            <a href="#" class="list-group-item">
-              <span class="badge">10</span> UX Design
-            </a>
+           <?=Blog::getCategories()?>
           </div>
           <!-- Recommended & Popular -->
           <h3 class="header header_plain">More Stories</h3>
           <ul class="nav nav-tabs nav-justified" role="tablist">
             <li role="presentation" class="active">
-              <a href="#blog-tab_recommended" aria-controls="blog-tab_recommended" role="tab" data-toggle="tab">Recommended</a>
+              <a href="#blog-tab_recommended" aria-controls="blog-tab_recommended" role="tab" data-toggle="tab">New</a>
             </li>
             <li role="presentation">
               <a href="#blog-tab_popular" aria-controls="blog-tab_popular" role="tab" data-toggle="tab">Popular</a>
@@ -266,43 +141,13 @@ lacinia erat, at maximus erat bibendum quis. Lorem ipsum dolor sit amet,
             <!-- Recommended -->
             <div role="tabpanel" class="tab-pane active" id="blog-tab_recommended">
               <div class="list-group blog-tab__list">
-                <a href="#" class="list-group-item">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  <time datetime="2015-01-01">January 1, 2015</time>
-                </a>
-                <a href="#" class="list-group-item">
-                  Cras hendrerit tellus porttitor elementum commodo
-                  <time datetime="2015-01-02">January 2, 2015</time>
-                </a>
-                <a href="#" class="list-group-item">
-                  Sed ultrices euismod hendrerit. Nunc augue tellus
-                  <time datetime="2015-01-03">January 3, 2015</time>
-                </a>
-                <a href="#" class="list-group-item">
-                  Maecenas venenatis sodales sem
-                  <time datetime="2015-01-04">January 4, 2015</time>
-                </a>
+               <?=Blog::getNew()?>
               </div>
             </div>
             <!-- Popular -->
             <div role="tabpanel" class="tab-pane" id="blog-tab_popular">
               <div class="list-group blog-tab__list">
-                <a href="#" class="list-group-item">
-                  Sed ultrices euismod hendrerit. Nunc augue tellus
-                  <time datetime="2015-01-05">January 5, 2015</time>
-                </a>
-                <a href="#" class="list-group-item">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                  <time datetime="2015-01-06">January 6, 2015</time>
-                </a>
-                <a href="#" class="list-group-item">
-                  Maecenas venenatis sodales sem
-                  <time datetime="2015-01-07">January 7, 2015</time>
-                </a>
-                <a href="#" class="list-group-item">
-                  Cras hendrerit tellus porttitor elementum commodo
-                  <time datetime="2015-01-08">January 8, 2015</time>
-                </a>
+         <?=Blog::getPopular()?>
               </div>
             </div>
           </div>

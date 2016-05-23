@@ -131,7 +131,7 @@ public function getReviews($id){
     else{
       echo '<br/><strong>Login to Review: </strong><br/><a href="../../Login/?r='.$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"].'"><button  type="submit" class="btn btn-primary">Login</button></a>';
     }
-  }
+  }//end of allowReview()
 
 }//end of class
 
