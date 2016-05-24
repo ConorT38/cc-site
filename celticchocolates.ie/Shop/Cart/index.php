@@ -139,6 +139,19 @@ window.location = window.location.href;
 });
 return false;
 });
+
+$('#submit').click(function(){
+// AJAX Code To Submit Form.
+$.ajax({
+type: "POST",
+url: "test.php",
+success: function(result){
+document.getElementById("result").innerHTML = result;
+window.location = window.location.href;
+}
+});
+return false;
+});
 });
 </script>
 

@@ -2,10 +2,6 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . "/../details/details.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/encryption.php";
 
-function getSubTotal(){
-	
-}
-
 function getContents(){
 	if(!empty($_SESSION['cart'])){
     $total=0;

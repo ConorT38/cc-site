@@ -22,7 +22,7 @@ while($row = mysqli_fetch_assoc($res)){
 	$password2 = $row['password'];
 if(validate_password($_POST['password'],$password2)){
 	session_start();
-	$_SESSION['admin'] = true;
+	$_SESSION['admin'] = "true";
 	$_SESSION['name'] = $row['name'];
 	$_SESSION['email'] = $row['email'];
 	$_SESSION['id'] = $row['a_id'];
