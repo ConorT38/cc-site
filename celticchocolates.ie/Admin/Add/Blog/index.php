@@ -1,6 +1,11 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/encryption.php";
 session_start();
+if(!isset($_SESSION['admin']) or !isset($_SESSION['name'])){
+	header("Location: ../../../");
+	die();
+	exit();
+}
 $name = Encryption::decrypt($_SESSION['name']);
 ?>
 <!DOCTYPE html>

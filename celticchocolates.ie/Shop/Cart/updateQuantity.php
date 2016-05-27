@@ -6,7 +6,7 @@ if(intval($id)<1){
 	echo "Too low a number";
 	return true;
 }
-if($_SESSION['cart'][$id] = array($id,$quant)){
+if($_SESSION['cart']["order"] = array($id,$quant)){
 	echo "Successfully changed!";
 }
 ?>

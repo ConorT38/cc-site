@@ -140,11 +140,14 @@ window.location = window.location.href;
 return false;
 });
 
-$('#submit').click(function(){
+$('.submitcart').click(function(){
 // AJAX Code To Submit Form.
 $.ajax({
 type: "POST",
-url: "test.php",
+url: "checkout.php",
+data: {
+        'quantity':$("#quantity").val()
+    },
 success: function(result){
 document.getElementById("result").innerHTML = result;
 window.location = window.location.href;
