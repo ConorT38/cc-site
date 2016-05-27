@@ -3,12 +3,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/../details/details.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/encryption.php";
 
 function getContents(){
-	if(!empty($_SESSION['cart'])){
+  if(!empty($_SESSION['cart'])){
     $total=0;
-		foreach($_SESSION['cart'] as $carte){
-      foreach($carte as $cart){
-      print_r($cart['p_id']);
-			echo '<tr>
+    $quant=0;
+    foreach($_SESSION['cart'] as $cart){
+      echo '<tr>
                   <td>
                     <div class="media">
                       <div class="media-left media-middle">
@@ -17,7 +16,8 @@ function getContents(){
                         </a>
                       </div>
                       <div class="media-body">
-                        <a href="../Product/?title='.str_replace(" ", "-", get($cart["p_id"],"title")).'&id='.$cart["p_id"].'">'.get($cart["p_id"],"title").'</a>
+                        <a href="../Product/?title='.str_replace(" ", "-", get($cart[0],"title")).'&id='.$cart[0].'">'.get($cart[0],"title").'</a>
+                        <input style="visibility:hidden;" id="id" value="'.$cart[0].'"/>
                       </div>
                     </div>
                   </td>
@@ -26,30 +26,27 @@ function getContents(){
                     <form class="form-inline" method="post">
                       <div class="form-group">
                         <label for="quantity" class="sr-only">Quantity</label>
-                        <input type="number" id="quantity" value="'.$cart["quantity"].'" class="form-control shopping-cart__qty">
+                        <input type="number" id="quantity'.$cart[0].'"  value="'.$cart[1].'" class="form-control quantity shopping-cart__qty">
                       </div>
                     
                   </td>
-                  <td>€'.get($cart["p_id"],"price").'</td>
-                  <td>€'.floatval(get($cart["p_id"],"price"))*$cart["quantity"].'</td>
-                  <td><button id="update" name ="'.$cart["p_id"].'"class="btn btn-default update">Update</button></td>
-                  <td><input type="submit" id="remove" name="'.$cart["p_id"].'" value="Remove" class="btn btn-danger remove"/></td>
+                  <td>€'.get($cart[0],"price").'</td>
+                  <td>€'.floatval(get($cart[0],"price"))*$cart[1].'</td>
+                  <td><button id="update" name="'.$cart[0].'" class="btn btn-default update">Update</button></td>
+                  <td><input type="submit" name="'.$cart[0].'" id="remove" value="Remove" class="btn btn-danger remove"/></td>
                   </form>
                 </tr>';//end of echo
-                $total += floatval(get($cart["p_id"],"price"))*$cart["quantity"];
-		}
-  }
-    $_SESSION['conf-total'] = $total;
-
+                $total += floatval(get($cart[0],"price"))*$cart[1];
+                $quant += intval($cart[1]);
+    }
     echo ' </tbody>
             </table>
           </div> <!-- / .table-responsive -->
-
           <!-- Subtotal -->
-          <p class="text-right">
-            <strong>Subtotal:</strong> €'.$total.' <a href="#" class="btn btn-primary submitcart">Checkout</a>
+          <p class="text-right ">
+            <strong>Subtotal:</strong> €'.$total.' <a href="#" name="'.$quant.'" id="'.$total.'"class="btn btn-primary submitCart">Checkout</a>
           </p>';
-	}
+  }
   else{
     echo '<tr>
                   <td>
@@ -57,7 +54,6 @@ function getContents(){
                   Cart is empty
             </table>
           </div> <!-- / .table-responsive -->';
-
   }
 }//end of getContents()
 

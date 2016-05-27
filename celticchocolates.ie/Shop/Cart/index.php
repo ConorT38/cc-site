@@ -112,8 +112,7 @@ $.ajax({
 type: "POST",
 url: "removeItem.php",
 data: {
-        'id':jQuery(this).attr('name'),
-        'quantity':$("#quantity").val()
+        'id':jQuery(this).attr('name')
     },
 success: function(result){
 document.getElementById("result").innerHTML = result;
@@ -130,7 +129,7 @@ type: "POST",
 url: "updateQuantity.php",
 data: {
         'id':jQuery(this).attr('name'),
-        'quantity':$("#quantity").val()
+        'quantity':$("#quantity"+jQuery(this).attr('name')).val()
     },
 success: function(result){
 document.getElementById("result").innerHTML = result;
@@ -140,13 +139,14 @@ window.location = window.location.href;
 return false;
 });
 
-$('.submitcart').click(function(){
+$('.submitCart').click(function(){
 // AJAX Code To Submit Form.
 $.ajax({
 type: "POST",
 url: "checkout.php",
 data: {
-        'quantity':$("#quantity").val()
+        'quantity':jQuery(this).attr('name'),
+        'total': jQuery(this).attr('id')
     },
 success: function(result){
 document.getElementById("result").innerHTML = result;

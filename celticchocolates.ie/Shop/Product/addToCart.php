@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['cart'])){
-    $_SESSION['cart']['order'] = array();
+    $_SESSION['cart'] = array();
 }
 
 $id =$_POST['id'];
@@ -13,9 +13,13 @@ if(array_key_exists($id, $_SESSION['cart'])){
    echo "Item already in basket";
    return true;
 }
+if($_SESSION['cart'][$id] = array($id,$quant)){
+		echo "Successfully added!";
+}
 
+/* Will try add later.
 if(array_push($_SESSION['cart']["order"],array("p_id"=>$id,"quantity"=>$quant))){
 	echo "Successfully added!";
 }
-
+*/
 ?>
