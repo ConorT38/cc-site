@@ -100,7 +100,7 @@ class Blog{
             while($row = mysqli_fetch_assoc($result)) {
               $num = $row['count'];
               $tag = $row['tag'];
-              echo '<a href="#" class="list-group-item">
+              echo '<a href="http://'.$_SERVER["HTTP_HOST"].'/Blog/Categories/?tag='.$tag.'" class="list-group-item">
               <span class="badge">'.$num.'</span> '.$tag.'
             </a>';
 
@@ -138,7 +138,7 @@ class Blog{
               $id = $row['b_id'];
               $time = $row['time'];
 
-                echo '<a href="http://localhost/Shop/Product/?title='.str_replace(" ", "-", $name).'&id='.$id.'" class="list-group-item">
+                echo '<a href="http://'.$_SERVER["HTTP_HOST"].'/Blog/Post/?title='.str_replace(" ", "-", $name).'&id='.$id.'" class="list-group-item">
                   '.$name.'
                   <time datetime="2015-01-01">'.$time.'</time>
                 </a>';
@@ -173,7 +173,7 @@ class Blog{
               $id = $row['b_id'];
               $time = $row['time'];
 
-                echo '<a href="http://localhost/Shop/Product/?title='.str_replace(" ", "-", $name).'&id='.$id.'" class="list-group-item">
+                echo '<a href="http://'.$_SERVER["HTTP_HOST"].'/Blog/Post/?title='.str_replace(" ", "-", $name).'&id='.$id.'" class="list-group-item">
                   '.$name.'
                   <time datetime="2015-01-01">'.$time.'</time>
                 </a>';
@@ -195,31 +195,35 @@ class Blog{
               echo "Failed to connect to MySQL: " . mysqli_connect_error();
               }
 
-    $sql ="SELECT * FROM `celtic_chocolates`.`comments` WHERE `c_id` = $id";
+    $sql ="SELECT *, DATE_FORMAT(`uploaded`,'%D of %M, %Y') as `time` FROM `celtic_chocolates`.`comments` WHERE `b_id` = $id";
     if($result = mysqli_query($con,$sql)){     
         if (mysqli_num_rows($result) >0) {
             while($row = mysqli_fetch_assoc($result)){
-              $id = $row['c_id'];
-              $date = $row['uploaded'];
-              $review = $row['comment'];
+              $cid = $row['c_id'];
+              $time = $row['time'];
+              $uid = $row['u_id'];
+              $name = Encryption::decrypt($row['name']);
+              $review = Encryption::decrypt($row['comment']);
               echo '<div class="comment">
             <div class="comment__author_img">
-              <img src="Product_files/photo_1.jpg" alt="..." class="img-responsive">
+              <img src="Post_files/avatar.jpg" alt="..." class="img-responsive">
             </div>
             <div class="comment__content">
-              <div class="comment__author_name">John Doe</div>
-              <time datetime="2015-01-30" class="comment__date">February 02, 2015</time>
+              <div class="comment__author_name">'.$name.'</div>
+              <time datetime="2015-01-30" class="comment__date">'.$time.'</time>
               <ul class="rating_stars">
-                '.Self::getRating($id).'
+                '.Self::getRating($cid).'
               </ul>
               <p>
                 '.$review.'
               </p>
-              <div class="btn-group pull-right" role="group" aria-label="comment__actions">
-                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-times"></i> Remove</a>
+              '; 
+              if(isset($_SESSION["id"]) and $_SESSION["id"] == $uid){ echo'<div class="btn-group pull-right" role="group" aria-label="comment__actions">
+                <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-times"></i> Remove</a>
                 <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-reply"></i> Answer</a>
-              </div>
+              </div>';
+            }
+            echo'
             </div> <!-- / .comment__content -->
           </div> <!-- / .comment -->';
       }
@@ -240,26 +244,30 @@ class Blog{
             </div>
             <div class="comment__content">
               <ul class="rating_stars rating-stars__new">
-                <li><i class="fa fa-star-o"></i></li>
-                <li><i class="fa fa-star-o"></i></li>
-                <li><i class="fa fa-star-o"></i></li>
-                <li><i class="fa fa-star-o"></i></li>
-                <li><i class="fa fa-star-o"></i></li>
+                <li id="1"><i class="fa fa-star-o"></i></li>
+                <li id="2"><i class="fa fa-star-o"></i></li>
+                <li id="3"><i class="fa fa-star-o"></i></li>
+                <li id="4"><i class="fa fa-star-o"></i></li>
+                <li id="5"><i class="fa fa-star-o"></i></li>
               </ul>
               <form>
                 <div class="form-group">
                   <label for="comment-new__textarea" class="sr-only">Enter your review</label>
-                  <textarea class="form-control" rows="2" id="comment-new__textarea" placeholder="Enter your review"></textarea>
+                  <textarea class="form-control" rows="2" id="comment" placeholder="Enter your review"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Send Review</button>
+                <button type="submit" class="btn btn-primary submit">Send Review</button>
               </form>
             </div> <!-- / .comment__content -->
           </div> <!-- / .comment__new -->';
     }
     else{
-      echo '<br/><strong>Login to Comments: </strong><br/><a href="../../Login/?r='.$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"].'"><button  type="submit" class="btn btn-primary">Login</button></a>';
+      echo '<br/><strong>Login to Comments: </strong><br/><a href="../../Login/?r='.urlencode($_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]).'"><button  type="submit" class="btn btn-primary">Login</button></a>';
     }
   }//end of allowReview()
+
+  public function countComments($id){
+
+  }//end of countComments()
 }
 
 

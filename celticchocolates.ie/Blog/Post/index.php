@@ -77,7 +77,7 @@ $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
             <ol class="breadcrumb page-header__breadcrumb">
               <li><a href="../../">Home</a></li>
               <li><a href="../">Blog</a></li>
-              <li class="active">Blog Post</li>
+              <li class="active"><?=$title?></li>
             </ol>
           </div>
         </div>
@@ -94,7 +94,7 @@ $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
             <div class="blog__item">
               <div class="blog__content">
                 <h3 class="blog__title">
-                  <a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/blog-post.html"><?=$title?></a>
+                  <a href=""><?=$title?></a>
                 </h3>
                 <ul class="blog__info">
                   <li><time><?=$time?></time></li>
@@ -113,6 +113,7 @@ $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
 
             <!-- Comments header -->
             <div class="comment__header">
+            <div id="result"></div>
               <span>List of Comments</span>
             </div>
 
@@ -169,7 +170,57 @@ $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
 
     <!-- JS Custom -->
     <script src="Post_files/custom.js"></script>
-
+<script type="text/javascript">
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+  $(document).ready(function(){
+    var rate = 1;
+$('#1').click(function(){
+  console.log("1");
+  rate = 1;
+});
+$('#2').click(function(){
+  console.log("2");
+  rate = 2;
+});
+$('#3').click(function(){
+  console.log("3");
+  rate = 3;
+});
+$('#4').click(function(){
+  console.log("4");
+  rate = 4;
+});
+$('#5').click(function(){
+  console.log("5");
+  rate = 5;
+});
+$('.submit').click(function(){
+// AJAX Code To Submit Form.
+$.ajax({
+type: "POST",
+url: "Comment.php",
+data: {
+        'comment':$('#comment').val(),
+        'id': getParameterByName('id'),
+        'rating': rate
+    },
+success: function(result){
+document.getElementById("result").innerHTML = result;
+window.location = window.location.href;
+}
+});
+return false;
+});
+});
+</script>
 
   
 <div title="" style="position: fixed; bottom: 5px; right: 5px; opacity: 0; cursor: pointer;" id="topcontrol"><i class="fa fa-angle-up scroll-to-top"></i></div></body></html>

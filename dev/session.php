@@ -5,7 +5,7 @@ if(isset($_SESSION['admin'])){
 	die();
 }
 if(isset($_SESSION['redirect'])){
-	header("Location: http://".$_SESSION['redirect']."");
+	header("Location: http://".urldecode($_SESSION['redirect'])."");
 	unset($_SESSION['redirect']);
 }
 

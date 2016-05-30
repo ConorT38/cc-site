@@ -82,10 +82,10 @@
             </li>
           </ul>
           <!-- Search form (for collapsed menu only) -->
-          <form class="navbar-form navbar-left visible-xs visible-sm" role="search">
+          <form class="navbar-form navbar-left visible-xs visible-sm" method="get" action="http://<?php echo $_SERVER['SERVER_NAME'];?>/Search/?go" role="search">
             <div class="form-group">
               <label class="sr-only" for="nav-search-xs">Search</label>
-              <input class="form-control" id="nav-search-xs" placeholder="Search here..." type="search">
+              <input class="form-control" id="nav-search-xs" placeholder="Search here..." name ="search" type="search">
             </div>
           </form>
         </div> <!-- / .navbar-collapse -->
