@@ -99,7 +99,7 @@ $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
                 <ul class="blog__info">
                   <li><time><?=$time?></time></li>
                   <li><a href="#"><?=$tag?></a></li>
-                  <li><a href="#"><i class="fa fa-comments-o"></i> 2</a></li>
+                  <li><a href="#"><i class="fa fa-comments-o"></i> <?=Blog::countComments($id)?></a></li>
                 </ul>
                 <div class="blog__body">
         <?=$content?>

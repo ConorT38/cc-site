@@ -52,7 +52,7 @@ $id = $_REQUEST['id'];
             <ol class="breadcrumb page-header__breadcrumb">
               <li><a href="../../">Home</a></li>
               <li><a href="../">Shop</a></li>
-              <li class="active">Shop Item</li>
+              <li class="active"><?=Product::get($id,"title");?></li>
             </ol>
           </div>
         </div>

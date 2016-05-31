@@ -112,18 +112,18 @@ public function getReviews($id){
             </div>
             <div class="comment__content">
               <ul class="rating_stars rating-stars__new">
-                <li><i class="fa fa-star-o"></i></li>
-                <li><i class="fa fa-star-o"></i></li>
-                <li><i class="fa fa-star-o"></i></li>
-                <li><i class="fa fa-star-o"></i></li>
-                <li><i class="fa fa-star-o"></i></li>
+                <li id="1"><i class="fa fa-star-o"></i></li>
+                <li id="2"><i class="fa fa-star-o"></i></li>
+                <li id="3"><i class="fa fa-star-o"></i></li>
+                <li id="4"><i class="fa fa-star-o"></i></li>
+                <li id="5"><i class="fa fa-star-o"></i></li>
               </ul>
               <form>
                 <div class="form-group">
                   <label for="comment-new__textarea" class="sr-only">Enter your review</label>
-                  <textarea class="form-control" rows="2" id="comment-new__textarea" placeholder="Enter your review"></textarea>
+                  <textarea class="form-control" rows="2" id="review" placeholder="Enter your review"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Send Review</button>
+                <button type="submit" class="btn btn-primary submit">Send Review</button>
               </form>
             </div> <!-- / .comment__content -->
           </div> <!-- / .comment__new -->';

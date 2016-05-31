@@ -143,7 +143,7 @@ $name = Encryption::decrypt($_SESSION['name']);
 			success: function(result){
 			document.getElementById("result").innerHTML = result;
 			$("#title").val("");
-			$("#summernote").val("");
+			$('#summernote').summernote('code', '');
 			$("#tag").val("");
 			}
 			});

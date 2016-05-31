@@ -77,6 +77,22 @@ if(isset($_SESSION['logged_in'])){
                       <label for="password" class="sr-only">Enter password</label>
                       <input class="form-control" id="password" placeholder="Password" type="password">
               </div>
+              <div class="form-group">
+                      <label for="password" class="sr-only">Enter address</label>
+                      <input class="form-control" id="address" placeholder="Address" type="text">
+              </div>
+              <div class="form-group">
+                      <label for="password" class="sr-only">Enter city</label>
+                      <input class="form-control" id="city" placeholder="City" type="text">
+              </div>
+              <div class="form-group">
+                      <label for="password" class="sr-only">Enter country</label>
+                      <input class="form-control" id="country" placeholder="Country" type="text">
+              </div>
+              <div class="form-group">
+                      <label for="password" class="sr-only">Enter phone number</label>
+                      <input class="form-control" id="phone" placeholder="Phone Number" type="text">
+              </div>
               <div class="checkbox">
               <button type="submit" id="submit" class="btn btn-primary btn-block btn-lg">Create Account</button>
             </form>
@@ -119,12 +135,23 @@ url: "Signup.php",
 data: {
         'name':$("#name").val(),
         'email':$("#email").val(),
-        'password':$("#password").val()
+        'password':$("#password").val(),
+        'address':$("#address").val(),
+        'city':$("#city").val(),
+        'country':$("#country").val(),
+        'phone':$("#phone").val()
     },
 success: function(result){
-    location.reload();
 document.getElementById("result").innerHTML = result;
-window.location='http://localhost/Login';
+$("#name").val("");
+$("#email").val("");
+$("#password").val("");
+$("#address").val("");
+$("#city").val("");
+$("#country").val("");
+$("#phone").val("");
+
+setInterval(function(){window.location='http://localhost/Login';},1000);
 }
 });
 return false;

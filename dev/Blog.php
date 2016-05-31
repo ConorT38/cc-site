@@ -25,17 +25,24 @@ class Blog{
                 $id = $row['b_id'];
                 $tag = $row['tag'];
                 $time = $row['time'];
+                $match = array();
+                $img = preg_match("/data:image(.*)\"/", $row['content'],$match);
+                if(!isset($match[0])){
+                  $img = "Blog_files/general_1.jpg";
+                }else{
+                  $img = $match[0];
+                }
 
                 echo '<div class="blog__item">
-              <img src="img/general_1.jpg" alt="..." class="img-responsive blog__img hidden-xs">
+              <img style="width:150px;height:100px;"src="'.$img.'" alt="..." class="img-responsive blog__img hidden-xs">
               <div class="blog__content">
                 <h3 class="blog__title">
                   <a href="http://'.$_SERVER["SERVER_NAME"].'/Blog/Post?id='.$id.'&title='.$title_link.'">'.$title_main.'</a>
                 </h3>
                 <ul class="blog__info">
                   <li><time datetime="2015-01-30">'.$time.'</time></li>
-                  <li><a href="#">'.$tag.'</a></li>
-                  <li><a href="#"><i class="fa fa-comments-o"></i> 2</a></li>
+                  <li><a href="http://'.$_SERVER["SERVER_NAME"].'/Blog/Tag/?tag='.$tag.'"">'.$tag.'</a></li>
+                  <li><a href="#"><i class="fa fa-comments-o"></i> '.Self::countComments($id).'</a></li>
                 </ul>
                 <div class="blog__body">
                 '.$content.'
@@ -100,7 +107,7 @@ class Blog{
             while($row = mysqli_fetch_assoc($result)) {
               $num = $row['count'];
               $tag = $row['tag'];
-              echo '<a href="http://'.$_SERVER["HTTP_HOST"].'/Blog/Categories/?tag='.$tag.'" class="list-group-item">
+              echo '<a href="http://'.$_SERVER["HTTP_HOST"].'/Blog/Tag/?tag='.$tag.'" class="list-group-item">
               <span class="badge">'.$num.'</span> '.$tag.'
             </a>';
 
@@ -113,7 +120,59 @@ class Blog{
 
         }//end of getCategories()
 
-	public function getBlogById($id){
+	public function getAllBlogsByTag($s){
+    $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+            // Check connection
+            if (mysqli_connect_errno())
+              {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
+
+             $sql ="SELECT *,DATE_FORMAT(`uploaded`,'%D of %M, %Y') as `time` FROM `celtic_chocolates`.`blog` WHERE tag = '$s'";
+                  if($result = mysqli_query($con,$sql)){
+        
+        if (mysqli_num_rows($result) >0) {
+            while($row = mysqli_fetch_assoc($result)) {
+
+                $content = strip_tags(substr(stripcslashes($row['content']),0,200));
+                $title_main = Encryption::decrypt($row['title']);
+                $title_link = str_replace(" ", "-", $title_main); 
+                $id = $row['b_id'];
+                $tag = $row['tag'];
+                $time = $row['time'];
+                $match = array();
+                $img = preg_match("/data:image(.*)\"/", $row['content'],$match);
+                if(!isset($match[0])){
+                  $img = "Blog_files/general_1.jpg";
+                }else{
+                  $img = $match[0];
+                }
+
+                echo '<div class="blog__item">
+              <img style="width:150px;height:100px;"src="'.$img.'" alt="..." class="img-responsive blog__img hidden-xs">
+              <div class="blog__content">
+                <h3 class="blog__title">
+                  <a href="http://'.$_SERVER["SERVER_NAME"].'/Blog/Post?id='.$id.'&title='.$title_link.'">'.$title_main.'</a>
+                </h3>
+                <ul class="blog__info">
+                  <li><time datetime="2015-01-30">'.$time.'</time></li>
+                  <li><a href="http://'.$_SERVER["SERVER_NAME"].'/Blog/Tag/?tag='.$tag.'">'.$tag.'</a></li>
+                  <li><a href="#"><i class="fa fa-comments-o"></i> '.Self::countComments($id).'</a></li>
+                </ul>
+                <div class="blog__body">
+                '.$content.'
+                </div>
+              </div>
+            </div> <!-- / .blog__item -->';
+
+      }
+    }else{
+        echo "There are no blogs yet.";
+    }
+
+    }else{
+        echo  "Something went wrong!";
+    }
 
 	}//end of getBlogById()
 
@@ -219,8 +278,8 @@ class Blog{
               </p>
               '; 
               if(isset($_SESSION["id"]) and $_SESSION["id"] == $uid){ echo'<div class="btn-group pull-right" role="group" aria-label="comment__actions">
-                <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-times"></i> Remove</a>
-                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-times remove"></i> Remove</a>
+                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit edit"></i> Edit</a>
               </div>';
             }
             echo'
@@ -240,7 +299,7 @@ class Blog{
 
       echo ' <div class="comment comment_new">
             <div class="comment__author_img">
-              <img class="img-responsive" alt="..." src="Product_files/photo_4.jpg">
+              <img class="img-responsive" alt="..." src="Post_files/avatar.jpg">
             </div>
             <div class="comment__content">
               <ul class="rating_stars rating-stars__new">
@@ -266,6 +325,23 @@ class Blog{
   }//end of allowReview()
 
   public function countComments($id){
+    $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+            // Check connection
+            if (mysqli_connect_errno())
+              {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
+
+    $sql ="SELECT COUNT(*) as `num` FROM `celtic_chocolates`.`comments` WHERE `b_id` = $id";
+    if($result = mysqli_query($con,$sql)){     
+        if (mysqli_num_rows($result) >0) {
+            while($row = mysqli_fetch_assoc($result)){
+              $num = $row['num'];
+            }return $num;
+          }else{
+            return "0";
+          }
+        }
 
   }//end of countComments()
 }
