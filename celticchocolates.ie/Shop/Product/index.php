@@ -93,7 +93,7 @@ $id = $_REQUEST['id'];
               echo '<li><i class="fa fa-star"></i></li>';
             }
           ?>    
-            <li class="rating__comment">(3 reviews)</li>
+            <li class="rating__comment">(<?=Product::countReviews($id)?> reviews)</li>
           </ul>
           <p class="text-muted">
             <?php echo Product::get(1,"description");?>
@@ -115,7 +115,7 @@ $id = $_REQUEST['id'];
               </div>
               <div class="form-group">
                 <label for="quantity" class="sr-only">Quantity</label>
-                <input id="quantity" value="1" class="form-control" type="number">
+                <input id="quantity" value="1" min="1" class="form-control" type="number">
                 <input style="visibility:hidden;" value="<?php echo $id;?>"  id="id"/>
               </div>
               <button type="submit" id="addToCart" class="btn btn-default"><i class="fa fa-cart-plus"></i> Add to Cart</button>
@@ -125,6 +125,7 @@ $id = $_REQUEST['id'];
       </div> <!-- / .row -->
       <div class="row">
         <div class="col-sm-8">
+        <div id="result"></div>
           <!-- New review -->
          <?php Product::allowReview();?>
 
@@ -180,6 +181,15 @@ $id = $_REQUEST['id'];
     <script src="Product_files/custom.js"></script>
 
         <script type="text/javascript">
+        function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
     $(document).ready(function(){
 $('#addToCart').click(function(){
 // AJAX Code To Submit Form.
@@ -197,11 +207,50 @@ document.getElementById("result").innerHTML = result;
 });
 return false;
 });
+
+    var rate = 1;
+$('#1').click(function(){
+  console.log("1");
+  rate = 1;
+});
+$('#2').click(function(){
+  console.log("2");
+  rate = 2;
+});
+$('#3').click(function(){
+  console.log("3");
+  rate = 3;
+});
+$('#4').click(function(){
+  console.log("4");
+  rate = 4;
+});
+$('#5').click(function(){
+  console.log("5");
+  rate = 5;
+});
+$('.submit').click(function(){
+// AJAX Code To Submit Form.
+$.ajax({
+type: "POST",
+url: "review.php",
+data: {
+        'review':$('#review').val(),
+        'id': getParameterByName('id'),
+        'rating': rate
+    },
+success: function(result){
+document.getElementById("result").innerHTML = result;
+window.location = window.location.href;
+}
+});
+return false;
+});
+
 });
 
 
-    </script>
-
+    </script>4
 
   
 <div title="" style="position: fixed; bottom: 5px; right: 5px; opacity: 0; cursor: pointer;" id="topcontrol"><i class="fa fa-angle-up scroll-to-top"></i></div></body></html>

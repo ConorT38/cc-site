@@ -26,7 +26,7 @@ function getContents(){
                     <form class="form-inline" method="post">
                       <div class="form-group">
                         <label for="quantity" class="sr-only">Quantity</label>
-                        <input type="number" id="quantity'.$cart[0].'"  value="'.$cart[1].'" class="form-control quantity shopping-cart__qty">
+                        <input type="number" id="quantity'.$cart[0].'"  min="1" value="'.$cart[1].'" class="form-control quantity shopping-cart__qty">
                       </div>
                     
                   </td>

@@ -9,6 +9,11 @@ array_push($_SESSION['cart-checkout']["order"],array("p_id"=>$cart[0],"quantity"
 require_once $_SERVER['DOCUMENT_ROOT'] . "/../details/details.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/encryption.php";
 
+$address = Encryption::decrypt($_SESSION['address']);
+$city = Encryption::decrypt($_SESSION['city']);
+$country = Encryption::decrypt($_SESSION['country']);
+$phone = Encryption::decrypt($_SESSION['phone']);
+
 $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
             // Check connection
             if (mysqli_connect_errno())
@@ -20,7 +25,7 @@ $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
               //$price = 21.2;
              // $quantity = 21;
               $quantity = $_POST['quantity'];
-      $sql ="INSERT INTO `orders`(u_id,p_id,price,quantity,address,city,country) VALUES($id,'".json_encode($_SESSION['cart-checkout'])."',$price,$quantity,'example','example','example')";
+      $sql ="INSERT INTO `orders`(u_id,p_id,price,quantity,address,city,country) VALUES($id,'".json_encode($_SESSION['cart-checkout'])."',$price,$quantity,'$address','$city','$country')";
      if($result = mysqli_query($con,$sql)){  
      	echo "Success. Testing.";
            }else{

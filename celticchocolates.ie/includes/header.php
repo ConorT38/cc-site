@@ -14,9 +14,9 @@
         <ul class="topbar-nav topbar-nav_right">
           <li>
             <!-- Search form -->
-            <form class="form-inline topbar__search" role="form">
+            <form class="form-inline topbar__search" method="get" action="http://<?php echo $_SERVER['SERVER_NAME'];?>/Search/" role="search">
               <label class="sr-only" for="nav-search">Search</label>
-              <input class="form-control" id="nav-search" placeholder="Search here..." type="search">
+              <input class="form-control" id="nav-search" name="search" placeholder="Search here..." type="search">
               <button type="submit"><i class="fa fa-search"></i></button>
             </form>
           </li>
@@ -82,7 +82,7 @@
             </li>
           </ul>
           <!-- Search form (for collapsed menu only) -->
-          <form class="navbar-form navbar-left visible-xs visible-sm" method="get" action="http://<?php echo $_SERVER['SERVER_NAME'];?>/Search/?go" role="search">
+          <form class="navbar-form navbar-left visible-xs visible-sm" method="get" action="http://<?php echo $_SERVER['SERVER_NAME'];?>/Search/index.php?go" role="search">
             <div class="form-group">
               <label class="sr-only" for="nav-search-xs">Search</label>
               <input class="form-control" id="nav-search-xs" placeholder="Search here..." name ="search" type="search">

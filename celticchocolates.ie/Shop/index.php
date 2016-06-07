@@ -95,7 +95,7 @@
         <div class="col-sm-8 col-md-9">
           <div class="row">
             <div class="col-xs-12 visible-xs">
-              <div class="h3 header">Seashells</div>
+              <div class="h3 header">Products</div>
             </div>
           </div>
           <div class="row">

@@ -4,7 +4,7 @@
 			<div class="container-fluid">
 				<!-- begin mobile sidebar expand / collapse button -->
 				<div class="navbar-header">
-					<a href="http://seantheme.com/source-admin-v1.2.1/admin/html/index.html" class="navbar-brand"><img src="Admin_files/logo-white.png" class="logo" alt=""> Celtic Chocolates</a>
+					<a href="http://<?=$_SERVER['HTTP_HOST']."/Admin"?>" class="navbar-brand"><img src="Admin_files/logo-white.png" class="logo" alt=""> Celtic Chocolates</a>
 					<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -29,10 +29,10 @@
 							<span class="hidden-xs"><?php echo $name;?></span> <b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu pull-right">
-							<li><a href="javascript:;">Edit Profile</a></li>
+							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Admin/Edit/Profile">Edit Profile</a></li>
 							<li><a href="javascript:;"><span class="badge badge-danger pull-right">2</span> Inbox</a></li>
 							<li><a href="javascript:;">Calendar</a></li>
-							<li><a href="javascript:;">Setting</a></li>
+							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/AdminSettings">Setting</a></li>
 							<li class="divider"></li>
 							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Logout">Log Out</a></li>
 						</ul>
@@ -91,12 +91,6 @@
 							<span>Invoices</span>
 						</a>
 					</li>
-					<li>
-						<a href="http://seantheme.com/source-admin-v1.2.1/admin/html/widgets.html">
-						    <i class="fa fa-diamond"></i>
-						    <span>Widgets</span>
-					    </a>
-					</li>
 					<li class="has-sub">
 						<a href="javascript:;">
 						    <b class="caret pull-right"></b>
@@ -122,7 +116,13 @@
 									<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Admin/Remove/Blog">Remove Blog</a></li>
 								</ul>
 							</li>
-							<li><a href="javascript:;">Users/Admins</a></li>
+							<li class="has-sub"><a href="javascript:;">Users/Admins</a>
+							<ul class="sub-menu">
+									<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Admin/Add/User">New User</a></li>
+									<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Admin/Remove/User">Remove User</a></li>
+								</ul>
+
+							</li>
 						</ul>
 					</li>
 					<li class="divider has-minify-btn">

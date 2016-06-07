@@ -67,31 +67,34 @@ public function getReviews($id){
               echo "Failed to connect to MySQL: " . mysqli_connect_error();
               }
 
-    $sql ="SELECT * FROM `celtic_chocolates`.`review` WHERE `p_id` = $id";
+    $sql ="SELECT *,DATE_FORMAT(`uploaded`,'%D of %M, %Y') as `time` FROM `celtic_chocolates`.`review` WHERE `p_id` = $id";
     if($result = mysqli_query($con,$sql)){     
         if (mysqli_num_rows($result) >0) {
             while($row = mysqli_fetch_assoc($result)){
               $id = $row['r_id'];
-              $date = $row['uploaded'];
-              $review = $row['review'];
+              $date = $row['time'];
+              $review = Encryption::decrypt($row['review']);
+              $name = Encryption::decrypt($row['name']);
               echo '<div class="comment">
             <div class="comment__author_img">
-              <img src="Product_files/photo_1.jpg" alt="..." class="img-responsive">
+              <img src="Product_files/avatar.jpg" alt="..." class="img-responsive">
             </div>
             <div class="comment__content">
-              <div class="comment__author_name">John Doe</div>
-              <time datetime="2015-01-30" class="comment__date">February 02, 2015</time>
+              <div class="comment__author_name">'.$name.'</div>
+              <time datetime="2015-01-30" class="comment__date">'.$date.'</time>
               <ul class="rating_stars">
                 '.Self::getRating($id).'
               </ul>
               <p>
                 '.$review.'
               </p>
-              <div class="btn-group pull-right" role="group" aria-label="comment__actions">
-                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-times"></i> Remove</a>
-                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> Edit</a>
-                <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-reply"></i> Answer</a>
-              </div>
+              '; 
+              if(isset($_SESSION["id"]) and $_SESSION["id"] == $row["u_id"]){ echo'<div class="btn-group pull-right" role="group" aria-label="comment__actions">
+                <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-times remove"></i> Remove</a>
+                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-edit edit"></i> Edit</a>
+              </div>';
+            }
+            echo'<hr/>
             </div> <!-- / .comment__content -->
           </div> <!-- / .comment -->';
       }
@@ -108,7 +111,7 @@ public function getReviews($id){
 
       echo ' <div class="comment comment_new">
             <div class="comment__author_img">
-              <img class="img-responsive" alt="..." src="Product_files/photo_4.jpg">
+              <img class="img-responsive" alt="..." src="Product_files/avatar.jpg">
             </div>
             <div class="comment__content">
               <ul class="rating_stars rating-stars__new">
@@ -132,6 +135,27 @@ public function getReviews($id){
       echo '<br/><strong>Login to Review: </strong><br/><a href="../../Login/?r='.$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"].'"><button  type="submit" class="btn btn-primary">Login</button></a>';
     }
   }//end of allowReview()
+
+  public function countReviews($id){
+    $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+            // Check connection
+            if (mysqli_connect_errno())
+              {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
+
+    $sql ="SELECT COUNT(*) as `num` FROM `celtic_chocolates`.`review` WHERE `p_id` = $id";
+    if($result = mysqli_query($con,$sql)){     
+        if (mysqli_num_rows($result) >0) {
+            while($row = mysqli_fetch_assoc($result)){
+              $num = $row['num'];
+            }return $num;
+          }else{
+            return "0";
+          }
+        }
+
+  }//end of countComments()
 
 }//end of class
 
