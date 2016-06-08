@@ -224,3 +224,9 @@ return false;
 
   
 <div title="" style="position: fixed; bottom: 5px; right: 5px; opacity: 0; cursor: pointer;" id="topcontrol"><i class="fa fa-angle-up scroll-to-top"></i></div></body></html>
+<?php
+$sql ="UPDATE blog set views =views+1 WHERE b_id = $id";
+                  if($result = mysqli_query($con,$sql)){
+                    return true;
+                  }
+?>

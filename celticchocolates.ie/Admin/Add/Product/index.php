@@ -69,37 +69,46 @@ $name = Encryption::decrypt($_SESSION['name']);
 			<!-- end breadcrumb -->
 			<!-- begin page-header -->
 			<div id="result"></div>
-			<h1 class="page-header"><?=$name?>, write a blog! <small>It can be about anything...</small></h1>
-			<h4>Title:</h4>
-			<input class="form-control" placeholder="Enter Title of Blog..." id="title" type="text"><br/>
+			<h1 class="page-header"><?=$name?>, Add a new product to the shop! <small>Don't forget to add the description...</small></h1>
+			<h4>Product Name:</h4>
+			<input class="form-control" placeholder="Enter Product Name..." id="title" type="text"><br/>
 			<!-- end page-header -->
 			
             <!-- begin panel -->
-            <div class="panel panel-inverse m-b-25">
-                <div class="form-group">
-        <label>Product name</label>
-        <input type="text" class="form-control" name="name" />
-    </div>
-
     <div class="form-group">
         <label>Description</label>
-        <textarea name="description" class="form-control" rows="5"></textarea>
+        <textarea id="description" class="form-control" rows="5"></textarea>
     </div>
 
     <div class="form-group">
         <label>Price</label>
         <div class="input-group">
-            <div class="input-group-addon">$</div>
-            <input type="text" class="form-control" name="price" />
+            <div class="input-group-addon">€</div>
+            <input type="text" class="form-control" size="30" id="price" />
         </div>
-           
+       <div class="form-group">
+        <label>Tag:</label>
+			<input class="form-control" placeholder="Enter Tag" id="tag" type="text"><br/>
+			</div>
+        </div>
+        <div class="form-group">
+        <label class="btn btn-primary btn-file" style="height:40px;">Upload an image
+        <input id="readimg" type="file" name="imagereader"  />
+		<button id="openimage" style="visibility:hidden;">Add an image</button>
+		</label>
+		<div id="getimage"></div>
+		<img src="" height="200" id="image" style="visibility:hidden;"/>
+	
+	<div class="pull-right">
+	<button id="submit" class="btn btn-lg btn-success">Submit</button>
+	</div>
+	</div>
+       
             <!-- end panel -->
 			
            <?php require_once "../../includes/footer.php";?>
 		</div>
 		<!-- end #content -->
-	
-	</div>
 	<!-- end page container -->
 	
 	
@@ -134,22 +143,58 @@ $name = Encryption::decrypt($_SESSION['name']);
 			// AJAX Code To Submit Form.
 			$.ajax({
 			type: "POST",
-			url: "Blog.php",
+			url: "Add.php",
 			data: {
 			        'title':$("#title").val(),
+			        'description':$("#description").val(),
+			        'price':$("#price").val(),
 			        'tag':$("#tag").val(),
-			        'content':$("#summernote").val()
+			        'image': document.getElementById("image").src
 			    },
 			success: function(result){
 			document.getElementById("result").innerHTML = result;
 			$("#title").val("");
-			$('#summernote').summernote('code', '');
+			$('#description').val("");
+			$("#price").val("");
 			$("#tag").val("");
+			document.getElementById("image").src ="";
+			document.getElementById("image").style = "visibility:hidden;";
 			}
 			});
 			return false;
 			});
 		});
+
+
+
+function simulateclick(){
+    document.getElementById("readimg").click();    
+}
+document.getElementById("readimg").style.visibility = "collapse";
+document.getElementById("readimg").style.width = "0px";
+document.getElementById("openimage").addEventListener("click", simulateclick, false);
+
+function readImage() {
+    var fileToLoad = document.getElementById("readimg").files[0];
+
+	var fileReader = new FileReader();
+	fileReader.onload = function(fileLoadedEvent) {
+		var textFromFileLoaded = fileLoadedEvent.target.result;
+		var previewimage = new Image();
+        // previewimage.src = textFromFileLoaded;
+        document.getElementById("getimage").appendChild(previewimage) ;   
+        document.getElementById("image").style = "";
+        document.getElementById("image").src = textFromFileLoaded;
+	};
+	fileReader.readAsDataURL(fileToLoad);
+}
+function bytesToSize(bytes) {
+   var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+   if (bytes == 0) return '0 Bytes';
+   var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+   return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+};
+document.getElementById("readimg").addEventListener("change", readImage, false);
 	</script>
 
 

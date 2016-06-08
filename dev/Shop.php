@@ -30,7 +30,7 @@ class Shop{
                 <!-- Image -->  
                 <div class="product-list__img">
                   <a href="http://'.$_SERVER["SERVER_NAME"].'/Shop/Product/?id='.$id.'&title='.$title_link.'">
-                    <img src="Shop_files/product_1.jpg" alt="Product Image">
+                    <img src="'.$row["image"].'" alt="Product Image">
                   </a>
                 </div>
                 <!-- Captions -->
@@ -86,7 +86,7 @@ class Shop{
                 <!-- Image -->  
                 <div class="product-list__img">
                   <a href="http://'.$_SERVER["SERVER_NAME"].'/Shop/Product/?id='.$id.'&title='.$title_link.'">
-                    <img src="Shop_files/product_1.jpg" alt="Product Image">
+                    <img src="'.$row["image"].'" alt="Product Image">
                   </a>
                 </div>
                 <!-- Captions -->
@@ -191,7 +191,7 @@ class Shop{
               $name = $row['title'];
               $id = $row['p_id'];
               echo '<a href="http://localhost/Shop/Product/?title='.str_replace(" ", "-", $name).'&id='.$id.'" class="list-group-item">
-                  <img class="img-responsive list-group-item__img" src="Shop_files/product_1.jpg" alt="...">
+                  <img class="img-responsive list-group-item__img" src="'.$row["image"].'" alt="...">
                   <div class="list-group-item__content">
                     '.$name.'
                     <ul class="rating_stars">
@@ -227,7 +227,7 @@ class Shop{
               $name = $row['title'];
               $id = $row['p_id'];
               echo '<a href="http://localhost/Shop/Product/?title='.str_replace(" ", "-", $name).'&id='.$id.'" class="list-group-item">
-                  <img class="img-responsive list-group-item__img" src="Shop_files/product_1.jpg" alt="...">
+                  <img class="img-responsive list-group-item__img" src="'.$row["image"].'" alt="...">
                   <div class="list-group-item__content">
                     '.$name.'
                     <ul class="rating_stars">

@@ -81,7 +81,7 @@ $name = Encryption::decrypt($_SESSION['name']);
 			    <form method="get">
 
 			    <div class="search-input">
-			        <input class="form-control" name="search" placeholder="Search Invoices" type="text"/>
+			        <input class="form-control" name="search" placeholder="Search Products" type="text"/>
 			    </div>
 			    </form>
 			    <!-- end search-input -->

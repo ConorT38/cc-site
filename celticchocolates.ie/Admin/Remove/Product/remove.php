@@ -11,7 +11,7 @@ $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
               {
               echo "Failed to connect to MySQL: " . mysqli_connect_error();
               }
-$sql = "DELETE FROM blog WHERE b_id=$id";
+$sql = "DELETE FROM products WHERE p_id=$id";
 if($result=mysqli_query($con,$sql)){
 	echo "Successfully deleted.";
 }else{

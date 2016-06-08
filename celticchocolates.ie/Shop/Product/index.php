@@ -70,7 +70,7 @@ $id = $_REQUEST['id'];
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               <div class="item active">
-                <img src="Product_files/product_2.jpg" alt="...">
+                <img src="<?php echo Product::get($id,"image");?>" alt="...">
                 <div class="carousel-caption">
                 </div>
               </div>
@@ -96,7 +96,7 @@ $id = $_REQUEST['id'];
             <li class="rating__comment">(<?=Product::countReviews($id)?> reviews)</li>
           </ul>
           <p class="text-muted">
-            <?php echo Product::get(1,"description");?>
+            <?php echo Product::get($id,"description");?>
           </p>
           <ul class="list-group">
             <li class="list-group-item"><i class="fa fa-check fa-fw text-primary"></i> Gluten Free</li>

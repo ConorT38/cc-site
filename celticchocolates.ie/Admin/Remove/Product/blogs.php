@@ -12,7 +12,7 @@ function getInvoices(){
               }
 
              $sql ="SELECT *,DATE_FORMAT(`uploaded`,'%d/%m/%Y') as `time`
-					FROM blog";
+					FROM products";
 
 
 
@@ -25,7 +25,7 @@ function getInvoices(){
 			    <div class="search-result-header">
                     <div class="search-result-total"><b class="f-s-16">'.mysqli_num_rows($result).'</b> Results Found</div>
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#"><i class="fa fa-fw fa-file"></i> Blogs</a></li>
+                        <li class="active"><a href="#"><i class="fa fa-fw fa-file"></i> Products</a></li>
                     </ul>
 			    </div>
 			    <!-- end search-result-header -->
@@ -35,22 +35,19 @@ function getInvoices(){
                         <table class="table table-bordered m-b-0">
                             <thead>
                                 <tr>
-                                    <th>Blog ID</th>
+                                    <th>Product ID</th>
                                     <th>Title</th>
-                                    <th>Content</th>
-                                    <th>Views</th>
-                                    <th class="text-center">Date</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>';
 
             while($row = mysqli_fetch_assoc($result)) {
-            	$id = $row['b_id'];
-                $title = Encryption::decrypt($row['title']);
-            	$content = strtolower(strip_tags(substr($row['content'],0,200)));
+            	$id = $row['p_id'];
+                $title = $row['title'];
+            	$content = strtolower(strip_tags(substr($row['description'],0,200)));
                 $content .="....";
             	$time = $row['time'];
-            	$views = $row['views'];
             	echo ' <tr>
                                     <td>
                                        #'.$id.'
@@ -62,8 +59,6 @@ function getInvoices(){
                                             <a href="" id="'.$id.'" class="btn btn-xs btn-rounded btn-danger m-r-3 p-l-10 p-r-10 remove"><i class="fa fa-cross"></i> Remove</a>
                                         </div>
                                     </td>
-                                    <td class="text-center"><div class="m-b-5">'.$views.'</div> <span class="text-success-light">Views</span></td>
-                                    <td class="text-center"><div class="m-b-5">'.$time.'</div> <span class="text-success-light">Date</span></td>
                                 </tr>';
             }
         }else{
@@ -72,7 +67,7 @@ function getInvoices(){
 			    <div class="search-result-header">
                     <div class="search-result-total"><b class="f-s-16">'.mysqli_num_rows($result).'</b> Results Found</div>
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#"><i class="fa fa-fw fa-file"></i> Blogs</a></li>
+                        <li class="active"><a href="#"><i class="fa fa-fw fa-file"></i> Products</a></li>
                     </ul>
 			    </div>
 			    <!-- end search-result-header -->
@@ -82,16 +77,14 @@ function getInvoices(){
                         <table class="table table-bordered m-b-0">
                             <thead>
                                  <tr>
-                                    <th>Blog ID</th>
+                                    <th>Product ID</th>
                                     <th>Title</th>
-                                    <th>Content</th>
-                                    <th>Views</th>
-                                    <th class="text-center">Date</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody><tr>
                                     <td>
-                                       There are no blogs.
+                                       There are no Products.
                                     </td>
                                     <td></td>
                                     <td>
@@ -115,7 +108,7 @@ function getSearch($search){
               }
 
              $sql ="SELECT *,DATE_FORMAT(`uploaded`,'%d/%m/%Y') as `time`
-					FROM blog 
+					FROM products 
 					WHERE `tag`LIKE '%$search%'";
 
 
@@ -128,7 +121,7 @@ echo'<div class="search-result-container">
                 <div class="search-result-header">
                     <div class="search-result-total"><b class="f-s-16">'.mysqli_num_rows($result).'</b> Results Found</div>
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#"><i class="fa fa-fw fa-file"></i> Blogs</a></li>
+                        <li class="active"><a href="#"><i class="fa fa-fw fa-file"></i> Products</a></li>
                     </ul>
                 </div>
                 <!-- end search-result-header -->
@@ -138,22 +131,19 @@ echo'<div class="search-result-container">
                         <table class="table table-bordered m-b-0">
                             <thead>
                                 <tr>
-                                    <th>Blog ID</th>
+                                    <th>Product ID</th>
                                     <th>Title</th>
-                                    <th>Content</th>
-                                    <th>Views</th>
-                                    <th class="text-center">Date</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>';
 
             while($row = mysqli_fetch_assoc($result)) {
-                $id = $row['b_id'];
-                $title = Encryption::decrypt($row['title']);
-                $content = strtolower(strip_tags(substr($row['content'],0,200)));
+                $id = $row['p_id'];
+                $title = $row['title'];
+                $content = strtolower(strip_tags(substr($row['description'],0,200)));
                 $content .="....";
                 $time = $row['time'];
-                $views = $row['views'];
                 echo ' <tr>
                                     <td>
                                        #'.$id.'
@@ -162,39 +152,35 @@ echo'<div class="search-result-container">
                                     <td>
                                        '.$content.'
                                         <div class="m-t-10">
-                                            <a href="#" id="'.$id.'" class="btn btn-xs btn-rounded btn-danger m-r-3 p-l-10 p-r-10 remove"><i class="fa fa-times"></i> Remove</a>
+                                            <a href="" id="'.$id.'" class="btn btn-xs btn-rounded btn-danger m-r-3 p-l-10 p-r-10 remove"><i class="fa fa-cross"></i> Remove</a>
                                         </div>
                                     </td>
-                                    <td class="text-center"><div class="m-b-5">'.$views.'</div> <span class="text-success-light">Views</span></td>
-                                    <td class="text-center"><div class="m-b-5">'.$time.'</div> <span class="text-success-light">Date</span></td>
                                 </tr>';
             }
         }else{
         	echo'<div class="search-result-container">
-			    <!-- begin search-result-header -->
-			    <div class="search-result-header">
+                <!-- begin search-result-header -->
+                <div class="search-result-header">
                     <div class="search-result-total"><b class="f-s-16">'.mysqli_num_rows($result).'</b> Results Found</div>
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#"><i class="fa fa-fw fa-file"></i> Blogs</a></li>
+                        <li class="active"><a href="#"><i class="fa fa-fw fa-file"></i> Products</a></li>
                     </ul>
-			    </div>
-			    <!-- end search-result-header -->
-			    <!-- begin search-result-content -->
-			    <div class="search-result-content">
-			        <div class="table-responsive">
+                </div>
+                <!-- end search-result-header -->
+                <!-- begin search-result-content -->
+                <div class="search-result-content">
+                    <div class="table-responsive">
                         <table class="table table-bordered m-b-0">
                             <thead>
                                  <tr>
-                                    <th>Blog ID</th>
+                                    <th>Product ID</th>
                                     <th>Title</th>
-                                    <th>Content</th>
-                                    <th>Views</th>
-                                    <th class="text-center">Date</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody><tr>
                                     <td>
-                                       There are no blogs.
+                                       There are no Products.
                                     </td>
                                     <td></td>
                                     <td>
