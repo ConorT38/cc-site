@@ -230,3 +230,21 @@ $sql ="UPDATE blog set views =views+1 WHERE b_id = $id";
                     return true;
                   }
 ?>
+<?php
+$sql = "SELECT * FROM views WHERE DATE(`uploaded`) = CURDATE()";
+if($result = mysqli_query($con,$sql)){
+  if (mysqli_num_rows($result) >0) {
+    $sql ="UPDATE views set views.views =views.views+1 WHERE DATE(`uploaded`) = CURDATE()";
+                  if($result = mysqli_query($con,$sql)){
+                    return true;
+                  }
+                }else{
+                    $sql = "INSERT INTO views VALUES(1,NOW())";
+                    if($result = mysqli_query($con,$sql)){
+                    return true;
+                  }else{
+                    return false;
+                  }
+                  }
+               }
+?>

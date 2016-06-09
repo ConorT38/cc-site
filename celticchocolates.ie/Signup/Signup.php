@@ -34,7 +34,7 @@ $sql ="SELECT email FROM users WHERE email='$E_email'";
 
 
 //Signup confirm
-  $sql1 ="INSERT INTO `users`(name,email,password,address,city,country,phone) VALUES('$E_name','$E_email','$hpass','$address','$city','$country','$phone');";
+  $sql1 ="INSERT INTO `users`(name,email,password,address,city,country,phone,uploaded) VALUES('$E_name','$E_email','$hpass','$address','$city','$country','$phone',NOW());";
     if($result = mysqli_query($con,$sql1)){
         echo "<div class='alert alert-success fade in'><a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Success!</strong></div>";
 }else{

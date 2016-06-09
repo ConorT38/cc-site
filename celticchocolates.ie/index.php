@@ -76,10 +76,8 @@ max-width:none
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <script style="" src="js/oQz0WbDPyw_wRkgCfvZ0bXMWCpSp5MyiCywqRwehGSs.js" charset="UTF-8" type="text/javascript"></script><style type="text/css">
 
-.recaptcha_is_showing_audio .recaptcha_only_if_image,.recaptcha_isnot_showing_audio .recaptcha_only_if_audio,.recaptcha_had_incorrect_sol .recaptcha_only_if_no_incorrect_sol,.recaptcha_nothad_incorrect_sol .recaptcha_only_if_incorrect_sol{display:none !important}</style>
-<script src="js/reload" type="text/javascript"></script>
+  <script style="" src="js/oQz0WbDPyw_wRkgCfvZ0bXMWCpSp5MyiCywqRwehGSs.js" charset="UTF-8" type="text/javascript"></script>
 <script src="js/common.js" charset="UTF-8" type="text/javascript"></script>
 <script src="js/map.js" charset="UTF-8" type="text/javascript"></script>
 <script src="js/util.js" charset="UTF-8" type="text/javascript"></script>
@@ -91,7 +89,7 @@ max-width:none
 <script src="home/vt_002" charset="UTF-8" type="text/javascript"></script>
 <script src="home/vt" charset="UTF-8" type="text/javascript"></script>
 <script src="home/AuthenticationService.Authenticate" charset="UTF-8" type="text/javascript"></script>
-<script src="home/QuotaService.RecordEvent" charset="UTF-8" type="text/javascript"></script></head>
+<script src="js/QuotaService.RecordEvent" charset="UTF-8" type="text/javascript"></script></head>
 
   <body style="margin-bottom: 448px;" class="body_index">
 
@@ -127,7 +125,7 @@ max-width:none
       </div> <!-- / .hero__inner -->
 
     <div style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 860px; width: 100%; z-index: -999998; position: absolute;" class="backstretch">
-    <img src="home/bg_1.jpg" style="-webkit-filter: grayscale(40%);position: absolute; margin: 0px; padding: 0px; border: medium none; width: 100%; height: 1217.45px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -194.223px;"></div></div> <!-- / .hero -->
+    <img src="home/bg_1.jpg" style=" filter:brightness(90%);-webkit-filter: brightness(90%);position: absolute; margin: 0px; padding: 0px; border: medium none; width: 100%; height: 1217.45px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -194.223px;"></div></div> <!-- / .hero -->
 
 
     <!-- KEY FEATURES
@@ -933,15 +931,16 @@ lobortis eu.
     <!-- Javascript
     ============================== -->
 
-    <!-- JS Global -->
+     <!-- JS Global -->
+    <script src="js/jquery.js"></script>
     <script src="js/jquery_002.js"></script>
-    <script src="js/js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="js/bootstrap.js"></script>
 
     <!-- JS Plugins -->
     <script src="js/backstretch.js"></script>
     <script src="js/counter.js"></script>
-    <script src="js/jquery.js"></script>
+    <script src="js/jquery.waypoints.js"></script>
     <script src="js/inview.js"></script>
     <script src="js/scrolltopcontrol.js"></script>
     <script src="js/wow.js"></script>
@@ -954,6 +953,33 @@ lobortis eu.
     <script src="js/custom_countto.js"></script>
     <script src="js/custom_google-map.js"></script>
 
+
     
   
 <div title="" style="position: fixed; bottom: 5px; right: 5px; opacity: 1; cursor: pointer;" id="topcontrol"><i class="fa fa-angle-up scroll-to-top"></i></div></body></html>
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . "/../details/details.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/encryption.php";
+$con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+            // Check connection
+            if (mysqli_connect_errno())
+              {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
+$sql = "SELECT * FROM views WHERE DATE(`uploaded`) = CURDATE()";
+if($result = mysqli_query($con,$sql)){
+  if (mysqli_num_rows($result) >0) {
+    $sql ="UPDATE views set views.views =views.views+1 WHERE DATE(`uploaded`) = CURDATE()";
+                  if($result = mysqli_query($con,$sql)){
+                    return true;
+                  }
+                }else{
+                    $sql = "INSERT INTO views VALUES(1,NOW())";
+                    if($result = mysqli_query($con,$sql)){
+                    return true;
+                  }else{
+                    return false;
+                  }
+                  }
+               }
+?>

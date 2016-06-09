@@ -129,3 +129,28 @@
 
   
 <div title="" style="position: fixed; bottom: 5px; right: 5px; opacity: 0; cursor: pointer;" id="topcontrol"><i class="fa fa-angle-up scroll-to-top"></i></div></body></html>
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . "/../details/details.php";
+$con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+            // Check connection
+            if (mysqli_connect_errno())
+              {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
+$sql = "SELECT * FROM views WHERE DATE(`uploaded`) = CURDATE()";
+if($result = mysqli_query($con,$sql)){
+  if (mysqli_num_rows($result) >0) {
+    $sql ="UPDATE views set views.views =views.views+1 WHERE DATE(`uploaded`) = CURDATE()";
+                  if($result = mysqli_query($con,$sql)){
+                    return true;
+                  }
+                }else{
+                    $sql = "INSERT INTO views VALUES(1,NOW())";
+                    if($result = mysqli_query($con,$sql)){
+                    return true;
+                  }else{
+                    return false;
+                  }
+                  }
+               }
+?>
