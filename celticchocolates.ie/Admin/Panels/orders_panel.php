@@ -27,14 +27,18 @@ AND `uploaded` < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY";
                         }
                     }
                 }
-            
+            if($sum3 ==0 or $sum2 ==0){
+                    $diff3= 0.0;
+                }else{
+                $diff3 = (1 - $sum3 / $sum2) * 100;
+            }
   ?>
 <div class="widget widget-stat bg-primary text-white">
                         <div class="widget-stat-btn"><a href="#" data-click="widget-reload"><i class="fa fa-repeat"></i></a></div>
-                        <div class="widget-stat-icon"><i class="fa fa-hdd-o"></i></div>
+                        <div class="widget-stat-icon"><i class="fa fa-edit"></i></div>
                         <div class="widget-stat-info">
                             <div class="widget-stat-title">Total Orders</div>
                             <div class="widget-stat-number"><?=$sum3?></div>
-                            <div class="widget-stat-text">(<?=percent($sum,$sum3);?>% better than last week)</div>
+                            <div class="widget-stat-text">(<?=$diff3;?>% better than last week)</div>
                         </div>
                     </div>

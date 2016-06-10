@@ -33,7 +33,7 @@ class Search{
                 <!-- Image -->  
                 <div class="product-list__img">
                   <a href="http://'.$_SERVER["SERVER_NAME"].'/Shop/Product/?id='.$id.'&title='.$title_link.'">
-                    <img src="Shop_files/product_1.jpg" alt="Product Image">
+                    <img src="'.$row["image"].'" alt="Product Image">
                   </a>
                 </div>
                 <!-- Captions -->

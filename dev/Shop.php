@@ -95,7 +95,7 @@ class Shop{
                     <a href="http://'.$_SERVER["SERVER_NAME"].'/Shop/Product/?id='.$id.'&title='.$title_link.'">'.$title_main.'</a>
                   </h3>
                   <ul class="rating_stars">'.self::getRating($id).'
-                    <li class="rating__comment">(12 reviews)</li>
+                    <li class="rating__comment">('.self::countReviews($id).' reviews)</li>
                   </ul>
                   <div class="product-list__price">€'.$price.'</div>
                 </div>

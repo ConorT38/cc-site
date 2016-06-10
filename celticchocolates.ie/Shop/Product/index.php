@@ -70,7 +70,7 @@ $id = $_REQUEST['id'];
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               <div class="item active">
-                <img src="<?php echo Product::get($id,"image");?>" alt="...">
+                <img src="<?php echo Product::get($id,"image");?>" alt="..." class="img-responsive" style="max-height:800px" >
                 <div class="carousel-caption">
                 </div>
               </div>

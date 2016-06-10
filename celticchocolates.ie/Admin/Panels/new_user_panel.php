@@ -27,7 +27,11 @@ AND `uploaded` < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY";
                         }
                     }
                 }
-                $diff2 = percent($sum,$sum2);
+                if($sum3 ==0 or $sum2 ==0){
+                    $diff2= 0.0;
+                }else{
+                $diff2 = (1 - $sum3 / $sum2) * 100;
+            }
 
   ?>
  <!-- begin widget -->

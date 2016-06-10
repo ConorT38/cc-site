@@ -1,17 +1,7 @@
   <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/../details/details.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/encryption.php";
-function percent($num_amount, $num_total) {
-if($num_total == 0 OR $num_amount==0){
-    //echo "0.00";
-    return true;
-}else{
-$count1 = $num_amount / $num_total;
-$count2 = $count1 * 100;
-$count = number_format($count2, 2);
-echo $count;
-}
-}
+
           
           $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
             // Check connection
@@ -37,8 +27,11 @@ AND `uploaded` < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY";
                         }
                     }
                 }
-                $diff = percent($sum,$sum2);
-
+                if($sum ==0 or $sum2 ==0){
+                    $diff= 0.0;
+                }else{
+                $diff = (1 - $sum / $sum2) * 100;
+            }
   ?><!-- begin widget -->
                     <div class="widget widget-stat bg-inverse text-white">
                         <div class="widget-stat-btn"><a href="#" data-click="widget-reload"><i class="fa fa-repeat"></i></a></div>

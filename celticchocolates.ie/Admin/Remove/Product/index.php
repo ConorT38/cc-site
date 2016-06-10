@@ -15,7 +15,7 @@ $name = Encryption::decrypt($_SESSION['name']);
 <html lang="en"><!--<![endif]--><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
-	<title>Invoices | Celtic Chocolates</title>
+	<title>Remove Products | Celtic Chocolates</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
 	<meta content="" name="description">
 	<meta content="" name="author">
