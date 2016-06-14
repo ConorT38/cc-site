@@ -1,4 +1,26 @@
-<!-- begin #header -->
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . "/../details/details.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/encryption.php";
+
+          
+          $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+            // Check connection
+            if (mysqli_connect_errno())
+              {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
+ $sql ="SELECT COUNT(o_id) AS `sum` FROM orders WHERE checked = 0";
+                  if($result = mysqli_query($con,$sql)){
+                    if (mysqli_num_rows($result) >0) {
+                        while($row2 = mysqli_fetch_assoc($result)) {
+                            $pend1 = $row2['sum'];
+                        }
+                    }
+                }
+                if($pend1 != 0){
+                	$pend = $pend1;
+                }
+?><!-- begin #header -->
 		<div data-current-theme="navbar-inverse" id="header" class="header navbar navbar-fixed-top navbar-inverse">
 			<!-- begin container-fluid -->
 			<div class="container-fluid">
@@ -25,14 +47,12 @@
 					</li>
 					<li class="dropdown navbar-user">
 						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-							<span class="image"><img src="Admin_files/user_profile.jpg" alt=""></span>
+							
 							<span class="hidden-xs"><?php echo $name;?></span> <b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu pull-right">
 							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Admin/Edit/Profile">Edit Profile</a></li>
-							<li><a href="javascript:;"><span class="badge badge-danger pull-right">2</span> Inbox</a></li>
-							<li><a href="javascript:;">Calendar</a></li>
-							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/AdminSettings">Setting</a></li>
+							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/AdminSettings">Settings</a></li>
 							<li class="divider"></li>
 							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Logout">Log Out</a></li>
 						</ul>
@@ -57,18 +77,16 @@
 				<ul class="nav">
 				    <li class="nav-user">
 				        <div class="image">
-				            <img src="Admin_files/user_profile.jpg" alt="">
+				           
 				        </div>
 				        <div class="info">
 				            <div class="name dropdown">
 				                <a href="javascript:;" data-toggle="dropdown"><?php echo $name;?> <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Admin/Edit/Profile">Edit Profile</a></li>
-                                    <li><a href="javascript:;"><span class="badge badge-danger pull-right">2</span> Inbox</a></li>
-                                    <li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Admin/New/Admin">New Admin</a></li>
-                                    <li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Admin/Settings">Setting</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Logout">Log Out</a></li>
+							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/AdminSettings">Settings</a></li>
+							<li class="divider"></li>
+							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Logout">Log Out</a></li>
                                 </ul>
 				            </div>
 				            <div class="position">Management Admin</div>
@@ -88,7 +106,7 @@
 					<li class="has-sub">
 						<a href="http://<?=$_SERVER['HTTP_HOST']."/Admin/Invoice"?>">
 							<i class="fa fa-inbox"></i> 
-							<span>Invoices</span>
+							<span>Invoices <?php if($pend !==0) echo'<span class="badge badge-warning pull-right">'.$pend.'</span>';?></span>
 						</a>
 					</li>
 					<li class="has-sub">
@@ -118,7 +136,7 @@
 							</li>
 							<li class="has-sub"><a href="javascript:;">Users/Admins</a>
 							<ul class="sub-menu">
-									<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Admin/Add/User">New User</a></li>
+									<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Admin/Add/Admin">New Admin</a></li>
 									<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Admin/Remove/User">Remove User</a></li>
 								</ul>
 
@@ -130,30 +148,7 @@
                         <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-left"></i></a>
                         <!-- end sidebar minify button -->
 					</li>
-					<li class="nav-header">Projects</li>
-					<li class="nav-project">
-					    <ul class="project-list">
-					        <li>
-                                <div class="icon"><i class="fa fa-circle-o text-success"></i></div>
-                                <div class="info">
-                                    <div class="title"><a href="javascript:;">iPhone Apps Development</a></div>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-success" style="width: 60%"></div>
-                                    </div>
-                                    <div class="desc">Donec tristique malesuada nibh quis lobortis. Quisque viverra faucibus hendrerit.</div>
-                                </div>
-					        </li>
-					        <li>
-                                <div class="icon"><i class="fa fa-circle-o text-danger"></i></div>
-                                <div class="info">
-                                    <div class="title"><a href="javascript:;">Website Redesign</a></div>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-danger" style="width: 30%"></div>
-                                    </div>
-                                    <div class="desc">Integer fermentum arcu et dolor sodales, quis laoreet justo aliquam.</div>
-                                </div>
-					        </li>
-					    </ul>
+
 					</li>
 				</ul>
 				<!-- end sidebar nav -->

@@ -47,6 +47,10 @@ if(validate_password($_POST['password'],$password2)){
 	$_SESSION['name'] = $row['name'];
 	$_SESSION['email'] = $row['email'];
 	$_SESSION['id'] = $row['u_id'];
+	$_SESSION['country'] = $row['country'];
+	$_SESSION['city'] = $row['city'];
+	$_SESSION['address'] = $row['address'];
+	$_SESSION['phone'] = $row['phone'];
 	echo "<div class='alert alert-success fade in'><a href='#'' class='close' data-dismiss='alert' aria-label='close'>&times;</a><strong>Success!</strong></div>";
 }
 else{

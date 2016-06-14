@@ -32,7 +32,13 @@ $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
             echo 'something went wrong, possibly the query failed...';
            }
           
+           $product = json_decode(json_encode($_SESSION['cart-checkout']));
 
-
+           foreach($product->order as $p){           
+               $sql ="UPDATE products SET sold=sold+'$p->quantity' WHERE p_id = '$p->p_id'";
+               if($result = mysqli_query($con,$sql)){  
+      echo "Success. Testing.";
+           }
+         }
 
 ?>

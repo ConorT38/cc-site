@@ -16,7 +16,7 @@ $id = $_GET['id'];
               echo "Failed to connect to MySQL: " . mysqli_connect_error();
               }
 
-      $sql ="SELECT orders.*,DATE_FORMAT(`uploaded`,'%D of %M, %Y') as `time`,users.name AS `name`,users.email AS `email`, users.phone AS `phone`
+      $sql ="SELECT orders.*,DATE_FORMAT(`orders`.`uploaded`,'%D of %M, %Y') as `time`,users.name AS `name`,users.email AS `email`, users.phone AS `phone`
              FROM `celtic_chocolates`.`orders` 
       		 INNER JOIN users 
       		 ON orders.u_id = users.u_id 
@@ -29,7 +29,7 @@ $id = $_GET['id'];
           	$recepient = Encryption::decrypt($row ['name']);
           	$date = $row['time'];
           	$email = Encryption::decrypt($row ['email']);
-          	$phone = $row['phone'];
+          	$phone = Encryption::decrypt($row ['phone']);
           	$product = json_decode($row['p_id']);
           }
       }
@@ -269,3 +269,9 @@ $id = $_GET['id'];
 
 
 </body></html>
+<?php
+    $sql ="UPDATE orders set checked =1 WHERE o_id=$id";
+                  if($result = mysqli_query($con,$sql)){
+                    return true;
+                  }
+?>

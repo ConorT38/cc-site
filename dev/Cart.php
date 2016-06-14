@@ -12,7 +12,7 @@ function getContents(){
                     <div class="media">
                       <div class="media-left media-middle">
                         <a href="http://simpleqode.com/preview/beatrix/1.0.1/blue-grey/shopping-cart.html#">
-                          <img class="media-object shopping-cart__img" src="./cart_files/product_1.jpg" alt="...">
+                          <img class="media-object shopping-cart__img" src="'.get($cart[0],"image").'" alt="..." height="40">
                         </a>
                       </div>
                       <div class="media-body">

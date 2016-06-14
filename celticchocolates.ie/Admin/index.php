@@ -147,175 +147,6 @@ $name = Encryption::decrypt($_SESSION['name']);
                 <!-- begin col-4 -->
                 <div class="col-md-4">
                     <!-- begin widget -->
-                    <div class="widget widget-chat">
-                        <div class="widget-header bg-inverse">
-                            <h4 class="text-white">Chat History</h4>
-                        </div>
-                        <div class="widget-body">
-                            <ul class="widget-chat-list">
-                                <li>
-                                    <a href="#" data-toggle="chat-detail">
-                                        <div class="chat-image">
-                                            <img src="Admin_files/user_1.jpg" alt="">
-                                        </div>
-                                        <div class="chat-info has-new">
-                                            <h4>Jengo Chima (1)</h4>
-                                            <p>
-                                                Aliquam erat volutpat. 
-Etiam vulputate arcu feugiat ante imperdiet, ut bibendum ipsum rhoncus.
-                                            </p>
-                                            <span class="chat-time">08:41</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" data-toggle="chat-detail">
-                                        <div class="chat-image">
-                                            <img src="Admin_files/user_2.jpg" alt="">
-                                        </div>
-                                        <div class="chat-info">
-                                            <h4>Pontus Dragomir</h4>
-                                            <p>
-                                                <i class="fa fa-check send-icon text-success-light"></i> Sed quis ante rutrum, cursus enim sit amet, placerat turpis.
-                                            </p>
-                                            <span class="chat-time">YESTERDAY</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" data-toggle="chat-detail">
-                                        <div class="chat-image">
-                                            <img src="Admin_files/user_3.jpg" alt="">
-                                        </div>
-                                        <div class="chat-info">
-                                            <h4>Lovro Étienne</h4>
-                                            <p>
-                                                <i class="fa fa-check send-icon text-success-light"></i> Morbi ultrices diam vitae placerat suscipit. Morbi consectetur ante et ex mollis eleifend.
-                                            </p>
-                                            <span class="chat-time">YESTERDAY</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" data-toggle="chat-detail">
-                                        <div class="chat-image">
-                                            <img src="Admin_files/user_4.jpg" alt="">
-                                        </div>
-                                        <div class="chat-info">
-                                            <h4>Kendal Matheus</h4>
-                                            <p>
-                                                <i class="fa fa-check send-icon text-success-light"></i> Aenean consectetur in velit vitae faucibus. Fusce libero est, euismod eu erat eu, luctus rutrum nunc.
-                                            </p>
-                                            <span class="chat-time">YESTERDAY</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" data-toggle="chat-detail">
-                                        <div class="chat-image">
-                                            <img src="Admin_files/user_5.jpg" alt="">
-                                        </div>
-                                        <div class="chat-info">
-                                            <h4>Eivind Andrew</h4>
-                                            <p>
-                                                <i class="fa fa-check send-icon text-success-light"></i> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                            </p>
-                                            <span class="chat-time">YESTERDAY</span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="widget-chat-detail">
-                                <div class="widget-header bg-inverse">
-                                    <h4 class="text-white"><a href="#" data-dismiss="chat-detail" class="m-r-5 text-white"><i class="fa fa-arrow-left"></i> Group Chat</a></h4>
-                                </div>
-                                <div class="widget-chat-detail-container">
-                                    <div style="position: relative; overflow: hidden; width: auto; height: 100%;" class="slimScrollDiv"><div data-init="true" style="overflow: hidden; width: auto; height: 100%;" data-scrollbar="true" data-height="100%">
-                                        <ul class="widget-chat-detail-list">
-                                            <li>
-                                                <a href="javascript:;" class="image"><img src="Admin_files/user_7.jpg" alt=""></a>
-                                                <div class="chat-info">
-                                                    <span class="time">04:15 am</span>
-                                                    <a href="#" class="name">Neck Jolly</a>
-                                                    <div class="message">
-                                                        Euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="right highlight">
-                                                <a href="javascript:;" class="image"><img src="Admin_files/user_6.jpg" alt=""></a>
-                                                <div class="chat-info">
-                                                    <span class="time">05:21 am</span>
-                                                    <a href="#" class="name">Sean Ngu</a>
-                                                    <div class="message">
-                                                        Nullam posuere, nisl a varius rhoncus, risus tellus hendrerit neque.
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;" class="image"><img src="Admin_files/user_1.jpg" alt=""></a>
-                                                <div class="chat-info">
-                                                    <span class="time">12:20pm</span>
-                                                    <a href="#" class="name">Shag Strap</a>
-                                                    <div class="message">
-                                                        Nullam iaculis 
-pharetra pharetra. Proin sodales tristique sapien mattis placerat.
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;" class="image"><img src="Admin_files/user_5.jpg" alt=""></a>
-                                                <div class="chat-info">
-                                                    <span class="time">Just Now</span>
-                                                    <a href="javascript:;" class="name">Sowse Bawdy</a>
-                                                    <div class="message">
-                                                        Lorem ipsum 
-dolor sit amet, consectetuer adipiscing elit volutpat. Praesent mattis 
-interdum arcu eu feugiat.
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div><div style="background: rgb(0, 0, 0) none repeat scroll 0% 0%; width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 0px; height: 239.212px;" class="slimScrollBar ui-draggable"></div><div style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 0px;" class="slimScrollRail"></div></div>
-                                </div>
-                                <div class="widget-chat-input">
-                                    <form method="POST" name="widget_chat_form" class="form-input-flat">
-                                        <div class="input-group">
-                                            <input class="form-control" placeholder="Type a message" type="text">
-                                            <div class="input-group-btn">
-                                                <button type="button" class="btn btn-inverse">Send</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end widget -->
-                </div>
-                <!-- end col-4 -->
-                <!-- begin col-8 -->
-                <div class="col-md-8">
-                    <!-- begin widget -->
-                    <div class="widget p-0 bg-info">
-                        <div class="row row-space-0">
-                            <div class="col-md-7">
-                                
-                            </div>
-                          <?php require_once "Panels/top_products_panel.php";?>
-                        </div>
-                    </div>
-                    <!-- end widget -->
-                </div>
-                <!-- end col-8 -->
-            </div>
-            <!-- end row -->
-            
-            <!-- begin row -->
-            <div class="row">
-                <!-- begin col-4 -->
-                <div class="col-md-4">
-                    <!-- begin widget -->
                     <div class="widget">
                         <div class="widget-header bg-inverse">
                             <ul class="widget-header-btn">
@@ -429,90 +260,26 @@ interdum arcu eu feugiat.
                         </ul>
                     </div>
                     <!-- end widget -->
+                    <!-- end widget -->
                 </div>
                 <!-- end col-4 -->
-                <!-- begin col-4 -->
-                <div class="col-md-4">
+                <!-- begin col-8 -->
+                <div class="col-md-8">
                     <!-- begin widget -->
-                    <div class="widget widget-form">
-                        <div class="widget-header bg-inverse">
-                            <h4 class="text-white">Widget Simple Form</h4>
-                        </div>
-                        <div class="widget-body p-b-15">
-                            <form class="form-input-flat" method="POST" name="sample_form">
-                                <div class="form-group">
-                                    <label class="control-label">Title</label>
-                                    <input class="form-control" type="text">
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">Content</label>
-                                    <textarea class="form-control" rows="5"></textarea>
-                                </div>
-                                <div class="m-b-10 p-b-2">
-                                    <button type="submit" class="btn btn-lime btn-block btn-lg">Quick Post</button>
-                                </div>
-                                <p class="help-block text-muted f-s-11 m-b-0">
-                                    <span class="text-danger">*</span> Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                </p>
-                            </form>
+                    <div class="widget p-0 bg-grey">
+                        <div class="row row-space-0">
+                            <div class="col-md-7">
+                                <?php require_once "Panels/blog_panel.php";?>
+                            </div>
+                            </div>
+                          <?php require_once "Panels/top_products_panel.php";?>
                         </div>
                     </div>
                     <!-- end widget -->
                 </div>
-                <!-- end col-4 -->
-                <!-- begin col-4 -->
-                <div class="col-md-4">
-                    <!-- begin widget -->
-                    <div class="widget">
-                        <div class="widget-header bg-inverse">
-                            <h4 class="text-white">Task Lists</h4>
-                        </div>
-                        <div class="widget-body p-0">
-                            <div style="position: relative; overflow: hidden; width: auto; height: 347px;" class="slimScrollDiv"><div data-init="true" style="overflow: hidden; width: auto; height: 347px;" data-scrollbar="true" data-height="347px">
-                                <ul class="widget-task-list">
-                                    <li>
-                                        <h4>Mobile App Development</h4>
-                                        <p>Due: 12 November 2015</p>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar progress-bar-success" style="width: 80%">80%</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <h4>UI Element Improvement</h4>
-                                        <p>Due: 06 December 2015</p>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar progress-bar-warning" style="width: 50%">50%</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <h4>New Server Installation</h4>
-                                        <p>Due: 10 December 2015</p>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar progress-bar-danger" style="width: 20%">20%</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <h4>Windows 10 Installation</h4>
-                                        <p>Due: 12 December 2015</p>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar progress-bar-grey" style="width: 10%">10%</div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <h4>Business Proposal Preparation</h4>
-                                        <p>Due: 15 December 2015</p>
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar progress-bar-primary" style="width: 90%">90%</div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div><div style="background: rgb(0, 0, 0) none repeat scroll 0% 0%; width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 0px; height: 298.782px;" class="slimScrollBar ui-draggable"></div><div style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 0px;" class="slimScrollRail"></div></div>
-                        </div>
-                    </div>
-                    <!-- end widget -->
-                </div>
-                <!-- end col-4 -->
+                <!-- end col-8 -->
             </div>
+            <!-- end row -->
             <!-- end row -->
 			
            <?php require_once "includes/footer.php";?>
@@ -561,22 +328,13 @@ interdum arcu eu feugiat.
 		    PageDemo.init();
 		});
 	</script>
-	<script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    
-      ga('create', 'UA-53034621-1', 'auto');
-      ga('send', 'pageview');
-    </script>
 
 <div class="jvectormap-label"></div>
 <div id="gritter-notice-wrapper">
     <div id="gritter-item-1" class="gritter-item-wrapper my-sticky-class" style="" role="alert">
         <div class="gritter-top"></div>
-        <div class="gritter-item"><a class="gritter-close" href="#" tabindex="1">Close Notification</a><img src="Admin_files/user_1.jpg" class="gritter-image">
-            <div class="gritter-with-image"><span class="gritter-title">Welcome back, <?php echo $name;?>!</span>
+        <div class="gritter-item"><a class="gritter-close" href="#" tabindex="1">Close Notification</a>
+            <div class="gritter-with-image"><span class="gritter-title">Welcome back, <?php echo Encryption::decrypt($_SESSION['name']);?>!</span>
                 <p>Please check your emails for invoices.</p>
             </div>
             <div style="clear:both"></div>

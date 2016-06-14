@@ -1,4 +1,4 @@
-  <?php
+<?php
   require_once $_SERVER['DOCUMENT_ROOT'] . "/../details/details.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/encryption.php";
 $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
@@ -7,25 +7,24 @@ $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
               {
               echo "Failed to connect to MySQL: " . mysqli_connect_error();
               }
-echo '<div class="col-md-5 bg-white">
-                                <h5 class="p-l-20 p-t-3">Top Products</h5>
+ echo'<h5 class="p-l-20 p-t-3">Top Blog Posts</h5>
                                 <div class="table-responsive m-b-0">
-                                    <table class="table table-bordered table-hover table-last-row-no-border-bottom m-b-0">
+                                    <table class="table  table-bordered table-hover table-last-row-no-border-bottom m-b-0">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>Product</th>
-                                                <th class="text-nowrap">Sold</th>
+                                                <th style="background:#a9a9a9;">#</th>
+                                                <th style="background:#a9a9a9;">Title</th>
+                                                <th style="background:#a9a9a9;" class="text-nowrap">Views</th>
                                             </tr>
                                         </thead>
                                         <tbody>';
-      $sql ="SELECT * FROM products ORDER BY sold DESC LIMIT 8";
+      $sql ="SELECT * FROM blog ORDER BY views DESC LIMIT 10";
      if($result = mysqli_query($con,$sql)){  
         if (mysqli_num_rows($result) >0) {
             $i =1;
           while($row = mysqli_fetch_assoc($result)) {
-            $name = $row['title'];
-            $sum = $row['sold'];
+            $name = Encryption::decrypt($row['title']);
+            $sum = $row['views'];
   
                                           echo'  <tr>
                                                 <td>'.$i.'</td>
@@ -37,9 +36,6 @@ echo '<div class="col-md-5 bg-white">
                                     }
                                 }
     echo '</tbody>
-                                    </table>
-                                </div>
-                            </div>';
-                                        
 
-?>
+                                    </table>';
+                                    ?>

@@ -12,7 +12,8 @@ function getInvoices(){
               }
 
              $sql ="SELECT *,DATE_FORMAT(`uploaded`,'%d/%m/%Y') as `time`
-					FROM orders";
+					FROM orders
+                    ORDER BY o_id DESC";
 
 
 
@@ -57,8 +58,15 @@ function getInvoices(){
                                     <td>
                                        '.$address.'
                                         <div class="m-t-10">
-                                            <a href="Order/?id='.$id.'" class="btn btn-xs btn-rounded btn-default m-r-3 p-l-10 p-r-10"><i class="fa fa-eye"></i> View</a>
-                                        </div>
+                                            <a href="Order/?id='.$id.'" class="btn btn-xs btn-rounded btn-default m-r-3 p-l-10 p-r-10"><i class="fa fa-eye"></i> View</a>'; 
+                                        if($row['checked'] == 0) {
+                                            echo '<span class="badge badge-danger pull-right">Unchecked</span>';
+                                        }
+                                        else{
+                                         echo '<span class="badge badge-success pull-right">Checked</span>';
+                                        }
+                                
+                                echo '</div>
                                     </td>
                                     <td class="text-center"><div class="m-b-5">€'.$sub.'</div> <span class="text-success-light">Cost</span></td>
                                     <td class="text-center"><div class="m-b-5">'.$time.'</div> <span class="text-success-light">Date</span></td>
@@ -114,7 +122,10 @@ function getSearch($search){
 
              $sql ="SELECT *,DATE_FORMAT(`uploaded`,'%d/%m/%Y') as `time`
 					FROM orders 
-					WHERE `address`LIKE '%$search%'";
+					WHERE `address`LIKE '%$search%'
+                    OR `city` LIKE '%$search%'
+                    OR `country` LIKE '%$search%'
+                    ORDER BY o_id DESC";
 
 
 
