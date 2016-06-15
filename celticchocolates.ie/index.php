@@ -902,7 +902,7 @@ lobortis eu.
               <div class="alert" id="form_message" role="alert"></div>
               <!-- Please carefully read the README.txt file in order to setup
                    the PHP contact form properly -->
-              <form role="form" id="form_sendemail">
+              <form >
                 <div class="row form-group">
                   <div class="col-xs-6">
                     <label for="email" class="sr-only">Your email address</label>
@@ -920,7 +920,8 @@ lobortis eu.
                   <textarea name="message" class="form-control" rows="3" id="message" placeholder="Message"></textarea>
                   <span class="help-block"></span>
                 </div>
-                <button type="submit" class="btn btn-primary">Contact Us</button>
+                <button type="submit" id="submit" class="btn btn-primary">Contact Us</button>
+                <div id="result" class="pull-right"></div>
               </form>
             </div> <!-- / .contact__form -->
           </div>
@@ -953,8 +954,32 @@ lobortis eu.
     <script src="js/custom_countto.js"></script>
     <script src="js/custom_google-map.js"></script>
 
+      <script type="text/javascript">
+$(document).ready(function(){
+$('#submit').click(function(){
+// AJAX Code To Submit Form.
+$.ajax({
+type: "POST",
+url: "home/Email.php",
+data: {
+        'name':$("#name").val(),
+        'email':$("#email").val(),
+        'message':$("#password").val()
+    },
+success: function(result){
+document.getElementById("result").innerHTML = "Success!";
+$("#name").val("");
+$("#email").val("");
+$("#message").val("");
 
-    
+}
+});
+return false;
+});
+});
+
+
+</script>    
   
 <div title="" style="position: fixed; bottom: 5px; right: 5px; opacity: 1; cursor: pointer;" id="topcontrol"><i class="fa fa-angle-up scroll-to-top"></i></div></body></html>
 <?php
