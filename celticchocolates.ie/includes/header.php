@@ -6,7 +6,7 @@
         <!-- Social links -->
         <ul class="topbar-nav topbar-nav_left">
           <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://www.facebook.com/CelticChocolates/"><i class="fa fa-facebook"></i></a></li>
           <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
           <li><a href="#"><i class="fa fa-vk"></i></a></li>
           <li><a href="#"><i class="fa fa-stumbleupon"></i></a></li>

@@ -20,6 +20,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/encryption.php";
                 if($pend1 != 0){
                 	$pend = $pend1;
                 }
+                if(!$pend1){
+                	$pend="";
+                }
 ?><!-- begin #header -->
 		<div data-current-theme="navbar-inverse" id="header" class="header navbar navbar-fixed-top navbar-inverse">
 			<!-- begin container-fluid -->
