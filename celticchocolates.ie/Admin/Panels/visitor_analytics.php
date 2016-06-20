@@ -1,3 +1,24 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . "/../details/details.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/encryption.php";
+
+          
+          $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+            // Check connection
+            if (mysqli_connect_errno())
+              {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
+
+             $sql ="SELECT SUM(views) AS `sum` FROM views";
+                  if($result = mysqli_query($con,$sql)){
+                    if (mysqli_num_rows($result) >0) {
+                        while($row = mysqli_fetch_assoc($result)) {
+                            $sum = $row['sum'];
+                        }
+                    }
+                }
+?>
 <div class="col-md-6">
                     <!-- begin widget -->
                     <div class="widget widget-chart p-b-15">
@@ -7,11 +28,11 @@
                                 <div class="col-md-6">
                                     <h4 class="m-b-5 m-t-10">Visitor Analytics</h4>
                                     <p class="f-s-11">
-                                        1 November 2015 - 31 November 2015 <a href="#" class="m-l-5"><i class="fa fa-cog"></i> Edit</a>
+                                        <?php echo date("Y",strtotime("-1 year"));?> - <?php echo date("Y");?> 
                                     </p>
                                 </div>
                                 <div class="col-md-6 text-right-md">
-                                    <h4 class="m-b-5 m-t-10">3,192,489</h4>
+                                    <h4 class="m-b-5 m-t-10"><?=$sum?></h4>
                                     <p class="f-s-11">
                                         Total Visitors
                                     </p>
@@ -20,13 +41,62 @@
                         </div>
                         <!-- end widget-header -->
                         <!-- begin visitor-chart -->
-                        <div style="height: 230px; padding: 0px; position: relative;" id="flot-visitor-chart" data-height="230px"><canvas height="230" width="754" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 754px; height: 230px;" class="flot-base"></canvas><div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);" class="flot-text"><div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;" class="flot-x-axis flot-x1-axis xAxis x1Axis"><div style="position: absolute; max-width: 68px; top: 214px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 14px; text-align: center;">0</div><div style="position: absolute; max-width: 68px; top: 214px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 87px; text-align: center;">1</div><div style="position: absolute; max-width: 68px; top: 214px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 160px; text-align: center;">2</div><div style="position: absolute; max-width: 68px; top: 214px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 233px; text-align: center;">3</div><div style="position: absolute; max-width: 68px; top: 214px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 306px; text-align: center;">4</div><div style="position: absolute; max-width: 68px; top: 214px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 379px; text-align: center;">5</div><div style="position: absolute; max-width: 68px; top: 214px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 451px; text-align: center;">6</div><div style="position: absolute; max-width: 68px; top: 214px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 524px; text-align: center;">7</div><div style="position: absolute; max-width: 68px; top: 214px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 597px; text-align: center;">8</div><div style="position: absolute; max-width: 68px; top: 214px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 670px; text-align: center;">9</div><div style="position: absolute; max-width: 68px; top: 214px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 741px; text-align: center;">10</div></div><div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;" class="flot-y-axis flot-y1-axis yAxis y1Axis"><div style="position: absolute; top: 201px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 6px; text-align: right;">0</div><div style="position: absolute; top: 168px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 1px; text-align: right;">10</div><div style="position: absolute; top: 134px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 0px; text-align: right;">20</div><div style="position: absolute; top: 101px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 0px; text-align: right;">30</div><div style="position: absolute; top: 67px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 0px; text-align: right;">40</div><div style="position: absolute; top: 34px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 0px; text-align: right;">50</div><div style="position: absolute; top: 0px; font: 300 11px/16px &quot;Nunito&quot;,sans-serif; color: rgb(60, 69, 77); left: 0px; text-align: right;">60</div></div></div><canvas height="230" width="754" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 754px; height: 230px;" class="flot-overlay"></canvas></div>
+                       <canvas id="myChart" width="400" height="123"></canvas>
+<script>
+var ctx = document.getElementById("myChart");
+var myLineChart = Chart.Line(ctx, {
+    data: {
+    labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    datasets: [
+        {
+            label: "Total Visitors/Month",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data: [<?php  
+            $t= "";
+            for($i = 1; $i<=12;$i++){
+                    $sql ="SELECT SUM(views) AS `sum` FROM views WHERE DATE_FORMAT(uploaded,\"%c\") = '$i'";
+                  if($result = mysqli_query($con,$sql)){
+                    if (mysqli_num_rows($result) >0) {
+                        while($row = mysqli_fetch_assoc($result)) {
+                            if($row['sum']){
+                                $t .= $row['sum'].",";
+                               
+                            }else{
+                            $t .="0,"; 
+                        }
+                    }
+                    }
+                }
+                }echo substr($t,0,-1);?>],
+        }
+    ]
+}
+});
+</script>
+
+
                         <!-- end visitor-chart -->
                         <!-- begin chart-placeholder -->
                         <ul class="widget-chart-placeholder text-center inline m-t-10">
-                            <li><span class="legend-circle bg-primary"></span> Total Visitors</li>
-                            <li><span class="legend-circle bg-info"></span> New Visitors</li>
-                            <li><span class="legend-circle bg-inverse"></span> Returned Visitors</li>
+                            <li></li>
+                            <li><span class="legend-circle bg-info"></span>Visitors</li>
+                            <li></li>
                         </ul>
                         <!-- end chart-placeholder -->
                     </div>
