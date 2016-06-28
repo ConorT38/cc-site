@@ -13,7 +13,10 @@ $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
               }
 $sql = "DELETE FROM products WHERE p_id=$id";
 if($result=mysqli_query($con,$sql)){
+	$sql = "DELETE FROM review WHERE p_id=$id";
+if($result=mysqli_query($con,$sql)){
 	echo "Successfully deleted.";
+}
 }else{
 	echo "Something went wrong.";
 }

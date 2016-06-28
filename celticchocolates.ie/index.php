@@ -210,10 +210,10 @@ max-width:none
         <div class="row">
           <div class="col-xs-12">
             <h1 class="section__title">
-              Showcase Your Work
+              Some of our Products
             </h1>
             <p class="section__intro">
-              Powered by Isotope, your portfolio has never been more engaging
+              We have a wide variety of products to suit every appetite, at any time of year!
             </p>
             <div class="section__hr section__hr_center"></div>
           </div>
@@ -246,12 +246,12 @@ max-width:none
                         <!-- Image -->
                         <div class="portfolio__img">
                           <a href="#">
-                            <img src="home/general_1.jpg" alt="Portfolio Image">
+                            <img src="img/6.jpg" alt="Portfolio Image">
                           </a>
                         </div>
                         <!-- Captions -->
                         <div class="portfolio__caption">
-                          <h3 class="portfolio__title">Simple &amp; Beautiful</h3>
+                          <h3 class="portfolio__title">Rondellos Orange</h3>
                           <div class="portfolio__intro">
                             Morbi vulputate eget ipsum vel maximus. Morbi dictum blandit mattis.
                           </div>
@@ -264,12 +264,12 @@ max-width:none
                         <!-- Image -->
                         <div class="portfolio__img">
                           <a href="#">
-                            <img src="home/general_2.jpg" alt="Portfolio Image">
+                            <img src="img/7.jpg" alt="Portfolio Image">
                           </a>
                         </div>
                         <!-- Captions -->
                         <div class="portfolio__caption">
-                          <h3 class="portfolio__title">Simple &amp; Beautiful</h3>
+                          <h3 class="portfolio__title">Choc'n'crispie Bars</h3>
                           <div class="portfolio__intro">
                             Morbi vulputate eget ipsum vel maximus. Morbi dictum blandit mattis.
                           </div>
@@ -282,12 +282,12 @@ max-width:none
                         <!-- Image -->
                         <div class="portfolio__img">
                           <a href="#">
-                            <img src="home/general_3.jpg" alt="Portfolio Image">
+                            <img src="img/8.jpg" alt="Portfolio Image">
                           </a>
                         </div>
                         <!-- Captions -->
                         <div class="portfolio__caption">
-                          <h3 class="portfolio__title">Simple &amp; Beautiful</h3>
+                          <h3 class="portfolio__title">White Choc Rondellos</h3>
                           <div class="portfolio__intro">
                             Morbi vulputate eget ipsum vel maximus. Morbi dictum blandit mattis.
                           </div>
@@ -300,12 +300,12 @@ max-width:none
                         <!-- Image -->
                         <div class="portfolio__img">
                           <a href="#">
-                            <img src="home/general_4.jpg" alt="Portfolio Image">
+                            <img src="img/9.jpg" alt="Portfolio Image">
                           </a>
                         </div>
                         <!-- Captions -->
                         <div class="portfolio__caption">
-                          <h3 class="portfolio__title">Simple &amp; Beautiful</h3>
+                          <h3 class="portfolio__title">Dark Chocolate Bars</h3>
                           <div class="portfolio__intro">
                             Morbi vulputate eget ipsum vel maximus. Morbi dictum blandit mattis.
                           </div>
@@ -342,7 +342,7 @@ max-width:none
                         <!-- Image -->
                         <div class="portfolio__img">
                           <a href="#">
-                            <img src="home/general_6.jpg" alt="Portfolio Image">
+                            <img src="img/10.jpg" alt="Portfolio Image">
                           </a>
                         </div>
                         <!-- Captions -->
@@ -378,7 +378,7 @@ max-width:none
                         <!-- Image -->
                         <div class="portfolio__img">
                           <a href="#">
-                            <img src="home/general_8.jpg" alt="Portfolio Image">
+                            <img src="img/11.jpg" alt="Portfolio Image">
                           </a>
                         </div>
                         <!-- Captions -->
@@ -411,7 +411,7 @@ max-width:none
               What we're about
             </h1>
             <p class="section__intro">
-              Once an item is purchased, you become eligible to free download all of its future updates
+              Celtic Chocolates products are all Dairy Free, Gluten Free and Vegan Friendly, and taste great too!
             </p>
             <div class="section__hr section__hr_center"></div>
           </div>
@@ -419,7 +419,7 @@ max-width:none
         <div class="row">
           <div class="col-xs-12 col-sm-6">
             <div class="about-us">
-              <h2 class="about-us__title">Demonstrate your talents with taste</h2>
+              <h2 class="about-us__title">Our Policy</h2>
               <p class="text-muted">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
  Cras eu lacus enim. Aliquam eu elit justo. Pellentesque tincidunt 
@@ -434,302 +434,13 @@ gravida ipsum. Sed dignissim nec ex nec fringilla. Ut commodo leo mi, eu
             </p></div>
           </div>
           <div class="col-xs-12 col-sm-6">
-
-            <!-- Skills chart -->
-            <div class="skills">
-              
-              <!-- Skills grid -->
-              <div class="skills__grid">
-                <div style="opacity: 1; left: 0px;" class="skills-grid__col" data-left="0"></div>
-                <div style="opacity: 1; left: 25%;" class="skills-grid__col" data-left="25%"></div>
-                <div style="opacity: 1; left: 50%;" class="skills-grid__col" data-left="50%"></div>
-                <div style="opacity: 1; left: 75%;" class="skills-grid__col" data-left="75%"></div>
-                <div style="opacity: 1; left: 100%;" class="skills-grid__col" data-left="100%"></div>
-              </div> <!-- / .skills grid -->
-
-              <!-- Skills progress bars -->
-              <div class="skills__progress">
-                <div style="opacity: 1; width: 85%;" class="skills-progress__bar" data-width="85%" data-queue="1">
-                  <span>CSS3</span>
-                </div>
-                <div style="opacity: 1; width: 60%;" class="skills-progress__bar" data-width="60%" data-queue="2">
-                  <span>JavaScript</span>
-                </div>
-                <div style="opacity: 1; width: 70%;" class="skills-progress__bar" data-width="70%" data-queue="3">
-                  <span>Photoshop</span>
-                </div>
-                <div style="opacity: 1; width: 95%;" class="skills-progress__bar" data-width="95%" data-queue="4">
-                  <span>HTML5</span>
-                </div>
-              </div> <!-- / .skills progress -->
-
-            </div> <!-- / .skills -->
+          <img src="img/vegan.png"/>
+          <img src="img/gluten.jpg" height="230"/>
           </div>
         </div> <!-- / .row -->
-
-        <!-- Counters -->
-        <div class="counter">
-          <div class="row">
-            <div class="col-xs-12 col-sm-3">
-              <div class="counter__item">
-                <!-- Replace the "data-to" value with your custom number. Please refer to README.txt for more info on counter setup -->
-                <div class="counter__number" data-from="0" data-to="50000" data-speed="4000" data-refresh-interval="50">50000</div>
-                <div class="counter__title">
-                  Counter Title
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-3">
-              <div class="counter__item">
-                <div class="counter__number" data-from="0" data-to="40000" data-speed="4000" data-refresh-interval="50">40000</div>
-                <div class="counter__title">
-                  Counter Title
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-3">
-              <div class="counter__item">
-                <div class="counter__number" data-from="0" data-to="25000" data-speed="4000" data-refresh-interval="50">25000</div>
-                <div class="counter__title">
-                  Counter Title
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-3">
-              <div class="counter__item">
-                <div class="counter__number" data-from="0" data-to="15000" data-speed="4000" data-refresh-interval="50">15000</div>
-                <div class="counter__title">
-                  Counter Title
-                </div>
-              </div>
-            </div>
-          </div> <!-- / .row -->
-        </div> <!-- / .counter -->
+                  <br/>
       </div> <!-- / .container -->
     </div> <!-- / .section -->
-
-
-    <!-- PRICING TABLE
-    ============================== -->
-    <div class="section section_pricing section_alt">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <h1 class="section__title">
-              Compretitive Prices
-            </h1>
-            <p class="section__intro">
-              Four pricing plans for personal and commercial projects. Painless refund guaranteed.
-            </p>
-            <div class="section__hr section__hr_center"></div>
-          </div>
-        </div> <!-- / .row -->
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <!-- Pricing item #1 -->
-            <div class="pricing__item">
-              <!-- Pricing header -->
-              <div class="pricing__header">
-                <div class="pricing__title">Basic Plan</div>
-                <div class="pricing__price">
-                  $<span class="pricing-price__digit">25</span>/mo
-                </div>
-              </div>
-              <!-- Pricing body -->
-              <div class="pricing__body">
-                <ul class="pricing__list">
-                  <li>Lorem ipsum dolor sit amet</li>
-                  <li>Lorem ipsum dolor sit amet</li>
-                  <li>Lorem ipsum dolor sit amet</li>
-                  <li>Lorem ipsum dolor sit amet</li>
-                </ul>
-                <div class="pricing__btn">
-                  <a class="btn btn-primary" href="#">Purchase now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <!-- Pricing item #2 -->
-            <div class="pricing__item">
-              <!-- Pricing header -->
-              <div class="pricing__header">
-                <div class="pricing__title">Pro Plan</div>
-                <div class="pricing__price">
-                  $<span class="pricing-price__digit">35</span>/mo
-                </div>
-              </div>
-              <!-- Pricing body -->
-              <div class="pricing__body">
-                <ul class="pricing__list">
-                  <li>Lorem ipsum dolor sit amet</li>
-                  <li>Lorem ipsum dolor sit amet</li>
-                  <li>Lorem ipsum dolor sit amet</li>
-                  <li>Lorem ipsum dolor sit amet</li>
-                </ul>
-                <div class="pricing__btn">
-                  <a class="btn btn-primary" href="#">Purchase now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <!-- Pricing item #3 -->
-            <div class="pricing__item">
-              <!-- Pricing header -->
-              <div class="pricing__header">
-                <div class="pricing__title">Business Plan</div>
-                <div class="pricing__price">
-                  $<span class="pricing-price__digit">45</span>/mo
-                </div>
-              </div>
-              <!-- Pricing body -->
-              <div class="pricing__body">
-                <ul class="pricing__list">
-                  <li>Lorem ipsum dolor sit amet</li>
-                  <li>Lorem ipsum dolor sit amet</li>
-                  <li>Lorem ipsum dolor sit amet</li>
-                  <li>Lorem ipsum dolor sit amet</li>
-                </ul>
-                <div class="pricing__btn">
-                  <a class="btn btn-primary" href="#">Purchase now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <!-- Pricing item #4 -->
-            <div class="pricing__item">
-              <!-- Pricing header -->
-              <div class="pricing__header">
-                <div class="pricing__title">Exclusive Plan</div>
-                <div class="pricing__price">
-                  $<span class="pricing-price__digit">55</span>/mo
-                </div>
-              </div>
-              <!-- Pricing body -->
-              <div class="pricing__body">
-                <ul class="pricing__list">
-                  <li>Lorem ipsum dolor sit amet</li>
-                  <li>Lorem ipsum dolor sit amet</li>
-                  <li>Lorem ipsum dolor sit amet</li>
-                  <li>Lorem ipsum dolor sit amet</li>
-                </ul>
-                <div class="pricing__btn">
-                  <a class="btn btn-primary" href="#">Purchase now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> <!-- / .row -->
-      </div> <!-- / .container -->
-    </div> <!-- / .section -->
-
-
-    <!-- AUTHORS
-    ============================== -->
-    <div class="section section_authors">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <h1 class="section__title">
-              Our Team
-            </h1>
-            <p class="section__intro">
-              A team of hard-working enthusiastic people who helped this product come to life
-            </p>
-            <div class="section__hr section__hr_center"></div>
-          </div>
-        </div> <!-- / .row -->
-        <div class="row">
-          <!-- Author #1 -->
-          <div class="col-xs-12 col-sm-4">
-            <div class="authors__item">
-              <div style="visibility: hidden; animation-name: none;" class="authors__img wow flipInY" data-wow-offset="118">
-                <img src="home/photo_1.jpg" class="img-responsive" alt="...">
-              </div>
-              <div class="authors__content">
-                <div class="authors__title">Joe Callery, Owner</div>
-                <div class="authors__intro">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu lacus enim. Aliquam eu elit justo. 
-                </div>
-                <ul class="authors__contact">
-                  <li class="facebook">
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                  </li>
-                  <li class="twitter">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                  </li>
-                  <li class="linkedin">
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </li>
-                  <li class="envelope">
-                    <a href=""><i class="fa fa-envelope-o"></i></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- Author #2 -->
-          <div class="col-xs-12 col-sm-4">
-            <div class="authors__item">
-              <div style="visibility: hidden; animation-delay: 0.2s; animation-name: none;" data-wow-offset="118" class="authors__img wow flipInY" data-wow-delay=".2s">
-                <img src="home/photo_2.jpg" class="img-responsive" alt="...">
-              </div>
-              <div class="authors__content">
-                <div class="authors__title">Phyllis O'Keeffe, Office Manager</div>
-                <div class="authors__intro">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu lacus enim. Aliquam eu elit justo. 
-                </div>
-                <ul class="authors__contact">
-                  <li class="facebook">
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                  </li>
-                  <li class="twitter">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                  </li>
-                  <li class="linkedin">
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </li>
-                  <li class="envelope">
-                    <a href=""><i class="fa fa-envelope-o"></i></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- Author #3 -->
-          <div class="col-xs-12 col-sm-4">
-            <div class="authors__item">
-              <div style="visibility: hidden; animation-delay: 0.4s; animation-name: none;" data-wow-offset="118" class="authors__img wow flipInY" data-wow-delay=".4s">
-                <img src="home/photo_3.jpg" class="img-responsive" alt="...">
-              </div>
-              <div class="authors__content">
-                <div class="authors__title">Richard Doe, Developer</div>
-                <div class="authors__intro">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu lacus enim. Aliquam eu elit justo. 
-                </div>
-                <ul class="authors__contact">
-                  <li class="facebook">
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                  </li>
-                  <li class="twitter">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                  </li>
-                  <li class="linkedin">
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </li>
-                  <li class="envelope">
-                    <a href=""><i class="fa fa-envelope-o"></i></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div> <!-- / .row -->
-      </div> <!-- /.container -->
-    </div> <!-- / .section -->
-
 
     <!-- FEEDBACK
     ============================== -->
@@ -750,33 +461,27 @@ gravida ipsum. Sed dignissim nec ex nec fringilla. Ut commodo leo mi, eu
                 <div class="item">
                   <div class="feedback__item">
                     <div class="feedback__content">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing
- elit. In nec turpis eget augue vulputate porta non et lectus. Mauris 
-aliquet elementum ligula id commodo.
+                      "Their vegan chocolates are gorgeous.  Great to know an Irish company is leading the way with ethical products."
                     </div>
-                    <div class="feedback__author">- Richard Roe -</div>
+                    <div class="feedback__author">- Miriam Anderson -</div>
                   </div>
                 </div>
                 <!-- Second item -->
                 <div class="item">
                   <div class="feedback__item">
                     <div class="feedback__content">
-                      Fusce a efficitur tortor. Vestibulum eget iaculis 
-libero, sed rhoncus augue. Aenean sit amet pharetra quam. Nunc nec sem 
-eget diam mattis pulvinar at eget metus.
+                      "Excellent quality chocolate, perfect for anyone with allergies or celiac!"
                     </div>
-                    <div class="feedback__author">- Judy Doe -</div>
+                    <div class="feedback__author">- Conor O'Donoghue -</div>
                   </div>
                 </div>
                 <!-- Third item -->
                 <div class="item active">
                   <div class="feedback__item">
                     <div class="feedback__content">
-                      Curabitur sit amet tortor ac elit mattis fermentum
- vel eu sem. In vestibulum mattis turpis ac dictum. Pellentesque eros 
-velit, pellentesque sed odio id.
+                      "Excellent chocolate alternative for vegans"
                     </div>
-                    <div class="feedback__author">- John Doe -</div>
+                    <div class="feedback__author">- Judy Doe -</div>
                   </div>
                 </div>
               </div>
@@ -801,10 +506,10 @@ velit, pellentesque sed odio id.
         <div class="row">
           <div class="col-xs-12">
             <h1 class="section__title">
-              Truly Responsive
+              Festive chocolates
             </h1>
             <p class="section__intro">
-              Looks equally great on your laptop, tablet, and phone
+              Chocolate for every time of the year! 
             </p>
             <div class="section__hr section__hr_center"></div>
           </div>
@@ -813,14 +518,14 @@ velit, pellentesque sed odio id.
           <div class="col-xs-12 col-sm-12 col-md-6">
             <!-- Image -->
             <div style="visibility: hidden; animation-name: none;" data-wow-offset="321" class="features-alt__img wow fadeIn">
-              <img src="home/showcase.png" class="img-responsive" alt="...">
+              <img src="home/general_5.jpg" class="img-responsive" alt="...">
             </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-6">
             <div class="features-alt__item">
-              <div class="features-alt__icon"><i class="fa fa-paint-brush fa-fw"></i></div>
+              <div class="features-alt__icon"><i class="fa fa-undo fa-fw"></i></div>
               <div class="features-alt__content">
-                <div class="features-alt__title">Multiple Color Options</div>
+                <div class="features-alt__title">All Year Round</div>
                 <div class="features-alt__intro">
                   Lorem ipsum dolor sit amet, consectetur adipiscing 
 elit. Duis diam nunc, porta ut metus et, volutpat dictum felis. Donec 
@@ -830,9 +535,9 @@ lobortis eu.
               </div>
             </div>
             <div class="features-alt__item">
-              <div class="features-alt__icon"><i class="fa fa-file-code-o fa-fw"></i></div>
+              <div class="features-alt__icon"><i class="fa fa-leaf fa-fw"></i></div>
               <div class="features-alt__content">
-                <div class="features-alt__title">Clean &amp; Clear Code</div>
+                <div class="features-alt__title">Easter Range</div>
                 <div class="features-alt__intro">
                   Lorem ipsum dolor sit amet, consectetur adipiscing 
 elit. Duis diam nunc, porta ut metus et, volutpat dictum felis. Donec 
@@ -842,21 +547,9 @@ lobortis eu.
               </div>
             </div>
             <div class="features-alt__item">
-              <div class="features-alt__icon"><i class="fa fa-android fa-fw"></i></div>
+              <div class="features-alt__icon"><i class="fa fa-star fa-fw"></i></div>
               <div class="features-alt__content">
-                <div class="features-alt__title">Truly Responsive Design</div>
-                <div class="features-alt__intro">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing 
-elit. Duis diam nunc, porta ut metus et, volutpat dictum felis. Donec 
-sit amet ultricies arcu. Ut tempus orci lorem, vitae ullamcorper nunc 
-lobortis eu.
-                </div>
-              </div>
-            </div>
-            <div class="features-alt__item">
-              <div class="features-alt__icon"><i class="fa fa-life-ring fa-fw"></i></div>
-              <div class="features-alt__content">
-                <div class="features-alt__title">Free Online Support</div>
+                <div class="features-alt__title">Christmas Range</div>
                 <div class="features-alt__intro">
                   Lorem ipsum dolor sit amet, consectetur adipiscing 
 elit. Duis diam nunc, porta ut metus et, volutpat dictum felis. Donec 

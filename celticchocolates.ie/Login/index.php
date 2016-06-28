@@ -83,7 +83,7 @@ if(isset($_REQUEST['r'])){
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox"> Remember me
+                  <input type="checkbox" id="remember"> Remember me
                 </label>
               </div>
               <button type="submit" id="submit" class="btn btn-primary btn-block btn-lg">Submit</button>
@@ -143,7 +143,8 @@ type: "POST",
 url: "Login.php",
 data: {
         'email':$("#email").val(),
-        'password':$("#password").val()
+        'password':$("#password").val(),
+        'remember': $('#remember').val()
     },
 success: function(result){
 document.getElementById("result").innerHTML = result;

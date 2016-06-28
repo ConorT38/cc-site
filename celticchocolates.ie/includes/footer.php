@@ -126,11 +126,11 @@
             </div>
             <div class="col-xs-12 col-sm-6">
               <ul class="footer__social">
-                <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                <li class="twitter"><img src="img/BRC.png" height="85"/></li>
+                <li class="facebook"><img src="img/2.jpg" height="85"/></li>
+                <li class="linkedin"><img src="img/3.jpg" height="85"/></li>
+                <li class="google-plus"><img src="img/4.jpg" height="85"/></li>
+                <li class="pinterest"><img src="img/5.jpg" height="85" width="40"/></li>
               </ul>
             </div>
           </div> <!-- / .row -->

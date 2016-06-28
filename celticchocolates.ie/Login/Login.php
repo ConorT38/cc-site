@@ -22,6 +22,12 @@ while($row = mysqli_fetch_assoc($res)){
 	$password2 = $row['password'];
 if(validate_password($_POST['password'],$password2)){
 	session_start();
+	if(isset($_POST['remember'])){
+		$pass = Encryption::encrypt($_POST['password']);
+		$mail = Encryption::encrypt($_POST['email']);
+		setcookie("email", $mail, time() + (86400 * 30), "/");
+		setcookie("x11", $pass, time() + (86400 * 30), "/");
+	}
 	$_SESSION['admin'] = "true";
 	$_SESSION['name'] = $row['name'];
 	$_SESSION['email'] = $row['email'];
@@ -43,6 +49,12 @@ while($row = mysqli_fetch_assoc($res)){
 	$password2 = $row['password'];
 if(validate_password($_POST['password'],$password2)){
 	session_start();
+	if(isset($_POST['remember'])){
+		$pass = Encryption::encrypt($_POST['password']);
+		$mail = Encryption::encrypt($_POST['email']);
+		setcookie("email", $mail, time() + (86400 * 30), "/");
+		setcookie("x11", $pass, time() + (86400 * 30), "/");
+	}
 	$_SESSION['logged_in'] = true;
 	$_SESSION['name'] = $row['name'];
 	$_SESSION['email'] = $row['email'];

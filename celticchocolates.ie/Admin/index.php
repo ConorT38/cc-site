@@ -39,7 +39,7 @@ $name = Encryption::decrypt($_SESSION['name']);
     
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="Admin_files/analytics.js" async=""></script><script src="Admin_files/pace.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
+    <script type="text/javascript" src="Admin_files/Chart.js"></script>
 	<!-- ================== END BASE JS ================== -->
 	
 	<!--[if lt IE 9]>
