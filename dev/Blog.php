@@ -344,7 +344,55 @@ class Blog{
         }
 
   }//end of countComments()
-}
+
+  public function footerBlogs(){
+    $con = mysqli_connect(HOST,USER,PASSWORD,DATABASE);
+            // Check connection
+            if (mysqli_connect_errno())
+              {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              }
+                $sql ="SELECT *,DATE_FORMAT(`uploaded`,'%D of %M, %Y') as `time` FROM `celtic_chocolates`.`blog` LIMIT 3";
+                  if($result = mysqli_query($con,$sql)){
+        
+        if (mysqli_num_rows($result) >0) {
+            while($row = mysqli_fetch_assoc($result)) {
+
+                $content = strip_tags(substr(stripcslashes($row['content']),0,200));
+                $title_main = Encryption::decrypt($row['title']);
+                $title_link = str_replace(" ", "-", $title_main); 
+                $id = $row['b_id'];
+                $tag = $row['tag'];
+                $time = $row['time'];
+                $match = array();
+                $img = preg_match("/data:image(.*)\"/", $row['content'],$match);
+                if(!isset($match[0])){
+                  $img = "Blog_files/general_1.jpg";
+                }else{
+                  $img = $match[0];
+                }
+
+                echo '<div class="footer__post">
+                    <div class="footer-post__img">
+                      <img src="'.$img.'" alt="...">
+                    </div>
+                    <div class="footer-post__content">
+                      <p><a href="http://'.$_SERVER["SERVER_NAME"].'/Blog/Post?id='.$id.'&title='.$title_link.'">'.$title_main.'</a></p>
+                      <time datetime="'.$time.'">'.$time.'</time>
+                    </div>
+                  </div>';
+      }
+    }else{
+        echo "There are no blogs yet.";
+    }
+
+    }else{
+        echo  "Something went wrong!";
+    }
+
+  }//end of footerBlogs()
+
+}//end of Class
 
 
 

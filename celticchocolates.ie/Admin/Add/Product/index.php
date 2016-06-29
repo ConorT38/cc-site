@@ -64,7 +64,7 @@ $name = Encryption::decrypt($_SESSION['name']);
 			<ol class="breadcrumb pull-right">
 				<li><a href="javascript:;">Home</a></li>
 				<li><a href="javascript:;">Operations</a></li>
-				<li class="active">Blog</li>
+				<li class="active">Products</li>
 			</ol>
 			<!-- end breadcrumb -->
 			<!-- begin page-header -->

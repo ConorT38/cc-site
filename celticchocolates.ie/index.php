@@ -115,7 +115,7 @@ max-width:none
                     Located in Summerhill, Co.Meath, Ireland
                   </p>
                   <div class="hero__action">
-                    <a href="#" class="btn btn-lg btn-primary">Discover</a>
+                    <a href="#about" class="btn btn-lg btn-primary">Discover</a>
                   </div>
                 </div>
               </div> <!-- / .row -->
@@ -151,6 +151,8 @@ max-width:none
               <div style="visibility: visible; animation-name: flipInY;" data-wow-offset="60" class="features__icon wow flipInY animated">
                 <i class="fa fa-check"></i>
                 <i class="fa fa-check"></i> <!-- Required for animation -->
+              </div>
+              <div id="about">
               </div>
               <!-- Title -->
               <h2 class="features__title">

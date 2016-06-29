@@ -30,7 +30,6 @@ if($res = mysqli_query($con,$sqladmin)){
 while($row = mysqli_fetch_assoc($res)){
 	$password2 = $row['password'];
 if(validate_password($sec,$password2)){
-	session_start();
 	$_SESSION['admin'] = "true";
 	$_SESSION['name'] = $row['name'];
 	$_SESSION['email'] = $row['email'];
@@ -47,7 +46,6 @@ if($res = mysqli_query($con,$sql)){
 while($row = mysqli_fetch_assoc($res)){
 	$password2 = $row['password'];
 if(validate_password($sec,$password2)){
-	session_start();
 	$_SESSION['logged_in'] = true;
 	$_SESSION['name'] = $row['name'];
 	$_SESSION['email'] = $row['email'];

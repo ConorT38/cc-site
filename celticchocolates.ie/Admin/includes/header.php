@@ -40,14 +40,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/encryption.php";
 				
 				<!-- begin navbar-right -->
 				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<form class="navbar-form form-input-flat">
-							<div class="form-group">
-								<input class="form-control" placeholder="Enter keyword..." type="text">
-								<button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
-							</div>
-						</form>
-					</li>
 					<li class="dropdown navbar-user">
 						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
 							
@@ -55,7 +47,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/encryption.php";
 						</a>
 						<ul class="dropdown-menu pull-right">
 							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Admin/Edit/Profile">Edit Profile</a></li>
-							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/AdminSettings">Settings</a></li>
+							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Admin/Settings">Settings</a></li>
 							<li class="divider"></li>
 							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Logout">Log Out</a></li>
 						</ul>
@@ -87,7 +79,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/encryption.php";
 				                <a href="javascript:;" data-toggle="dropdown"><?php echo $name;?> <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Admin/Edit/Profile">Edit Profile</a></li>
-							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/AdminSettings">Settings</a></li>
+							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Admin/Settings">Settings</a></li>
 							<li class="divider"></li>
 							<li><a href="http://<?=$_SERVER['HTTP_HOST']?>/Logout">Log Out</a></li>
                                 </ul>

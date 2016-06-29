@@ -6,8 +6,8 @@
  * and open the template in the editor.
  */
     define('HOST', 'localhost');
-    define('USER',"root");
-    define('PASSWORD',"A0LmondaY");
+    define('USER',"root");//for site : u1303498_Conor
+    define('PASSWORD',"A0LmondaY");//for site: {WM,Er2GD1i~OgDX
     define('DATABASE',"celtic_chocolates");
 
 

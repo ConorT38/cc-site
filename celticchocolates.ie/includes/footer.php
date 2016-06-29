@@ -1,4 +1,6 @@
- <!-- FOOTER
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . "/../dev/Blog.php";
+?> <!-- FOOTER
     ============================== -->
     <footer>
 
@@ -13,15 +15,14 @@
                 <div class="footer__title">Contact Us</div>
                 <div class="footer__content">
                   <p>
-                    Do not hesitate to contact us if you have any questions or feature requests:
+                    Please contact us on any queries you may have regarding our products:
                   </p><p>
-                    Lorem ipsum dolor sit amet,<br>
-                    Consectetur adipiscing elit
+                   We will return your message as soon as possible,<br>
+                    Our information:
                   </p><p>
-                    Phone: +0 000 000 00 00<br>
-                    Fax: +0 000 000 00 00
+                    Phone:  +353 46 955 7077<br>
                   </p><p>
-                    Email: <a href="#">support@example.com</a>
+                    Email: <a href="mailto: info@celticchocolates.eu">info@celticchocolates.eu</a>
                   </p>
                 </div>
               </div>
@@ -63,33 +64,7 @@
               <div class="footer__item">
                 <div class="footer__title">Recent Posts</div>
                 <div class="footer__content">
-                  <div class="footer__post">
-                    <div class="footer-post__img">
-                      <img src="Beatrix%20::%20Shop_files/general_1.jpg" alt="...">
-                    </div>
-                    <div class="footer-post__content">
-                      <p><a href="#">Lorem ipsum dolor sit amet</a></p>
-                      <time datetime="2015-01-01">2015/01/01</time>
-                    </div>
-                  </div>
-                  <div class="footer__post">
-                    <div class="footer-post__img">
-                      <img src="Beatrix%20::%20Shop_files/general_2.jpg" alt="...">
-                    </div>
-                    <div class="footer-post__content">
-                      <p><a href="#">Lorem ipsum dolor sit amet</a></p>
-                      <time datetime="2015-01-01">2015/01/01</time>
-                    </div>
-                  </div>
-                  <div class="footer__post">
-                    <div class="footer-post__img">
-                      <img src="<?php echo $_SERVER['SERVER_NAME'];?>/home/general_3.jpg" alt="...">
-                    </div>
-                    <div class="footer-post__content">
-                      <p><a href="#">Lorem ipsum dolor sit amet</a></p>
-                      <time datetime="2015-01-01">2015/01/01</time>
-                    </div>
-                  </div>
+                <?=Blog::footerBlogs();?>
                 </div>
               </div>            
             </div>
