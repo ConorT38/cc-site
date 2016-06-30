@@ -148,7 +148,7 @@ data: {
     },
 success: function(result){
 document.getElementById("result").innerHTML = result;
-setTimeout(function(){window.location='http://<?php echo $_SERVER["HTTP_HOST"];?>/';},1800);
+window.location.reload();
 }
 });
 return false;

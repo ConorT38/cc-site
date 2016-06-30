@@ -31,28 +31,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/../dev/Blog.php";
             <!-- Recent Tweets -->
             <div class="col-xs-12 col-sm-3">
               <div class="footer__item">
-                <div class="footer__title">Recent Tweets</div>
+                <div class="footer__title">Nut Policy</div>
                 <div class="footer__content">
                   <div class="footer__tweet">
-                    <div class="footer-tweet__icon">
-                      <i class="fa fa-twitter"></i>
-                    </div>
                     <div class="footer-tweet__content">
                       <p>
-                        <a href="#">@wrapbootstrap</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisi lorem, elementum sed feugiat.
+                       We do not use nuts in the factory and none of our ingredients contain nuts.</br><br/>
+We prohibit staff from consuming nuts in the canteen or bringing nuts on site and conduct spot checks to ensure this rule is adhered to.<br/> 
                       </p>
-                      <a href="#">1 hour ago</a>
-                    </div>
-                  </div>
-                  <div class="footer__tweet">
-                    <div class="footer-tweet__icon">
-                      <i class="fa fa-twitter"></i>
-                    </div>
-                    <div class="footer-tweet__content">
-                      <p>
-                        <a href="#">@wrapbootstrap</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisi lorem, elementum sed feugiat.
-                      </p>
-                      <a href="#">1 day ago</a>
                     </div>
                   </div>
                 </div>

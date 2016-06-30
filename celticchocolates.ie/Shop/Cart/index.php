@@ -58,7 +58,6 @@
       </div>
     </div>
 
-
     <!-- PAGE CONTENT
     ============================== -->
     <div class="container">
@@ -137,6 +136,9 @@ window.location = window.location.href;
 }
 });
 return false;
+});
+$('.modalclick').click(function(){
+
 });
 
 $('.submitCart').click(function(){

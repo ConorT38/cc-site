@@ -160,7 +160,7 @@ max-width:none
               </h2>
               <!-- Intro -->
               <p class="features__intro">
-                We use literally no dairy or gluten in our products!
+                We use absolutely no dairy or gluten in our products!
               </p>
             </div>
           </div>
@@ -178,7 +178,7 @@ max-width:none
               </h2>
               <!-- Intro -->
               <p class="features__intro">
-                Build on the source LESS code or quickly get started with precompiled CSS if you are a novice developer.
+                Made with the tastiest free-from ingredients!
               </p>
             </div>
           </div>
@@ -187,16 +187,16 @@ max-width:none
             <div class="features__item">
               <!-- Icon -->
               <div style="visibility: visible; animation-delay: 0.4s; animation-name: flipInY;" data-wow-offset="60" class="features__icon wow flipInY animated" data-wow-delay=".4s">
-                <i class="fa fa-paper-plane"></i>
-                <i class="fa fa-paper-plane"></i> <!-- Required for animation -->
+                <i class="fa fa-leaf"></i>
+                <i class="fa fa-leaf"></i> <!-- Required for animation -->
               </div>
               <!-- Title -->
               <h2 class="features__title">
-                Swift delivery
+                Allergen friendly
               </h2>
               <!-- Intro -->
               <p class="features__intro">
-                Beatrix comes with a fully functional PHP contact form with built in spam protection powered by reCaptcha.
+                Dairy free, gluten free, wheat free, egg free and made in a dedicated free-from facility with no nuts.
               </p>
             </div>
           </div>
@@ -255,7 +255,7 @@ max-width:none
                         <div class="portfolio__caption">
                           <h3 class="portfolio__title">Rondellos Orange</h3>
                           <div class="portfolio__intro">
-                            Morbi vulputate eget ipsum vel maximus. Morbi dictum blandit mattis.
+                             Tasty white free-from chocolate orange discs.
                           </div>
                         </div>
                       </div>
@@ -273,7 +273,7 @@ max-width:none
                         <div class="portfolio__caption">
                           <h3 class="portfolio__title">Choc'n'crispie Bars</h3>
                           <div class="portfolio__intro">
-                            Morbi vulputate eget ipsum vel maximus. Morbi dictum blandit mattis.
+                            Crispy chocolate bars
                           </div>
                         </div>
                       </div>
@@ -291,7 +291,7 @@ max-width:none
                         <div class="portfolio__caption">
                           <h3 class="portfolio__title">White Choc Rondellos</h3>
                           <div class="portfolio__intro">
-                            Morbi vulputate eget ipsum vel maximus. Morbi dictum blandit mattis.
+                            Tasty white free-from chocolate discs.
                           </div>
                         </div>
                       </div>
@@ -309,7 +309,7 @@ max-width:none
                         <div class="portfolio__caption">
                           <h3 class="portfolio__title">Dark Chocolate Bars</h3>
                           <div class="portfolio__intro">
-                            Morbi vulputate eget ipsum vel maximus. Morbi dictum blandit mattis.
+                            Delicious Dark Chocolate Bars.
                           </div>
                         </div>
                       </div>
@@ -331,9 +331,9 @@ max-width:none
                         </div>
                         <!-- Captions -->
                         <div class="portfolio__caption">
-                          <h3 class="portfolio__title">Simple &amp; Beautiful</h3>
+                          <h3 class="portfolio__title">All Vegan Chocolate</h3>
                           <div class="portfolio__intro">
-                            Morbi vulputate eget ipsum vel maximus. Morbi dictum blandit mattis.
+                            Every product we make, is 100% dairy and gluten free!
                           </div>
                         </div>
                       </div>
@@ -349,9 +349,9 @@ max-width:none
                         </div>
                         <!-- Captions -->
                         <div class="portfolio__caption">
-                          <h3 class="portfolio__title">Simple &amp; Beautiful</h3>
+                          <h3 class="portfolio__title">Chocolate Rondellos</h3>
                           <div class="portfolio__intro">
-                            Morbi vulputate eget ipsum vel maximus. Morbi dictum blandit mattis.
+                            Delicious chocolate discs, perfect for any kid (or grown up kid!)
                           </div>
                         </div>
                       </div>
@@ -385,9 +385,9 @@ max-width:none
                         </div>
                         <!-- Captions -->
                         <div class="portfolio__caption">
-                          <h3 class="portfolio__title">Simple &amp; Beautiful</h3>
+                          <h3 class="portfolio__title">Chocolate Orange Bars</h3>
                           <div class="portfolio__intro">
-                            Morbi vulputate eget ipsum vel maximus. Morbi dictum blandit mattis.
+                            Tasty Free From Chocolate Orange bars
                           </div>
                         </div>
                       </div>
@@ -423,16 +423,10 @@ max-width:none
             <div class="about-us">
               <h2 class="about-us__title">Our Policy</h2>
               <p class="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- Cras eu lacus enim. Aliquam eu elit justo. Pellentesque tincidunt 
-mauris a feugiat lobortis. Phasellus feugiat nulla leo, eu lobortis 
-felis molestie nec.
+                Celtic Chocolates chocolate products are dairy free, gluten free, wheat free, egg free and made in a dedicated free-from facility with no nuts present or in raw materials/ingredients, and that's a fact!
               </p>
               <p class="text-muted">
-                Vestibulum sapien sapien, rutrum vitae nisl et, ornare 
-gravida ipsum. Sed dignissim nec ex nec fringilla. Ut commodo leo mi, eu
- cursus metus consectetur nec. Sed dictum ut nisi vel laoreet. Curabitur
- auctor lorem sit amet nisi ornare sodales.
+                We make no exceptions when it comes to making quality, free-from and delicious chocolate. That's why we go to every extent to keeping our facilities free from dairy and nuts, why not try some?
             </p></div>
           </div>
           <div class="col-xs-12 col-sm-6">
@@ -472,7 +466,7 @@ gravida ipsum. Sed dignissim nec ex nec fringilla. Ut commodo leo mi, eu
                 <div class="item">
                   <div class="feedback__item">
                     <div class="feedback__content">
-                      "Excellent quality chocolate, perfect for anyone with allergies or celiac!"
+                      "Excellent quality chocolate, perfect for anyone with allergies or celiac, I love it!"<br/><br/>
                     </div>
                     <div class="feedback__author">- Conor O'Donoghue -</div>
                   </div>
@@ -481,9 +475,9 @@ gravida ipsum. Sed dignissim nec ex nec fringilla. Ut commodo leo mi, eu
                 <div class="item active">
                   <div class="feedback__item">
                     <div class="feedback__content">
-                      "Excellent chocolate alternative for vegans"
+                      "Excellent chocolate alternative for vegans"<br/><br/>
                     </div>
-                    <div class="feedback__author">- Judy Doe -</div>
+                    <div class="feedback__author">- Roisin Dixon -</div>
                   </div>
                 </div>
               </div>
@@ -529,11 +523,8 @@ gravida ipsum. Sed dignissim nec ex nec fringilla. Ut commodo leo mi, eu
               <div class="features-alt__content">
                 <div class="features-alt__title">All Year Round</div>
                 <div class="features-alt__intro">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing 
-elit. Duis diam nunc, porta ut metus et, volutpat dictum felis. Donec 
-sit amet ultricies arcu. Ut tempus orci lorem, vitae ullamcorper nunc 
-lobortis eu.
-                </div>
+                  We have a selection of products that are available all year round, no matter the season! <br/><br/>
+                   </div>
               </div>
             </div>
             <div class="features-alt__item">
@@ -541,10 +532,7 @@ lobortis eu.
               <div class="features-alt__content">
                 <div class="features-alt__title">Easter Range</div>
                 <div class="features-alt__intro">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing 
-elit. Duis diam nunc, porta ut metus et, volutpat dictum felis. Donec 
-sit amet ultricies arcu. Ut tempus orci lorem, vitae ullamcorper nunc 
-lobortis eu.
+                 Our renowned Easter Eggs are sure to brighten up any Easter! We have a wide selection of eggs to fill the easter season!<br/><br/>
                 </div>
               </div>
             </div>
@@ -553,10 +541,7 @@ lobortis eu.
               <div class="features-alt__content">
                 <div class="features-alt__title">Christmas Range</div>
                 <div class="features-alt__intro">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing 
-elit. Duis diam nunc, porta ut metus et, volutpat dictum felis. Donec 
-sit amet ultricies arcu. Ut tempus orci lorem, vitae ullamcorper nunc 
-lobortis eu.
+                  We have a selection of advent calendars and various products for the Christmas season<br/><br/>
                 </div>
               </div>
             </div>

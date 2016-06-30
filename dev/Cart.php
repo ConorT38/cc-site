@@ -44,8 +44,47 @@ function getContents(){
           </div> <!-- / .table-responsive -->
           <!-- Subtotal -->
           <p class="text-right ">
-            <strong>Subtotal:</strong> €'.$total.' <a href="#" name="'.$quant.'" id="'.$total.'"class="btn btn-primary submitCart">Checkout</a>
-          </p>';
+            <strong>Subtotal:</strong> €'.$total;
+            if(isset($_SESSION['logged_in'])){ echo ' <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Checkout</a>';
+          }else{
+            echo ' <a href="../../Login" class="btn btn-primary" >Login</a>';
+          }
+          echo '</p>';
+            echo '<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Checkout Address</h4>
+      </div>
+      <div class="modal-body">
+      <div class="form-group">
+                      <label>Enter Name</label>
+                      <input class="form-control" id="name" placeholder="Name" value="'.Encryption::decrypt($_SESSION["name"]).'" type="text">
+              </div>
+         <div class="form-group">
+                      <label>Enter address</label>
+                      <input class="form-control" id="address" placeholder="Address" value="'.Encryption::decrypt($_SESSION["address"]).'" type="text">
+              </div>
+              <div class="form-group">
+                      <label>Enter city</label>
+                      <input class="form-control" id="city" placeholder="City" value="'.Encryption::decrypt($_SESSION["city"]).'" type="text">
+              </div>
+              <div class="form-group">
+                      <label>Enter country</label>
+                      <input class="form-control" id="country" placeholder="Country" value="'.Encryption::decrypt($_SESSION["country"]).'" type="text">
+              </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" name="'.$quant.'" id="'.$total.'" class="btn btn-success submitCart">Checkout</button>
+      </div>
+    </div>
+
+  </div>
+</div>';
   }
   else{
     echo '<tr>
