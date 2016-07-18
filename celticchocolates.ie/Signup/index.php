@@ -32,6 +32,7 @@ if(isset($_SESSION['logged_in'])){
     <link href="Signup_files/css.css" rel="stylesheet" type="text/css">
     <link href="Signup_files/css_002.css" rel="stylesheet" type="text/css">
 
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -39,7 +40,7 @@ if(isset($_SESSION['logged_in'])){
     <![endif]-->
   </head>
 
-  <body class="body_plain">
+  <body class="body_plain" ng-controller="controllerName" ng-app="app">
 
     <!-- PRELOADER (uncomment to enable)
     ============================== -->
@@ -64,38 +65,41 @@ if(isset($_SESSION['logged_in'])){
           <div class="body-plain__form">
 
             <!-- Sign Up form -->
-            <form role="form">
+            <ng-form name="val">
+            <div>
               <div class="form-group">
                 <label for="name" class="sr-only">Enter name</label>
-                <input class="form-control" id="name" placeholder="Your name" type="text">
+                <input class="form-control" ng-model="name" ng-pattern="reName" id="name" placeholder="Your name" type="text">
               </div>
               <div class="form-group">
                 <label for="email" class="sr-only">Enter email</label>
-                <input class="form-control" id="email" placeholder="Enter email" type="email">
+                <input class="form-control" ng-model="email" ng-pattern="reEmail" id="email" placeholder="Enter email" type="email">
               </div>
                     <div class="form-group">
                       <label for="password" class="sr-only">Enter password</label>
-                      <input class="form-control" id="password" placeholder="Password" type="password">
+                      <input class="form-control" ng-model="password" ng-pattern="rePassword" id="password" placeholder="Password" type="password">
               </div>
               <div class="form-group">
                       <label for="password" class="sr-only">Enter address</label>
-                      <input class="form-control" id="address" placeholder="Address" type="text">
+                      <input class="form-control" ng-model="address" ng-pattern="reAddress" id="address" placeholder="Address" type="text">
               </div>
               <div class="form-group">
                       <label for="password" class="sr-only">Enter city</label>
-                      <input class="form-control" id="city" placeholder="City" type="text">
+                      <input class="form-control" ng-model="city" ng-pattern="reCity" id="city" placeholder="City" type="text">
               </div>
               <div class="form-group">
                       <label for="password" class="sr-only">Enter country</label>
-                      <input class="form-control" id="country" placeholder="Country" type="text">
+                      <input class="form-control" ng-model="country" ng-pattern="reCountry" id="country" placeholder="Country" type="text">
               </div>
               <div class="form-group">
                       <label for="password" class="sr-only">Enter phone number</label>
-                      <input class="form-control" id="phone" placeholder="Phone Number" type="text">
+                      <input class="form-control" ng-model="phone" ng-pattern="rePhone" id="phone" placeholder="Phone Number" type="text" required>
+                      <span ng-show="val.phone.$error.pattern || val.phone.$error.required" style="color:red">Numbers only from 8-20 digits.</span>
               </div>
               <div class="checkbox">
               <button type="submit" id="submit" class="btn btn-primary btn-block btn-lg">Create Account</button>
-            </form>
+              </div>
+            </ng-form>
 
             <!-- Sign In link -->
             <hr>
@@ -125,6 +129,7 @@ if(isset($_SESSION['logged_in'])){
 
     <!-- JS Custom -->
     <script src="Signup_files/custom.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
    <script type="text/javascript">
 $(document).ready(function(){
 $('#submit').click(function(){
@@ -160,6 +165,18 @@ return false;
 
 
 </script>
+   <script>
+    var app = angular.module("app", []);
+    app.controller('controllerName', ['$scope', function ($scope) {
+    $scope.reName = /^[a-zA-Z\' ]{2,20}$/;
+    $scope.reEmail = /^[a-zA-Z ]{2,20}$/;
+    $scope.rePassword = /^[a-zA-Z0-9 ]{2,20}$/;
+    $scope.reAddress = /^[a-zA-Z ]{2,20}$/;
+    $scope.reCity = /^[a-zA-Z ]{2,20}$/;
+    $scope.reCountry = /^[a-zA-Z ]{2,20}$/;
+    $scope.rePhone = /^[0-9 ]{8,20}$/;
+    }]);
+    </script>
 
 
   
