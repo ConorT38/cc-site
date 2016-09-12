@@ -2,13 +2,14 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/PassHash.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/../src/encryption.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/../details/details.php";
-$email = $_POST['email'];
-$password = $_POST['password'];
-$name = $_POST['name'];
-$address = Encryption::encrypt($_POST['address']);
-$city = Encryption::encrypt($_POST['city']);
-$country = Encryption::encrypt($_POST['country']);
-$phone = Encryption::encrypt($_POST['phone']);
+$unwanted = array("$", "&", "#", "?", ">", "<", "=", ")", "(", ";","\\","/");
+$email = str_replace($unwanted, "", $_POST['email']);
+$password = str_replace($unwanted, "", $_POST['password']);
+$name = str_replace($unwanted, "", $_POST['name']);
+$address = Encryption::encrypt(str_replace($unwanted, "", $_POST['address']));
+$city = Encryption::encrypt(str_replace($unwanted, "", $_POST['city']));
+$country = Encryption::encrypt(str_replace($unwanted, "", $_POST['country']));
+$phone = Encryption::encrypt(str_replace($unwanted, "", $_POST['phone']));
 
 $E_email = Encryption::encrypt($email);
 $hpass = create_hash($password);

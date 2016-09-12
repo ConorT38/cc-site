@@ -38,6 +38,7 @@ if(isset($_SESSION['logged_in'])){
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
   </head>
 
   <body class="body_plain" ng-controller="controllerName" ng-app="app">
@@ -65,41 +66,48 @@ if(isset($_SESSION['logged_in'])){
           <div class="body-plain__form">
 
             <!-- Sign Up form -->
-            <ng-form name="val">
+            <form name="val">
             <div>
               <div class="form-group">
                 <label for="name" class="sr-only">Enter name</label>
-                <input class="form-control" ng-model="name" ng-pattern="reName" id="name" placeholder="Your name" type="text">
+                <input class="form-control" ng-model="name" ng-pattern="reName" id="name" name="name" placeholder="Enter your Name" type="text">
+                <span ng-show="val.name.$error.pattern || val.name.$error.required" style="color:red">Not a valid Name.</span>
               </div>
               <div class="form-group">
                 <label for="email" class="sr-only">Enter email</label>
-                <input class="form-control" ng-model="email" ng-pattern="reEmail" id="email" placeholder="Enter email" type="email">
+                <input class="form-control" ng-model="email" ng-pattern="reEmail" id="email" name="email" placeholder="Enter your Email" type="email">
+                <span ng-show="val.email.$error.pattern || val.email.$error.required" style="color:red">Not a valid Email.</span>
               </div>
                     <div class="form-group">
                       <label for="password" class="sr-only">Enter password</label>
-                      <input class="form-control" ng-model="password" ng-pattern="rePassword" id="password" placeholder="Password" type="password">
+                      <input class="form-control" ng-model="password" ng-pattern="rePassword" name="password" id="password" placeholder="Enter your Password" type="password">
+                      <span ng-show="val.password.$error.pattern || val.password.$error.required" style="color:red">Password must be at least 8 characters long.</span>
               </div>
               <div class="form-group">
-                      <label for="password" class="sr-only">Enter address</label>
-                      <input class="form-control" ng-model="address" ng-pattern="reAddress" id="address" placeholder="Address" type="text">
+                      <label for="password" class="sr-only">Enter address</label> 
+                      <input class="form-control" ng-model="address" ng-pattern="reAddress" name="address" id="address" placeholder="Enter your Address" type="text">
+                      <span ng-show="val.address.$error.pattern || val.address.$error.required" style="color:red">Not a valid address.</span>
               </div>
               <div class="form-group">
                       <label for="password" class="sr-only">Enter city</label>
-                      <input class="form-control" ng-model="city" ng-pattern="reCity" id="city" placeholder="City" type="text">
+                      <input class="form-control" ng-model="city" ng-pattern="reCity" name="city" id="city" placeholder="Enter your City" type="text">
+                      <span ng-show="val.city.$error.pattern || val.city.$error.required" style="color:red">Not a valid City.</span>
               </div>
               <div class="form-group">
                       <label for="password" class="sr-only">Enter country</label>
-                      <input class="form-control" ng-model="country" ng-pattern="reCountry" id="country" placeholder="Country" type="text">
+                      <input class="form-control" ng-model="country" ng-pattern="reCountry" name="country" id="country" placeholder="Enter your Country" type="text">
+                      <span ng-show="val.country.$error.pattern || val.country.$error.required" style="color:red">Not a valid country.</span>
               </div>
               <div class="form-group">
                       <label for="password" class="sr-only">Enter phone number</label>
-                      <input class="form-control" ng-model="phone" ng-pattern="rePhone" id="phone" placeholder="Phone Number" type="text" required>
+                      <input class="form-control" ng-model="phone" ng-pattern="rePhone" name="phone" id="phone" placeholder="Enter your Phone Number" type="text">
                       <span ng-show="val.phone.$error.pattern || val.phone.$error.required" style="color:red">Numbers only from 8-20 digits.</span>
               </div>
               <div class="checkbox">
               <button type="submit" id="submit" class="btn btn-primary btn-block btn-lg">Create Account</button>
               </div>
-            </ng-form>
+            </form>
+
 
             <!-- Sign In link -->
             <hr>
@@ -129,11 +137,11 @@ if(isset($_SESSION['logged_in'])){
 
     <!-- JS Custom -->
     <script src="Signup_files/custom.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
    <script type="text/javascript">
 $(document).ready(function(){
 $('#submit').click(function(){
 // AJAX Code To Submit Form.
+
 $.ajax({
 type: "POST",
 url: "Signup.php",
@@ -156,7 +164,7 @@ $("#city").val("");
 $("#country").val("");
 $("#phone").val("");
 
-setInterval(function(){window.location='http://localhost/Login';},1000);
+setInterval(function(){window.location=location.protocol + "//" + location.host +'/Login';},1000);
 }
 });
 return false;
@@ -165,16 +173,16 @@ return false;
 
 
 </script>
-   <script>
+             <script>
     var app = angular.module("app", []);
     app.controller('controllerName', ['$scope', function ($scope) {
     $scope.reName = /^[a-zA-Z\' ]{2,20}$/;
-    $scope.reEmail = /^[a-zA-Z ]{2,20}$/;
-    $scope.rePassword = /^[a-zA-Z0-9 ]{2,20}$/;
-    $scope.reAddress = /^[a-zA-Z ]{2,20}$/;
-    $scope.reCity = /^[a-zA-Z ]{2,20}$/;
-    $scope.reCountry = /^[a-zA-Z ]{2,20}$/;
-    $scope.rePhone = /^[0-9 ]{8,20}$/;
+    $scope.reEmail = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+    $scope.rePassword = /^[a-zA-Z0-9!@: ]{8,20}$/;
+    $scope.reAddress = /^[a-zA-Z0-9\-,\. ]{2,20}$/;
+    $scope.reCity = /^[a-zA-Z\- ]{2,20}$/;
+    $scope.reCountry = /^[a-zA-Z\-\' ]{2,20}$/;
+    $scope.rePhone = /^[0-9\+\- ]{8,20}$/;
     }]);
     </script>
 

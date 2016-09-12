@@ -1,4 +1,4 @@
- <?php include $_SERVER['DOCUMENT_ROOT']."../../dev/session.php";?>
+ <?php include $_SERVER['DOCUMENT_ROOT']."../dev/session.php";?>
  <!-- STATIC TOPBAR
     ============================== -->
     <div class="topbar hidden-xs hidden-sm">

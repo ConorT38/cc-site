@@ -37,9 +37,7 @@
                       <span ng-show="val.phone.$error.pattern || val.phone.$error.required" style="color:red">Numbers only from 8-20 digits.</span>
               </div>
               <div class="checkbox">
-              <span ng-show="!val.phone.$error.pattern && !val.city.$error.pattern && !val.country.$error.pattern && !val.address.$error.pattern &&!val.password.$error.pattern &&  !val.name.$error.pattern">
               <button type="submit" id="submit" class="btn btn-primary btn-block btn-lg">Create Account</button>
-              </span>
               </div>
             </form>
              <script>
@@ -52,61 +50,6 @@
     $scope.reCity = /^[a-zA-Z\- ]{2,20}$/;
     $scope.reCountry = /^[a-zA-Z\- ]{2,20}$/;
     $scope.rePhone = /^[0-9\+ ]{8,20}$/;
-
-  $scope.$watch('password', function(newValue){
-     if(newValue.length === 0){
-       document.getElementById("submit").disabled = true;
-     } 
-     else{
-      var password = true;
-     }
-  });
-   $scope.$watch('name', function(newValue){
-     if(newValue.length === 0){
-      document.getElementById("submit").disabled = true;
-     } else{
-      var name = true;
-     }
-  });
-    $scope.$watch('email', function(newValue){
-     if(newValue.length === 0){
-       document.getElementById("submit").disabled = true;
-     } else{
-      var email = true;
-     }
-  });
-     $scope.$watch('city', function(newValue){
-     if(newValue.length === 0){
-        document.getElementById("submit").disabled = true;
-     } else{
-      var city = true;
-     }
-  });
-      $scope.$watch('country', function(newValue){
-     if(newValue.length === 0){
-      document.getElementById("submit").disabled = true;
-     } else{
-      var country = true;
-     }
-  });
-       $scope.$watch('address', function(newValue){
-     if(newValue.length === 0){
-   document.getElementById("submit").disabled = true;
-     } else{
-      var address = true;
-     }
-  });
-         $scope.$watch('phone', function(newValue){
-     if(newValue.length === 0){
-   document.getElementById("submit").disabled = true;
-     } else{
-      var phone = true;
-      if(name && phone && email && address && country && city && password){
-          document.getElementById("submit").disabled = false;
-          alert("yo");
-         }
-     }
-  });
     }]);
     </script>
     </body>
